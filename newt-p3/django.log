@@ -1,0 +1,2109 @@
+[ERROR] 2016-07-06 22:58:41,467 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 662, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/urls.py", line 21, in <module>
+    (r'^api/auth', include('authnz.urls')),
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 662, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py", line 6, in <module>
+    urlpatterns += [
+NameError: name 'urlpatterns' is not defined
+[ERROR] 2016-07-06 22:58:42,132 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 662, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/urls.py", line 21, in <module>
+    (r'^api/auth', include('authnz.urls')),
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 662, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py", line 6, in <module>
+    urlpatterns += [
+NameError: name 'urlpatterns' is not defined
+[ERROR] 2016-07-07 02:23:42,871 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:23:43,852 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:24:18,030 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'path': 'api/auth', 'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:24:18,990 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'path': 'api/auth', 'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:25:16,486 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'path': 'api/auth', 'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:25:17,423 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'path': 'api/auth', 'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:25:32,620 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:25:33,146 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:30:52,154 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:30:53,064 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:44:56,971 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:45:37,689 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'path': 'api/auth', 'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:48:15,143 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:50:44,087 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'path': 'api/auth', 'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 02:59:24,162 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 03:04:47,633 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 03:05:14,108 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 03:05:39,131 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 03:07:12,958 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'path': 'api/auth', 'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 03:08:25,356 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 03:09:47,965 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]], 'path': 'api/auth'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 03:11:21,570 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'path': 'api/auth', 'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 03:11:22,475 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'path': 'api/auth', 'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth/>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 03:16:46,825 django.request : Internal Server Error: /api/file
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 404, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.core.urlresolvers.Resolver404: {'path': 'api/file', 'tried': [[<RegexURLResolver <module 'django.contrib.admindocs.urls' from '/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/contrib/admindocs/urls.py'> (None:None) ^admin/doc/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^api/$>], [<RegexURLResolver <module 'status.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/status/urls.py'> (None:None) ^api/status/>], [<RegexURLResolver <module 'file.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/file/urls.py'> (None:None) ^api/file/>], [<RegexURLResolver <module 'authnz.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/authnz/urls.py'> (None:None) ^api/auth>], [<RegexURLResolver <module 'command.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/urls.py'> (None:None) ^api/command/>], [<RegexURLResolver <module 'store.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/store/urls.py'> (None:None) ^api/store/>], [<RegexURLResolver <module 'account.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/account/urls.py'> (None:None) ^api/account/>], [<RegexURLResolver <module 'job.urls' from '/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/job/urls.py'> (None:None) ^api/job/>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 59, in templates
+    default_name = tpl['BACKEND'].rsplit('.', 2)[-2]
+KeyError: 'BACKEND'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 92, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/defaults.py", line 39, in page_not_found
+    template = loader.get_template(template_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 26, in get_template
+    engines = _engine_list(using)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/loader.py", line 143, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 110, in all
+    return [self[alias] for alias in self]
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 107, in __iter__
+    return iter(self.templates)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/template/utils.py", line 64, in templates
+    "your TEMPLATES setting.".format(invalid_backend))
+django.core.exceptions.ImproperlyConfigured: Invalid BACKEND for a template engine: <not defined>. Check your TEMPLATES setting.
+[ERROR] 2016-07-07 04:12:16,633 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 22, in json_response
+    response = json.dumps(wrapper, cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2ad92a6ba828> is not JSON serializable
+[ERROR] 2016-07-07 04:17:08,685 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 22, in json_response
+    response = json.dumps(wrapper, cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2af4f100b9b0> is not JSON serializable
+[ERROR] 2016-07-07 04:18:36,635 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 22, in json_response
+    response = json.dumps(wrapper, cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2ac6696c55f8> is not JSON serializable
+[ERROR] 2016-07-07 04:24:00,682 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/views.py", line 23, in post
+    command = urllib.unquote(request.POST['command'])
+AttributeError: module 'urllib' has no attribute 'unquote'
+[ERROR] 2016-07-07 04:24:01,532 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/command/views.py", line 23, in post
+    command = urllib.unquote(request.POST['command'])
+AttributeError: module 'urllib' has no attribute 'unquote'
+[ERROR] 2016-07-07 04:27:16,856 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 22, in json_response
+    response = json.dumps(wrapper, cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:27:17,480 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 22, in json_response
+    response = json.dumps(wrapper, cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:27:42,999 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 22, in json_response
+    response = json.dumps(wrapper, cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'ln4\n' is not JSON serializable
+[ERROR] 2016-07-07 04:27:43,894 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 22, in json_response
+    response = json.dumps(wrapper, cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'.\n..\n.autofsck\n.autorelabel\nbin\nboot\ncgroup\n.dbus\ndev\netc\nhome\nHOME\nlib\nlib64\nlog\nlost+found\nmedia\nmisc\nmnt\nnet\nopt\nproc\nroot\nsbin\nselinux\nsrv\nsys\ntmp\nusr\nvar\nVIP\nvol7\nvol-th\nWORK\n' is not JSON serializable
+[ERROR] 2016-07-07 04:35:01,403 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 24, in json_response
+    response = serializers.serialize('json', wrapper)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/__init__.py", line 129, in serialize
+    s.serialize(queryset, **options)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/base.py", line 83, in serialize
+    concrete_model = obj._meta.concrete_model
+AttributeError: 'str' object has no attribute '_meta'
+[ERROR] 2016-07-07 04:35:01,986 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 24, in json_response
+    response = serializers.serialize('json', wrapper)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/__init__.py", line 129, in serialize
+    s.serialize(queryset, **options)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/base.py", line 83, in serialize
+    concrete_model = obj._meta.concrete_model
+AttributeError: 'str' object has no attribute '_meta'
+[ERROR] 2016-07-07 04:35:02,065 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 24, in json_response
+    response = serializers.serialize('json', wrapper)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/__init__.py", line 129, in serialize
+    s.serialize(queryset, **options)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/base.py", line 83, in serialize
+    concrete_model = obj._meta.concrete_model
+AttributeError: 'str' object has no attribute '_meta'
+[ERROR] 2016-07-07 04:37:46,580 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 24, in json_response
+    response = serializers.serialize('json', wrapper.objects.all())
+AttributeError: 'dict' object has no attribute 'objects'
+[ERROR] 2016-07-07 04:37:47,498 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 24, in json_response
+    response = serializers.serialize('json', wrapper.objects.all())
+AttributeError: 'dict' object has no attribute 'objects'
+[ERROR] 2016-07-07 04:37:47,574 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 24, in json_response
+    response = serializers.serialize('json', wrapper.objects.all())
+AttributeError: 'dict' object has no attribute 'objects'
+[ERROR] 2016-07-07 04:40:29,871 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 25, in json_response
+    response = json.dumps(wrapper, cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'ln4\n' is not JSON serializable
+[ERROR] 2016-07-07 04:40:30,832 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 25, in json_response
+    response = json.dumps(wrapper, cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'.\n..\n.autofsck\n.autorelabel\nbin\nboot\ncgroup\n.dbus\ndev\netc\nhome\nHOME\nlib\nlib64\nlog\nlost+found\nmedia\nmisc\nmnt\nnet\nopt\nproc\nroot\nsbin\nselinux\nsrv\nsys\ntmp\nusr\nvar\nVIP\nvol7\nvol-th\nWORK\n' is not JSON serializable
+[ERROR] 2016-07-07 04:46:47,416 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(wrapper)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 230, in dumps
+    return _default_encoder.encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:46:48,019 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(wrapper)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 230, in dumps
+    return _default_encoder.encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:49:21,843 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(wrapper,sort_keys=True)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:49:22,821 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(wrapper,sort_keys=True)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:50:02,822 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(wrapper,sort_keys=True,indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:50:03,769 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(wrapper,sort_keys=True,indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:52:48,210 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 27, in json_response
+    response = json.dumps(wrapper,sort_keys=True,indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:52:48,901 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 27, in json_response
+    response = json.dumps(wrapper,sort_keys=True,indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:54:49,825 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:54:50,827 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:58:46,541 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(dict(wrapper), cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:58:47,546 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(dict(wrapper), cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'' is not JSON serializable
+[ERROR] 2016-07-07 04:59:27,132 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(dict(wrapper), cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'ln4\n' is not JSON serializable
+[ERROR] 2016-07-07 04:59:27,770 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(dict(wrapper), cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: b'.\n..\n.autofsck\n.autorelabel\nbin\nboot\ncgroup\n.dbus\ndev\netc\nhome\nHOME\nlib\nlib64\nlog\nlost+found\nmedia\nmisc\nmnt\nnet\nopt\nproc\nroot\nsbin\nselinux\nsrv\nsys\ntmp\nusr\nvar\nVIP\nvol7\nvol-th\nWORK\n' is not JSON serializable
+[ERROR] 2016-07-07 05:01:41,968 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(dict(wrapper), cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2ba90b597470> is not JSON serializable
+[ERROR] 2016-07-07 19:55:31,243 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(dict(wrapper), cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2ab731a35a20> is not JSON serializable
+[ERROR] 2016-07-07 20:02:13,813 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps(dict(wrapper), cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2aad323d8860> is not JSON serializable
+[ERROR] 2016-07-07 20:04:03,537 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps((wrapper.decode("utf-8")), cls=DjangoJSONEncoder, indent=4)
+AttributeError: 'dict' object has no attribute 'decode'
+[ERROR] 2016-07-07 20:04:04,304 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps((wrapper.decode("utf-8")), cls=DjangoJSONEncoder, indent=4)
+AttributeError: 'dict' object has no attribute 'decode'
+[ERROR] 2016-07-07 20:04:04,380 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps((wrapper.decode("utf-8")), cls=DjangoJSONEncoder, indent=4)
+AttributeError: 'dict' object has no attribute 'decode'
+[ERROR] 2016-07-07 20:04:45,551 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 27, in json_response
+    response = json.dumps(wrapper.decode("utf-8"))
+AttributeError: 'dict' object has no attribute 'decode'
+[ERROR] 2016-07-07 20:04:46,107 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 27, in json_response
+    response = json.dumps(wrapper.decode("utf-8"))
+AttributeError: 'dict' object has no attribute 'decode'
+[ERROR] 2016-07-07 20:04:46,186 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 27, in json_response
+    response = json.dumps(wrapper.decode("utf-8"))
+AttributeError: 'dict' object has no attribute 'decode'
+[ERROR] 2016-07-07 20:07:38,336 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 26, in json_response
+    response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2ae0df26b9e8> is not JSON serializable
+[ERROR] 2016-07-07 20:10:54,293 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 30, in json_response
+    response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4,default=convert_to_builtin_type)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 8, in convert_to_builtin_type
+    d.update(obj.__dict__)
+AttributeError: 'map' object has no attribute '__dict__'
+[ERROR] 2016-07-07 20:18:47,231 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 30, in json_response
+    response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4) #,default=convert_to_builtin_type)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2b2900e547b8> is not JSON serializable
+[ERROR] 2016-07-07 20:20:01,164 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 30, in json_response
+    response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4) #,default=convert_to_builtin_type)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2b45fe78d6a0> is not JSON serializable
+[ERROR] 2016-07-07 20:26:52,393 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 662, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/urls.py", line 2, in <module>
+    from newt.views import RootView
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 7, in <module>
+    from common.response import json_response
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 4, in <module>
+    import simplejson as json
+ImportError: No module named 'simplejson'
+[ERROR] 2016-07-07 20:26:53,009 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 662, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/urls.py", line 2, in <module>
+    from newt.views import RootView
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 7, in <module>
+    from common.response import json_response
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 4, in <module>
+    import simplejson as json
+ImportError: No module named 'simplejson'
+[ERROR] 2016-07-07 20:26:53,087 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 662, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/urls.py", line 2, in <module>
+    from newt.views import RootView
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 7, in <module>
+    from common.response import json_response
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 4, in <module>
+    import simplejson as json
+ImportError: No module named 'simplejson'
+[ERROR] 2016-07-07 20:32:10,629 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 30, in json_response
+    response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4) #,default=convert_to_builtin_type)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2ab9a0fe5a90> is not JSON serializable
+[ERROR] 2016-07-07 20:32:40,932 django.request : Internal Server Error: /api/file/localhost/
+Traceback (most recent call last):
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/newt/views.py", line 27, in dispatch
+    response = json_response(response)
+  File "/WORK/nscc-gz_jiangli/project/ehpc/newt-p3/common/response.py", line 30, in json_response
+    response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4) #,default=convert_to_builtin_type)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 403, in _iterencode_dict
+    yield from chunks
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 436, in _iterencode
+    o = _default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/site-packages/Django-1.9-py3.5.egg/django/core/serializers/json.py", line 115, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <map object at 0x2b1b5dd325f8> is not JSON serializable

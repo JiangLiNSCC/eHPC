@@ -1,6 +1,0 @@
-*.pyc
-*sqlite
-.DS_Store
-venv
-local_settings.py
-*.log

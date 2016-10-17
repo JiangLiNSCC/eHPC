@@ -2107,3 +2107,466 @@ Traceback (most recent call last):
   File "/WORK/app/Python/3.5.1/lib/python3.5/json/encoder.py", line 180, in default
     raise TypeError(repr(o) + " is not JSON serializable")
 TypeError: <map object at 0x2b1b5dd325f8> is not JSON serializable
+[ERROR] 2016-10-17 03:34:34,831 django.request : Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 34, in <module>
+    url(r'^api/file', include('file.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/file/urls.py", line 3, in <module>
+    from file.views import FileView, FileRootView, ExtraFileView
+  File "/home/user1/virtualenv/eHPC/newt-p3/file/views.py", line 9, in <module>
+    file_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['FILE']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/file/adapters/localfile_adapter.py", line 3, in <module>
+    import magic
+ImportError: No module named 'magic'
+[ERROR] 2016-10-17 03:37:21,555 django.request : Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 34, in <module>
+    url(r'^api/file', include('file.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/file/urls.py", line 3, in <module>
+    from file.views import FileView, FileRootView, ExtraFileView
+  File "/home/user1/virtualenv/eHPC/newt-p3/file/views.py", line 9, in <module>
+    file_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['FILE']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/file/adapters/localfile_adapter.py", line 3, in <module>
+    import magic
+ImportError: No module named 'magic'
+[ERROR] 2016-10-17 03:38:42,113 django.request : Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 39, in <module>
+    url(r'^api/job/', include('job.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/urls.py", line 3, in <module>
+    from job.views import *
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/views.py", line 7, in <module>
+    job_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['JOB']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 6, in <module>
+    from bson.objectid import ObjectId
+ImportError: No module named 'bson'
+[ERROR] 2016-10-17 03:39:03,766 django.request : Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 39, in <module>
+    url(r'^api/job/', include('job.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/urls.py", line 3, in <module>
+    from job.views import *
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/views.py", line 7, in <module>
+    job_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['JOB']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 6, in <module>
+    from bson.objectid import ObjectId
+ImportError: No module named 'bson.objectid'
+[ERROR] 2016-10-17 03:39:28,678 django.request : Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 39, in <module>
+    url(r'^api/job/', include('job.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/urls.py", line 3, in <module>
+    from job.views import *
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/views.py", line 7, in <module>
+    job_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['JOB']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 6, in <module>
+    from bson.objectid import ObjectId
+ImportError: No module named 'bson.objectid'
+[ERROR] 2016-10-17 03:39:33,824 django.request : Internal Server Error: /job
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/middleware/common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 39, in <module>
+    url(r'^api/job/', include('job.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/urls.py", line 3, in <module>
+    from job.views import *
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/views.py", line 7, in <module>
+    job_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['JOB']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 6, in <module>
+    from bson.objectid import ObjectId
+ImportError: No module named 'bson.objectid'
+[ERROR] 2016-10-17 03:39:39,368 django.request : Internal Server Error: /auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/middleware/common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 39, in <module>
+    url(r'^api/job/', include('job.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/urls.py", line 3, in <module>
+    from job.views import *
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/views.py", line 7, in <module>
+    job_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['JOB']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 6, in <module>
+    from bson.objectid import ObjectId
+ImportError: No module named 'bson.objectid'
+[ERROR] 2016-10-17 03:39:42,952 django.request : Internal Server Error: /api
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/middleware/common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 39, in <module>
+    url(r'^api/job/', include('job.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/urls.py", line 3, in <module>
+    from job.views import *
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/views.py", line 7, in <module>
+    job_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['JOB']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 6, in <module>
+    from bson.objectid import ObjectId
+ImportError: No module named 'bson.objectid'
+[ERROR] 2016-10-17 03:39:46,375 django.request : Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 39, in <module>
+    url(r'^api/job/', include('job.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/urls.py", line 3, in <module>
+    from job.views import *
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/views.py", line 7, in <module>
+    job_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['JOB']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 6, in <module>
+    from bson.objectid import ObjectId
+ImportError: No module named 'bson.objectid'
+[ERROR] 2016-10-17 03:44:44,515 django.request : Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 30, in get
+    return acct_adapter.extras_router(request, query)
+NameError: name 'acct_adapter' is not defined

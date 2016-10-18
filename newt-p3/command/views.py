@@ -21,7 +21,8 @@ class CommandView(JSONRestView):
     def post(self, request, machine_name):
         logger.debug("Entering %s:%s" % (self.__class__.__name__, __name__))
         #command = urllib.unquote(request.POST['command'])
-        command = urllib.parse.unquote(request.POST['command'])
+        #command = urllib.parse.unquote( request.POST.get('command') )
+        command =  request.POST.get('command') 
         if not command:
             return json_response(status="ERROR", 
                                  status_code=400, 

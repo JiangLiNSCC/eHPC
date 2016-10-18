@@ -46,13 +46,8 @@ def login(request):
     Keyword arguments:
     request -- Django HttpRequest
     """
-    print( 'test')
-    print( request.POST.get('username')  , 'un')
-    for key in request.POST :
-        print( key )
     username = request.POST.get('username') #.encode("utf-8")
     password = request.POST.get('password') #.encode("utf-8")
-    
     if ( 1 == 1) :
         try:
             myuser = User.objects.get(username=username)
@@ -76,6 +71,8 @@ def logout(request):
     Keyword arguments:
     request -- Django HttpRequest
     """
+    auth.logout(request)
+    return get_status(request)
     pass
 
 

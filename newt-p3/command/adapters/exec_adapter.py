@@ -7,12 +7,14 @@ logger = logging.getLogger("newt." + __name__)
 def execute(request, machine_name, command):
     try:
         logger.debug("Running command: %s" % command)
+        print( command  + 's')
         (output, error, retcode) = run_command(command)
         response = {
-            'output': output,
-            'error': error,
+            'output': output.decode('utf-8'),
+            'error': error.decode('utf-8'),
             'retcode': retcode
         }
+        #print( response)
         return response
     except Exception as e:
         logger.error("Could not run command: %s" % str(e))

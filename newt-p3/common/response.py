@@ -15,11 +15,15 @@ def json_response(content="", status="OK", status_code=200, error=""):
                        (See http://goo.gl/DKyBHK for status codes)
         error -- string with the error message if there is one 
     """
+    #if isinstance(content, dict):
+    #    
     wrapper = {
         'status': status,
         'status_code': status_code,
         'output': content,
         'error': error
     }
-    response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4) 
+    print( type( wrapper) , wrapper )
+    response = json.dumps((wrapper)) 
+    #response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4) 
     return HttpResponse(response, content_type='application/json', status=status_code)

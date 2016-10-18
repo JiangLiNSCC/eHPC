@@ -2570,3 +2570,1074 @@ Traceback (most recent call last):
   File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 30, in get
     return acct_adapter.extras_router(request, query)
 NameError: name 'acct_adapter' is not defined
+[ERROR] 2016-10-17 04:10:20,994 django.request : Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 35, in <module>
+    url(r'^api/auth', include('authnz.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/urls.py", line 3, in <module>
+    from authnz.views import AuthView, ExtraAuthView
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 6, in <module>
+    auth_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['AUTH']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 56
+    except Exception,ex:
+                    ^
+SyntaxError: invalid syntax
+[ERROR] 2016-10-17 04:36:51,472 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    username = request.POST['username'].encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 04:38:31,120 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    username = request.POST['username'].encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 04:39:54,439 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    username = request.POST['username'].encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 04:41:42,157 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 04:43:17,842 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 394, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/middleware/common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/urls.py", line 35, in <module>
+    url(r'^api/auth', include('authnz.urls')),
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 2254, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/urls.py", line 3, in <module>
+    from authnz.views import AuthView, ExtraAuthView
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 6, in <module>
+    auth_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['AUTH']['adapter'])
+  File "/home/user1/virtualenv/py3env/lib/python3.4/importlib/__init__.py", line 109, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46
+    print request.POST
+                ^
+SyntaxError: Missing parentheses in call to 'print'
+[ERROR] 2016-10-17 04:43:30,693 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 47, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 04:44:07,761 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    print (request.POST.all)
+AttributeError: 'QueryDict' object has no attribute 'all'
+[ERROR] 2016-10-17 04:47:03,810 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    print (request.raw_post_data)
+AttributeError: 'QueryDict' object has no attribute 'all'
+[ERROR] 2016-10-17 04:47:18,321 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    print (request.raw_post_data)
+AttributeError: 'QueryDict' object has no attribute 'all'
+[ERROR] 2016-10-17 04:49:18,659 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    #print (request.raw_post_data)
+AttributeError: 'QueryDict' object has no attribute 'all'
+[ERROR] 2016-10-17 04:50:01,720 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    username = request.POST['username'] #.encode("utf-8")
+AttributeError: 'QueryDict' object has no attribute 'all'
+[ERROR] 2016-10-17 04:50:14,909 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 04:50:56,992 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    print( request.raw_post_data )
+AttributeError: 'WSGIRequest' object has no attribute 'raw_post_data'
+[ERROR] 2016-10-17 04:52:01,490 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 46, in login
+    print( request.POST.get() )
+TypeError: get() missing 1 required positional argument: 'key'
+[ERROR] 2016-10-17 04:52:25,696 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 47, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 04:52:53,102 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 47, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 04:54:01,022 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 47, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 04:54:20,756 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 47, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 04:56:22,837 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 49, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 19:56:38,278 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 49, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 19:58:13,046 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 49, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 20:01:53,858 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 47, in login
+    print( request["foo"] )
+TypeError: 'WSGIRequest' object is not subscriptable
+[ERROR] 2016-10-17 20:05:42,532 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 50, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 20:06:35,214 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 50, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 20:06:42,286 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 50, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 20:07:35,676 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 50, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 20:08:24,780 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 50, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 20:10:20,198 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 50, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 20:10:48,686 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 50, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 20:12:23,062 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 50, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 20:13:32,724 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 320, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 50, in login
+    username = request.POST['username'] #.encode("utf-8")
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/utils/datastructures.py", line 322, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-10-17 20:16:08,230 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 54, in login
+    myuser = User.objects.get(username=username)
+NameError: name 'User' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 55, in login
+    except ObjectDoesNotExist:
+NameError: name 'ObjectDoesNotExist' is not defined
+[ERROR] 2016-10-17 20:17:49,107 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 55, in login
+    myuser = User.objects.get(username=username)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+django.contrib.auth.models.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 56, in login
+    except ObjectDoesNotExist:
+NameError: name 'ObjectDoesNotExist' is not defined
+[ERROR] 2016-10-17 20:18:15,639 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 55, in login
+    myuser = User.objects.get(username=username)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+django.contrib.auth.models.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 58, in login
+    email = "%s@%s" % (username, settings.NEWT_DOMAIN)
+NameError: name 'settings' is not defined
+[ERROR] 2016-10-17 20:18:37,242 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 57, in login
+    myuser = User.objects.get(username=username)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+django.contrib.auth.models.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 65, in login
+    raise ex
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 62, in login
+    myuser = User.objects.create_user(username, email)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/models.py", line 187, in create_user
+    **extra_fields)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/models.py", line 175, in _create_user
+    raise ValueError('The given username must be set')
+ValueError: The given username must be set
+[ERROR] 2016-10-17 20:19:27,031 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 57, in login
+    myuser = User.objects.get(username=username)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+django.contrib.auth.models.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 65, in login
+    raise ex
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 62, in login
+    myuser = User.objects.create_user(username, email)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/models.py", line 187, in create_user
+    **extra_fields)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/models.py", line 175, in _create_user
+    raise ValueError('The given username must be set')
+ValueError: The given username must be set
+[ERROR] 2016-10-17 20:19:57,787 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 57, in login
+    try:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+django.contrib.auth.models.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 65, in login
+    logger.error(ex)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 62, in login
+    try:
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/models.py", line 187, in create_user
+    **extra_fields)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/models.py", line 175, in _create_user
+    raise ValueError('The given username must be set')
+ValueError: The given username must be set
+[ERROR] 2016-10-17 20:20:10,265 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 58, in login
+    myuser = User.objects.get(username=username)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+django.contrib.auth.models.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 66, in login
+    raise ex
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 63, in login
+    myuser = User.objects.create_user(username, email)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/models.py", line 187, in create_user
+    **extra_fields)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/models.py", line 175, in _create_user
+    raise ValueError('The given username must be set')
+ValueError: The given username must be set
+[ERROR] 2016-10-17 20:20:44,741 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 58, in login
+    myuser = User.objects.get(username=username)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+django.contrib.auth.models.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 66, in login
+    raise ex
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 63, in login
+    myuser = User.objects.create_user(username, email)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/models.py", line 187, in create_user
+    **extra_fields)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/models.py", line 175, in _create_user
+    raise ValueError('The given username must be set')
+ValueError: The given username must be set
+[ERROR] 2016-10-17 20:21:08,752 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 67, in login
+    auth.login(request, myuser)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/__init__.py", line 112, in login
+    request.session[BACKEND_SESSION_KEY] = user.backend
+AttributeError: 'User' object has no attribute 'backend'
+[ERROR] 2016-10-17 20:23:45,217 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 67, in login
+    raise ex
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/__init__.py", line 112, in login
+    request.session[BACKEND_SESSION_KEY] = user.backend
+AttributeError: 'User' object has no attribute 'backend'
+[ERROR] 2016-10-17 20:24:44,902 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 67, in login
+    raise ex
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/__init__.py", line 112, in login
+    request.session[BACKEND_SESSION_KEY] = user.backend
+AttributeError: 'User' object has no attribute 'backend'
+[ERROR] 2016-10-17 20:25:00,393 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 67, in login
+    raise ex
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/__init__.py", line 112, in login
+    request.session[BACKEND_SESSION_KEY] = user.backend
+AttributeError: 'User' object has no attribute 'backend'
+[ERROR] 2016-10-17 20:27:02,960 django.request : Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/views.py", line 21, in post
+    return auth_adapter.login(request)
+  File "/home/user1/virtualenv/eHPC/newt-p3/authnz/adapters/test_adapter.py", line 67, in login
+    myuser.backend = 'django.contrib.auth.backends.ModelBackend'
+  File "/home/user1/virtualenv/py3env/lib/python3.4/site-packages/django/contrib/auth/__init__.py", line 112, in login
+    request.session[BACKEND_SESSION_KEY] = user.backend
+AttributeError: 'User' object has no attribute 'backend'

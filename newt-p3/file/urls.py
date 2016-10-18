@@ -1,5 +1,5 @@
-from django.conf.urls import patterns ,url
-
+#from django.conf.urls import patterns ,url
+from django.conf.urls import *
 from file.views import FileView, FileRootView, ExtraFileView
 
 '''

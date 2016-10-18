@@ -246,7 +246,7 @@ NEWT_CONFIG = {
             'models': "",
         }, 
         'AUTH': {
-            'adapter': 'authnz.adapters.dbauth_adapter',
+            'adapter': 'authnz.adapters.test_adapter',
             'models': '',
         },
         'COMMAND': {

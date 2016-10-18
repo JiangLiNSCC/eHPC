@@ -1,5 +1,5 @@
-from django.conf.urls import patterns , url
-
+#from django.conf.urls import patterns , url
+from django.conf.urls import *
 from status.views import StatusView, ExtraStatusView
 
 '''

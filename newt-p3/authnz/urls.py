@@ -1,5 +1,5 @@
-from django.conf.urls import patterns , url 
-
+#from django.conf.urls import patterns , url 
+from django.conf.urls import * 
 from authnz.views import AuthView, ExtraAuthView
 
 '''

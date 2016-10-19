@@ -4504,3 +4504,64 @@ Traceback (most recent call last):
   File "/usr/lib/python3.4/json/encoder.py", line 173, in default
     raise TypeError(repr(o) + " is not JSON serializable")
 TypeError: b'' is not JSON serializable
+[ERROR] 2016-10-19 03:01:47,961 django.request : Internal Server Error: /api/job/localhost/
+Traceback (most recent call last):
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 69, in submit_job
+    job = Popen([job_emu, tmp_job_name, request.user.username, data], stdout=PIPE)
+  File "/usr/lib/python3.4/subprocess.py", line 848, in __init__
+    restore_signals, start_new_session)
+  File "/usr/lib/python3.4/subprocess.py", line 1446, in _execute_child
+    raise child_exception_type(errno_num, err_msg)
+PermissionError: [Errno 13] Permission denied
+[ERROR] 2016-10-19 03:24:45,200 django.request : Internal Server Error: /api/job/localhost/
+Traceback (most recent call last):
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 69, in submit_job
+    job = Popen([job_emu, tmp_job_name, request.user.username, data], stdout=PIPE)
+  File "/usr/lib/python3.4/subprocess.py", line 848, in __init__
+    restore_signals, start_new_session)
+  File "/usr/lib/python3.4/subprocess.py", line 1446, in _execute_child
+    raise child_exception_type(errno_num, err_msg)
+PermissionError: [Errno 13] Permission denied
+[ERROR] 2016-10-19 03:29:38,287 django.request : Internal Server Error: /api/job/localhost/6174
+Traceback (most recent call last):
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 244, in _legacy_get_response
+    response = middleware_method(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/job/localhost/6174/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.

@@ -285,4 +285,7 @@ try:
 except ImportError:
     pass
 
-
+try:
+    from celery_broker_settings import *
+except ImportError:
+    pass

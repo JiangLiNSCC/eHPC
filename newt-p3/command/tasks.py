@@ -1,11 +1,11 @@
+from __future__ import absolute_import
+from celery import shared_task
 import time
-from celery import task
-
-@task()
+@shared_task()
 def add(x,y):
     return x+ y 
 
-@task()
+@shared_task()
 def sendmail(mail):
     print("+++++++++++++++++++++++++++")
     print('sending mail to %s...' % mail['to'] )

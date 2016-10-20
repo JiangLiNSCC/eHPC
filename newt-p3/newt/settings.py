@@ -137,6 +137,7 @@ INSTALLED_APPS = (
     'store',
     'account',
     'job',
+    'command',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -292,3 +293,4 @@ except ImportError:
 import djcelery
 djcelery.setup_loader()
 BROKER_URL= 'redis://127.0.0.1:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'

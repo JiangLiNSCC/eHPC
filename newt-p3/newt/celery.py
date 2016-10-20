@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+from __future__ import absolute_import #,unicode_literals
 
 import os
 
@@ -9,11 +9,12 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'newt.settings')
 
 from django.conf import settings  # noqa
 
-app = Celery('newt')
+app = Celery('proj')
 
 # Using a string here means the worker will not have to
 # pickle the object when using Windows.
-app.config_from_object('django.conf:settings')
+app.config_from_object('django.conf:settings' ) #, namespace='CELERY')
+#app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
 

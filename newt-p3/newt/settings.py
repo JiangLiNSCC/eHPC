@@ -289,3 +289,6 @@ try:
     from celery_broker_settings import *
 except ImportError:
     pass
+import djcelery
+djcelery.setup_loader()
+BROKER_URL= 'redis://127.0.0.1:6379/0'

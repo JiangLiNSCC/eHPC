@@ -28,7 +28,7 @@ def view_queue(request, machine_name):
     (output, error, retcode) = run_command('ps -eo "%U %p %P %r %y %x %c %a"')
     #patt = re.compile(r'(?P<user>[^\s]+)\s+(?P<jobid>\d+)\s+(?P<ppid>\d+)\s+(?P<pgid>\d+)\s+(?P<sess>\d+)\s+(?P<jobc>\d+)\s+(?P<status>[^\s]+)\s+(?P<tt>[^\s]+)\s+(?P<timeuse>[^\s]+)\s+(?P<command>.+)')
     patt = re.compile(r'(?P<user>[^\s]+)\s+(?P<jobid>\d+)\s+(?P<ppid>\d+)\s+(?P<pgid>\d+)\s+(?P<tty>[^\s]+)\s+(?P<time>[^\s]+)(?P<command>.+)')
-    processes = output.decode('utf-8').splitlines()[1:]
+    processes = output.splitlines()[1:]
     #print( processes )
     processes = list(map(lambda x: patt.match(x).groupdict(), processes))
     return processes
@@ -128,8 +128,8 @@ def delete_job(request, machine_name, job_id):
     if retcode != 0:
         return json_response(status="ERROR",
                              status_code=500,
-                             error=error.decode('utf-8'))
-    return {"output": output.decode('utf-8')}
+                             error=error)
+    return {"output": output}
 
 patterns = (
 )

@@ -1,4 +1,6 @@
+
 set -x 
+#### test auth
 curl -X GET http://localhost:8000 | grep api
  curl -X GET http://localhost:8000/api
  curl -X GET http://localhost:8000/api/auth
@@ -7,9 +9,10 @@ curl -X GET http://localhost:8000 | grep api
  curl -b cookie.txt -X DELETE http://localhost:8000/api/auth
  curl -X GET -b cookie.txt http://localhost:8000/api/auth
  curl -X POST -d "username=test3&password=test3" -D cookie.txt http://localhost:8000/api/auth
+#### test job
  curl -X GET -b cookie.txt http://localhost:8000/api/job/
  curl -X GET -b cookie.txt http://localhost:8000/api/job/localhost/
-
+#### test command
  curl -X POST -d "command=ls /" -b cookie.txt http://localhost:8000/api/command/local
 
  # need to chmod the *.sh file in job dir

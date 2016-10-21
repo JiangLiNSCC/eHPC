@@ -1,3 +1,6 @@
+from __future__ import absolute_import
+from celery import shared_task
+
 from subprocess import PIPE, Popen
 import shlex
 import re
@@ -25,8 +28,8 @@ try:
 except ValueError as e:
     logger.warning('setting alarm handler failed: "%s"' %e)
 
-
-def run_command(command, env=None, timeout=600):
+@shared_task
+def run_command(command, env=None, timeout=600 , decode ='utf-8' ):
     args = shlex.split(smart_str(command))
     try:
         p = Popen(args, stdout=PIPE, stderr=PIPE, env=env)
@@ -57,5 +60,4 @@ def run_command(command, env=None, timeout=600):
         # May not want to expose user to error
         #os.strerror(retcode)
         logger.warning('command "%s", exit: %d <br> %s' % (command, retcode, error))
-  
-    return (output, error, retcode)
+    return (output.decode( decode ), error.decode( decode  ), retcode)

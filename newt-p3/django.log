@@ -4565,3 +4565,45 @@ Traceback (most recent call last):
   File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
     'url': request.get_host() + new_path,
 RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/job/localhost/6174/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[ERROR] 2016-10-20 21:07:54,866 django.request : Internal Server Error: /api/job/localhost/
+Traceback (most recent call last):
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/job/views.py", line 21, in get
+    return job_adapter.view_queue(request, machine)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 31, in view_queue
+    processes = output.decode('utf-8').splitlines()[1:]
+AttributeError: 'str' object has no attribute 'decode'
+[ERROR] 2016-10-20 21:08:00,173 django.request : Internal Server Error: /api/job/localhost/13665/
+Traceback (most recent call last):
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/py3env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/job/views.py", line 31, in delete
+    return job_adapter.delete_job(request, machine, job_id)
+  File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 132, in delete_job
+    return {"output": output.decode('utf-8')}
+AttributeError: 'str' object has no attribute 'decode'

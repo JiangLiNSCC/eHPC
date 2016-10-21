@@ -1,5 +1,6 @@
 from common.shell import run_command
 from common.response import json_response
+from celery.result import AsyncResult
 import logging
 logger = logging.getLogger("newt." + __name__)
 
@@ -7,7 +8,8 @@ logger = logging.getLogger("newt." + __name__)
 def execute(request, machine_name, command):
     try:
         logger.debug("Running command: %s" % command)
-        print( command  + 's')
+        #print( command  + 's')
+        res = run_command(command)
         (output, error, retcode) = run_command(command)
         response = {
             'output': output,
@@ -19,6 +21,32 @@ def execute(request, machine_name, command):
     except Exception as e:
         logger.error("Could not run command: %s" % str(e))
         return json_response(error="Could not run command: %s" % str(e), status="ERROR", status_code=500)
+
+def async_execute(request , machine_name , command):
+    try:
+        logger.debug("Running command: %s" % command)
+        res = run_command.delay(command)
+        #(output, error, retcode) = run_command(command)
+        response = {
+            'id': res.id,
+        }
+        return response
+    except Exception as e:
+        logger.error("Could not run command: %s" % str(e))
+        return json_response(error="Could not run command: %s" % str(e), status="ERROR", status_code=500)
+
+def async_check(request,machine_name,rid):
+    try :
+        res = AsyncResult( rid )
+        response = {
+             'status' : res.status ,
+             'info'   : res.info   ,
+        }
+        return response
+    except Exception as e :
+        logger.error("Could not check aysnc command : %s" % str(e))
+        return json_response(error="Could not check aysnc command: %s" % str(e), status="ERROR", status_code=500)
+
 
 
 def get_systems(request):

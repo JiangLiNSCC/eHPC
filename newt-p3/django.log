@@ -4607,3 +4607,24 @@ Traceback (most recent call last):
   File "/home/tonge/WorkStation/virtualenv/eHPC/newt-p3/job/adapters/unix_adapter.py", line 132, in delete_job
     return {"output": output.decode('utf-8')}
 AttributeError: 'str' object has no attribute 'decode'
+[ERROR] 2016-10-31 22:18:28,362 django.request : Internal Server Error: /api/command/localhost
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/views.py", line 30, in post
+    return command_adapter.execute(request, machine_name, command)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/adapters/ssh_adapter.py", line 8, in execute
+    conf = settings.NEWT_CONFIG
+NameError: name 'settings' is not defined

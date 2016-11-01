@@ -239,10 +239,15 @@ ALLOWED_HOSTS = [ 'localhost', '127.0.0.1' ]
 NEWT_CONFIG = {
     'SYSTEMS': [
         {'NAME': 'localhost', 'HOSTNAME': 'localhost' },
+        {'NAME': 'ln3', 'HOSTNAME': 'ln3-gn0' },
+        {'NAME': 'ln4', 'HOSTNAME': 'ln4-gn0' },
+        {'NAME': 'ln6', 'HOSTNAME': 'ln6-gn0' },
+        {'NAME': 'lnerror', 'HOSTNAME': 'lnerror' },
+
     ],
     'ADAPTERS': {
         'STATUS': {
-            'adapter': 'status.adapters.ping_adapter',
+            'adapter': 'status.adapters.ssh_adapter',
             'models': '',
         },
         'FILE': {
@@ -254,7 +259,7 @@ NEWT_CONFIG = {
             'models': '',
         },
         'COMMAND': {
-            'adapter': 'command.adapters.exec_adapter',
+            'adapter': 'command.adapters.ssh_adapter',
             'models': '',
         },
         'STORES': {

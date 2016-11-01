@@ -70,7 +70,7 @@ def get_dir(request, machine_name, path):
 
         # import pdb; pdb.set_trace()
         # Split the lines
-        output = list(map(lambda i: i.strip(), output.decode('utf-8').split('\n')))
+        output = list(map(lambda i: i.strip(), output.split('\n')))
         print('OUT1', output )
         # "awesome" regular expression that captures ls output of the form:
         # drwxrwxr-x   4  shreyas     newt        32768 Apr 15 10:59 home

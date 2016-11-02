@@ -4628,3 +4628,337 @@ Traceback (most recent call last):
   File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/adapters/ssh_adapter.py", line 8, in execute
     conf = settings.NEWT_CONFIG
 NameError: name 'settings' is not defined
+[ERROR] 2016-11-01 01:44:51,017 django.request : Internal Server Error: /api/job/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 16, in get
+    return job_adapter.get_machines(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 33, in get_machines
+    for (machine, attrs) in gridutil.GRID_RESOURCE_TABLE.iteritems():
+NameError: name 'gridutil' is not defined
+[ERROR] 2016-11-01 01:48:45,279 django.request : Internal Server Error: /api/job/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 16, in get
+    return job_adapter.get_machines(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 33, in get_machines
+    for (machine, attrs) in gridutil.GRID_RESOURCE_TABLE.iteritems():
+NameError: name 'gridutil' is not defined
+[ERROR] 2016-11-01 02:00:35,648 django.request : Internal Server Error: /api/job/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 16, in get
+    return job_adapter.get_machines(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 33, in get_machines
+    for (machine, attrs) in gridutil.GRID_RESOURCE_TABLE.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+[ERROR] 2016-11-01 02:41:52,336 django.request : Internal Server Error: /api/job/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 16, in get
+    return job_adapter.get_machines(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 35, in get_machines
+    if attrs['jobmanagers'] != {}:
+KeyError: 'jobmanagers'
+[ERROR] 2016-11-01 03:17:32,725 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 21, in get
+    return job_adapter.view_queue(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 51, in view_queue
+    env = slurmutil.get_cred_env(request.user)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/slurmutil.py", line 112, in get_cred_env
+    if env.has_key('LD_LIBRARY_PATH'):
+AttributeError: 'dict' object has no attribute 'has_key'
+[ERROR] 2016-11-01 03:26:45,031 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 21, in get
+    return job_adapter.view_queue(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 52, in view_queue
+    mycmd = "ssh %s ' %s '" % machine.hostname ,machine.qstat
+AttributeError: 'dict' object has no attribute 'hostname'
+[ERROR] 2016-11-01 03:27:14,816 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 21, in get
+    return job_adapter.view_queue(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 52, in view_queue
+    mycmd = "ssh %s ' %s '" % machine["hostname"] ,machine["qstat"]
+AttributeError: 'dict' object has no attribute 'hostname'
+[ERROR] 2016-11-01 03:27:31,414 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 21, in get
+    return job_adapter.view_queue(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 52, in view_queue
+    mycmd = "ssh %s ' %s '" % machine["hostname"] ,machine["qstat"]
+TypeError: not enough arguments for format string
+[ERROR] 2016-11-01 03:28:51,115 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 21, in get
+    return job_adapter.view_queue(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 52, in view_queue
+    mycmd = "ssh " + machine["hostname"]   +   " ' " + machine["qstat"]  + " '"
+TypeError: Can't convert 'dict' object to str implicitly
+[ERROR] 2016-11-01 22:23:52,053 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 89, in submit_job
+    tmp_job_file.write(job_script)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 399, in func_wrapper
+    return func(*args, **kwargs)
+TypeError: 'str' does not support the buffer interface
+[ERROR] 2016-11-01 22:29:35,580 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 90, in submit_job
+    tmp_job_file.write(job_script)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 399, in func_wrapper
+    return func(*args, **kwargs)
+TypeError: 'str' does not support the buffer interface
+[ERROR] 2016-11-01 22:29:47,847 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 90, in submit_job
+    tmp_job_file.write(job_script)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 399, in func_wrapper
+    return func(*args, **kwargs)
+TypeError: 'str' does not support the buffer interface
+[ERROR] 2016-11-01 22:30:23,091 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 90, in submit_job
+    tmp_job_file.write(job_script)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 399, in func_wrapper
+    return func(*args, **kwargs)
+TypeError: 'str' does not support the buffer interface
+[ERROR] 2016-11-01 22:31:07,439 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 90, in submit_job
+    tmp_job_file.write(job_script)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 399, in func_wrapper
+    return func(*args, **kwargs)
+TypeError: 'str' does not support the buffer interface

@@ -8,15 +8,17 @@ logger = logging.getLogger("newt." + __name__)
 from common.shell import run_command
 
 GRID_RESOURCE_TABLE = dict(
-    genepool=dict(
-        hostname='genepool01.nersc.gov', 
-        jobmanagers=dict(fork=dict(url="genepool01.nersc.gov/jobmanager"), 
-                         batch=dict(url="genepool01.nersc.gov/jobmanager-sge")),
-        gridftp_servers=['genepool01.nersc.gov'],
-        qstat=dict(bin='/project/projectdirs/osp/newt_tools/qstat_sge.sh', scheduler='sge'),
-        qsub=dict(bin='/opt/uge/genepool/uge/bin/lx-amd64/qsub', scheduler='sge'),
-        qdel=dict(bin='/opt/uge/genepool/uge/bin/lx-amd64/qdel', scheduler='sge'),
+    ln3=dict(
+        hostname='ln3-gn0', 
+       jobmanagers=dict(fork=dict(url="ln3-gn0/jobmanager"), 
+                         batch=dict(url="ln3-gn0/jobmanager-slurm")),
+        #gridftp_servers=['genepool01.nersc.gov'],
+        qstat=dict(bin='/usr/bin/squeue -o "%.18i %.18P %.18j %.32u %.2t %.10M %.6D %R" ', scheduler='slurm'),
+        qsub=dict(bin='/usr/bin/sbatch', scheduler='slurm'),
+        qdel=dict(bin='/usr/bin/scancel', scheduler='slurm'),
     ),
+)
+"""
     edison=dict(
         hostname='edisongrid.nersc.gov', 
         jobmanagers=dict(fork=dict(url="edisongrid.nersc.gov/jobmanager"), 
@@ -68,7 +70,13 @@ GRID_RESOURCE_TABLE = dict(
         qstat=dict(),
     )
 )
+"""
 
+SLURM_CONF = {
+    "LIB_PATH" : "/usr/local/mpi3-dynamic/lib"
+}
+
+"""
 MYPROXY_CONFIG = dict(
     SERVER="nerscca2.nersc.gov",
     PATH="/global/scratch2/sd/tsun/",
@@ -85,6 +93,7 @@ GLOBUS_CONF = {
 SGE_EXECD_PORT = "537"
 SGE_QMASTER_PORT = "536"
 SGE_ROOT = "/common/nsg/sge/ge-8.1.2"
+"""
 
 def is_sanitized(input):
     return not re.search(r'[^ a-zA-Z0-9!@#%^_+:./-]', input)
@@ -96,6 +105,16 @@ def get_cred_env(user):
     user -- django.contrib.auth.model.user object
     """
     pass
+    """
+    add cred latter 
+    """
+    env = os.environ.copy()
+    #if env.has_key('LD_LIBRARY_PATH'):  has_key not work for python3
+    if 'LD_LIBRARY_PATH' in env : 
+        env['LD_LIBRARY_PATH'] = GLOBUS_CONF['LIB_PATH'] + ":" + env['LD_LIBRARY_PATH']
+    else:
+        env['LD_LIBRARY_PATH'] = SLURM_CONF['LIB_PATH']
+    return env
     """
     def create_cert(path, data):
         logger.debug("Creating x509 cert in directory: %s" % path)
@@ -129,14 +148,18 @@ def get_cred_env(user):
     return env
     """
 def get_grid_path(machine, path):
+    pass
+    """
     hostname = GRID_RESOURCE_TABLE[machine].get('hostname', machine)
     path = urllib.unquote(path)
     path = urllib.pathname2url(path)
     if not is_sanitized(path):
         raise ValueError("Bad Pathname")
     return "gsiftp://" + hostname + path
-
+    """
 class GlobusHelper:
+    pass
+    """
     GLOBUS_JOB_RUN_BIN = GLOBUS_CONF['LOCATION'] + "/bin/globus-job-run"
 
     @classmethod
@@ -152,3 +175,4 @@ class GlobusHelper:
     def run_job(self, command, host, flags=""):
         cmd_str = self.GLOBUS_JOB_RUN_BIN + " %s %s %s" % (host, flags, command)
         return run_command(cmd_str, env=self.env)
+    """

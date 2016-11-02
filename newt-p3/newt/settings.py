@@ -271,7 +271,7 @@ NEWT_CONFIG = {
             'models': '',
         },
         'JOB': {
-            'adapter': 'job.adapters.unix_adapter',
+            'adapter': 'job.adapters.slurm_job_adapter',
             'models': '',
         },
     },

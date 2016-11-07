@@ -136,33 +136,24 @@ def get_info(request, machine_name, job_id):
     output = [x.strip() for x in output]
     output = filter(lambda line: patt.match(line), output)
     output = list(map(lambda x: patt.match(x).groupdict(), output))[2:]
-    print( output  )
+    #print( output  )
     return (output)
 
 
-    """
-    machine = gridutil.GRID_RESOURCE_TABLE.get(machine_name, None)
-    if not machine:
-        return json_response(status="ERROR", status_code=400, error="Invalid machine name: %s" % machine_name)
 
-    env = gridutil.get_cred_env(request.user)
-    (output, error, retcode) = run_command(gridutil.GLOBUS_CONF['LOCATION'] + "bin/globus-job-run %s /project/projectdirs/osp/newt_tools/qs_moab.sh %s" % (machine['hostname'], job_id), env=env)
-    patt = re.compile(r'(?P<jobid>[^\s]+)\s+(?P<status>[^\s]+)\s+(?P<user>[^\s]+)\s+(?P<job_name>[^\s]+)\s+(?P<nodes>\d+)\s+(?P<walltime>[^\s]+)\s+(?P<time_use>[^\s]+)\s+(?P<time_submit>\w{3}\s\d{1,2}\s[\d\:]+)\s+(?P<rank>[^\s]+)\s+(?P<queue>[^\s]+)\s+(?P<q_state>[^\s]+)\s+(?P<processors>[^\s]+)\s*(?P<details>.*)$')
-
-    if retcode != 0:
-        return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
-    # filter out stuff that doesn't match pattern
-    output = output.splitlines()
-    output = [x.strip() for x in output]
-    output = filter(lambda line: patt.match(line), output)
-
-    # Convert output into dict from group names
-    output = map(lambda x: patt.match(x).groupdict(), output)[0]
-
-    return output
-    """
 @login_required
 def delete_job(request, machine_name, job_id):
+    machine = slurmutil.GRID_RESOURCE_TABLE.get(machine_name, None)
+    if not machine:
+        return json_response(status="ERROR", status_code=400, error="Invalid machine name: %s" % machine_name)
+    env = slurmutil.get_cred_env(request.user)
+    mycmd = "ssh " + machine["hostname"]   +   " ' " + ' scancel  '  + job_id  + " '"
+    (output, error, retcode) = run_command( mycmd )
+    if retcode !=0 :
+        return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
+    return (output)
+
+
     """Gets the information of a job, given the id
 
     Keyword arguments:
@@ -170,6 +161,7 @@ def delete_job(request, machine_name, job_id):
     job_id -- the job id
     """
     pass
+
     """
     machine = gridutil.GRID_RESOURCE_TABLE.get(machine_name, None)
     if not machine:

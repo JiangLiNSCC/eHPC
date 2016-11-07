@@ -4962,3 +4962,45 @@ Traceback (most recent call last):
   File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 399, in func_wrapper
     return func(*args, **kwargs)
 TypeError: 'str' does not support the buffer interface
+[ERROR] 2016-11-04 04:43:13,921 django.request : Internal Server Error: /api/command/ln4
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/views.py", line 30, in post
+    return command_adapter.execute(request, machine_name, command)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 49, in wrapper
+    for s in conf['SYSTEMS']:
+UnboundLocalError: local variable 'conf' referenced before assignment
+[ERROR] 2016-11-04 04:45:21,082 django.request : Internal Server Error: /api/command/ln4
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/views.py", line 30, in post
+    return command_adapter.execute(request, machine_name, command)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 50, in wrapper
+    if machine_name==s['NAME']:
+NameError: name 'machine_name' is not defined

@@ -1,12 +1,12 @@
 HTTP/1.0 200 OK
-Date: Wed, 02 Nov 2016 01:54:02 GMT
+Date: Thu, 03 Nov 2016 02:22:35 GMT
 Server: WSGIServer/0.2 CPython/3.4.3
 Access-Control-Allow-Origin: *
-Vary: Cookie
 Access-Control-Allow-Headers: x-requested-with, content-type
+Access-Control-Allow-Credentials: true
+Vary: Cookie
 Access-Control-Allow-Methods: POST,GET,OPTIONS,PUT,DELETE,HEAD
 Content-Type: application/json
-Access-Control-Allow-Credentials: true
-Set-Cookie:  newt_sessionid=v91c43fjxpncuukg05wq0qrvjj0xedsj; expires=Wed, 16-Nov-2016 01:54:01 GMT; HttpOnly; Max-Age=1209600; Path=/
-Set-Cookie:  csrftoken=YhaSuBAN8ogd9Z2c9z2mYMhLvpXwBskfb7lsnK9NkAFjWbxE60xctTk1V2dol9rS; expires=Wed, 01-Nov-2017 01:54:01 GMT; Max-Age=31449600; Path=/
+Set-Cookie:  csrftoken=248fuIx4LD4Lr5Aw8V0zCSFpZ1YPFAusv7attmPTtZE6xxg1yqalsezCyEngjErW; expires=Thu, 02-Nov-2017 02:22:35 GMT; Max-Age=31449600; Path=/
+Set-Cookie:  newt_sessionid=g7d5auwnzt3gzxyoz1xnerdeeu1tuz7z; expires=Thu, 17-Nov-2016 02:22:35 GMT; HttpOnly; Max-Age=1209600; Path=/
 

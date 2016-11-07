@@ -13,7 +13,8 @@ app = Celery('proj')
 
 # Using a string here means the worker will not have to
 # pickle the object when using Windows.
-app.config_from_object('django.conf:settings' ) #, namespace='CELERY')
+#app.config_from_object('django.conf:settings' ) #, namespace='CELERY')
+app.config_from_object('newt.celery_settings' )
 #app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 

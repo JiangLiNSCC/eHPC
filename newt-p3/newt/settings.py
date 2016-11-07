@@ -259,7 +259,7 @@ NEWT_CONFIG = {
             'models': '',
         },
         'COMMAND': {
-            'adapter': 'command.adapters.ssh_adapter',
+            'adapter': 'command.adapters.celery_adapter',
             'models': '',
         },
         'STORES': {
@@ -292,11 +292,3 @@ try:
 except ImportError:
     pass
 
-try:
-    from celery_broker_settings import *
-except ImportError:
-    pass
-import djcelery
-djcelery.setup_loader()
-BROKER_URL= 'redis://127.0.0.1:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'

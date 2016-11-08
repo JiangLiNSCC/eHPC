@@ -5,7 +5,8 @@ from common.response import json_response
 from django.conf import settings
 from celery.result import AsyncResult
 import logging
-from common.decorators import machine_check
+from common.decorators import machine_check , login_required
+import time
 logger = logging.getLogger("newt." + __name__)
 
 #app = Celery()
@@ -14,42 +15,46 @@ logger = logging.getLogger("newt." + __name__)
 def execute_task(self , command  , machine = None):
     try :
         (output, error, retcode) = run_command(command)
-        return (output, error, retcode)
+        response = {
+                'output': output,
+                'error': error,
+                'retcode': retcode
+            }
+        return response
     except Exception as e:
         return json_response(error="Could not run command: %s" % str(e), status="ERROR", status_code=500)
 
+from common.celeryutil import celery_request
+
+def execute(request, machine_name='', command=''   ):
+    return celery_request(  request , execute_task , command , machine = machine_name  )
+
+
+@login_required
 @machine_check
-def execute(request, machine_name='', command=''):
+def execute_old(request, machine_name='', command='' , waittime = 0.03  ):
     try:
         logger.debug("Running command(ssh): %s  (@ %s)" % (command, machine_name))
         qid = request.POST.get('qid')
         async = request.POST.get('async')
-        print( 'async:' , async )
+        #print( 'async:' , async )
         if qid :
             rest = AsyncResult ( qid )
         else :
             rest = execute_task.delay( command , machine = machine_name   )
+        if waittime > 0 : 
+            time.sleep( waittime )
         if async == "False" or async == "false" :
-            (output, error, retcode) = rest.get()
-            response = {
-                'output': output,
-                'error': error,
-                'retcode': retcode
-            }
+            response = rest.get 
             return response
         cur_state = rest.state 
         if cur_state == "SUCCESS" :
-            (output, error, retcode) = rest.result
-            response = {
-                'output': output,
-                'error': error,
-                'retcode': retcode
-            }
+            response =  rest.result
             return response
         elif cur_state == 'FAILURE':
-            return json_response(error= rest.result , status="ERROR", status_code=500)
+            return json_response(error= "Command run failure : %s " % rest.result , status="ERROR", status_code=500)
         else :
-            return json_response(error= rest.result , status=cur_state, status_code=100 , content=rest.id)
+            return json_response(error= "Command running on Celery worker : %s " % rest.result , status=cur_state, status_code=100 , content=rest.id)
     except Exception as e:
         logger.error("Could not run command: %s" % str(e))
         return json_response(error="Could not run command: %s" % str(e), status="ERROR", status_code=500)

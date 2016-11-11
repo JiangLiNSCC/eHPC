@@ -5038,3 +5038,186 @@ Traceback (most recent call last):
   File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
     'url': request.get_host() + new_path,
 RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/job/ln3/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[ERROR] 2016-11-11 09:22:09,307 django.request : Internal Server Error: /api/job/ln3
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 244, in _legacy_get_response
+    response = middleware_method(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/job/ln3/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[ERROR] 2016-11-11 09:55:14,688 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/utils/datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 80, in submit_job
+    username = request.POST['username']
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'username'"
+[ERROR] 2016-11-11 14:56:38,323 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 82, in submit_job
+    job = HPCJob()
+TypeError: __init__() missing 2 required positional arguments: 'user' and 'jobfile'
+[ERROR] 2016-11-11 14:59:27,185 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 104, in submit_job
+    job = HPCJob( user ,jobfile )
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/job_models.py", line 67, in __init__
+    self.user = user
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/fields/related_descriptors.py", line 215, in __set__
+    if instance._state.db is None:
+AttributeError: 'HPCJob' object has no attribute '_state'
+[ERROR] 2016-11-11 15:38:29,090 django.request : Internal Server Error: /api/job/ln3/3422542/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 28, in get
+    return job_adapter.get_info(request, machine, job_id)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 151, in get_info
+    job.save()
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/base.py", line 796, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/base.py", line 824, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/base.py", line 889, in _save_table
+    forced_update)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/base.py", line 939, in _do_update
+    return filtered._update(values) > 0
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/query.py", line 654, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/sql/compiler.py", line 1148, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/sql/compiler.py", line 824, in execute_sql
+    sql, params = self.as_sql()
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/sql/compiler.py", line 1112, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/fields/__init__.py", line 755, in get_db_prep_save
+    prepared=False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/fields/__init__.py", line 747, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/fields/__init__.py", line 1832, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '0:0'
+[ERROR] 2016-11-11 15:42:01,158 django.request : Internal Server Error: /api/job/ln3/3422542/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 28, in get
+    return job_adapter.get_info(request, machine, job_id)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_job_adapter.py", line 151, in get_info
+    job.save()
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/base.py", line 796, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/base.py", line 824, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/base.py", line 889, in _save_table
+    forced_update)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/base.py", line 939, in _do_update
+    return filtered._update(values) > 0
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/query.py", line 654, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/sql/compiler.py", line 1148, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/sql/compiler.py", line 824, in execute_sql
+    sql, params = self.as_sql()
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/sql/compiler.py", line 1112, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/fields/__init__.py", line 755, in get_db_prep_save
+    prepared=False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/fields/__init__.py", line 747, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/fields/__init__.py", line 1832, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '0:0'

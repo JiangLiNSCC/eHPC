@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -255,7 +255,7 @@ NEWT_CONFIG = {
             'models': "",
         }, 
         'AUTH': {
-            'adapter': 'authnz.adapters.test_adapter',
+            'adapter': 'authnz.adapters.ldap_adapter',
             'models': '',
         },
         'COMMAND': {
@@ -272,7 +272,7 @@ NEWT_CONFIG = {
         },
         'JOB': {
             'adapter': 'job.adapters.slurm_job_adapter',
-            'models': '',
+            'models': 'job.adapters.job_models',
         },
     },
 }

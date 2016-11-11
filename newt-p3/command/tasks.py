@@ -13,3 +13,26 @@ def sendmail(mail):
     print('mail sent.')
     print("---------------------------")
     return mail['to']
+
+from pwd import getpwnam
+import os
+
+import encodings.idna 
+
+@shared_task()
+def test_safty( username , cmd ) :
+    ngid = getpwnam( username ).pw_gid
+    nuid = getpwnam( username ).pw_uid
+    #newpid = os.fork()
+    print( ngid , nuid)
+    newpid = 0 
+    if newpid == 0 :
+        #os.setegid( ngid) 
+        #os.seteuid( nuid)
+        os.setgid(ngid)
+        os.setuid(nuid)
+        output = os.popen( cmd )
+        ret = output.read()
+        return ret.encode('utf-8')
+    return 'error'
+

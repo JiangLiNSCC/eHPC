@@ -21,6 +21,8 @@ from common.shell import run_command
 import tempfile
 from common.decorators import login_required
 
+from django.contrib.auth.models import User
+from job.adapters.job_models import HPCJob
 
 @login_required
 def get_machines(request):
@@ -75,29 +77,29 @@ def submit_job(request, machine_name):
         return json_response(status="ERROR", status_code=400, error="Invalid machine name: %s" % machine_name)
     qsub = machine['qsub']['bin']
     env = slurmutil.get_cred_env(request.user)
-    
+    user = request.user # User.objects.get(username=username)
     if request.POST.get("jobfile", False):
         # Create command for sbatch on an existing slurm file
         job_file_path = request.POST.get("jobfile")
+        jobfile = job_file_path
         cmd = "%s %s" % (qsub, job_file_path)
     elif request.POST.get("jobscript", False):
         # Create command for qsub from stdin data
         job_script = request.POST.get("jobscript").encode()
 
         # Creates a temporary job file
-        tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_")
+        tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/HOME/nscc-gz_jiangli/tmp' , delete = False)
         print(job_script)
         tmp_job_file.write(job_script)
         tmp_job_file.flush()
-
-        # Stages the temporary job file and pass it as to stdin to qsub
-        #flags += " -- %s" % tmp_job_file.name
+        jobfile = tmp_job_file.name
         cmd = "%s %s" % (qsub, tmp_job_file.name)
     else:
         return json_response(status="ERROR", 
                              status_code=400, 
                              error="No data received")
-
+    job = HPCJob( user = user,jobfile = jobfile , machine = machine_name )
+    job.save()
     try:
         #runner = GlobusHelper(request.user)
         cmd_str = "ssh " + machine["hostname"]   +   '  " ' + cmd +' " '  
@@ -111,7 +113,9 @@ def submit_job(request, machine_name):
         return json_response(status="ERROR", 
                              status_code=500, 
                              error="qsub failed with error: %s" % error)
-    return {"jobid":output.strip().split(' ')[-1]}
+    job.jobid = output.strip().split(' ')[-1]
+    job.save()
+    return {"jobid":job.jobid}
 
     
 @login_required
@@ -128,6 +132,9 @@ def get_info(request, machine_name, job_id):
         return json_response(status="ERROR", status_code=400, error="Invalid machine name: %s" % machine_name)
     env = slurmutil.get_cred_env(request.user)
     mycmd = "ssh " + machine["hostname"]   +   " ' " + ' sacct -j  '  + job_id  + " '"
+    job = HPCJob.objects.get(machine= machine_name ,jobid= job_id )
+    if job.state == "COMPLETED" or job.state == "FAILED" :
+        return {"partition": job.state , "jobid": job.jobid, "state": job.state, "exitcode": job.exit_code, "jobname": job.job_name }
     (output, error, retcode) = run_command( mycmd )
     if retcode !=0 :
         return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
@@ -137,6 +144,12 @@ def get_info(request, machine_name, job_id):
     output = filter(lambda line: patt.match(line), output)
     output = list(map(lambda x: patt.match(x).groupdict(), output))[2:]
     #print( output  )
+    # {"partition": "work", "account": "nscc-gz", "alloccpus": "24", "jobid": "3422542", "state": "COMPLETED", "exitcode": "0:0", "jobname": "newt_cs0r+"}
+    job.partition = output[0]["partition"]
+    job.exit_code = output[0]["exitcode"].split(':')[1]
+    job.job_name = output[0]["jobname"]
+    job.state = output[0]["state"]
+    job.save()
     return (output)
 
 
@@ -154,65 +167,6 @@ def delete_job(request, machine_name, job_id):
     return (output)
 
 
-    """Gets the information of a job, given the id
-
-    Keyword arguments:
-    machine_name -- name of the machine
-    job_id -- the job id
-    """
-    pass
-
-    """
-    machine = gridutil.GRID_RESOURCE_TABLE.get(machine_name, None)
-    if not machine:
-        return json_response(status="ERROR", status_code=400, error="Invalid machine name: %s" % machine_name)
-
-    flags = ""
-    jobmanager = machine['jobmanagers']['fork']['url']
-    qdel = machine['qdel']['bin']
-    scheduler = machine['qdel']['scheduler']
-    cmd = "%s %s" % (qdel, job_id)
-
-    # Set environment flags for qsub
-    if scheduler == "sge":
-        sge_env_str = "-env SGE_ROOT=%s -env SGE_QMASTER_PORT=%s -env SGE_EXECD_PORT=%s" % (gridutil.SGE_ROOT, gridutil.SGE_QMASTER_PORT, gridutil.SGE_EXECD_PORT)
-        flags += " " + sge_env_str
-
-    if scheduler != "sge":
-        cmd = '/bin/bash -l -c "%s"' % cmd
-
-    try:
-        runner = GlobusHelper(request.user)
-        (output, error, retcode) = runner.run_job(cmd, jobmanager, flags)
-    except Exception as ex:
-        return json_response(status="ERROR", 
-                             status_code=500, 
-                             error="qsub failed with error: %s" % str(ex))
-    if retcode != 0:
-        return json_response(status="ERROR", 
-                             status_code=500, 
-                             error="qsub failed with error: %s" % error)
-    return output
-    """
-
-"""A tuple list in the form of:
-    (
-        (compiled_regex_exp, associated_function, request_required),
-        ...
-    )
-
-    Note: The compiled_regex_exp must have named groups corresponding to
-          the arguments of the associated_function
-    Note: if request_required is True, the associated_function must have
-          request as the first argument
-
-    Example:
-        patterns = (
-            (re.compile(r'/usage/(?P<path>.+)$'), get_usage, False),
-            (re.compile(r'/image/(?P<query>.+)$'), get_image, False),
-            (re.compile(r'/(?P<path>.+)$'), get_resource, False),
-        )
-"""
 patterns = (
 )
 

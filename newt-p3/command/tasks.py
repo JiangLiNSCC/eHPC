@@ -1,10 +1,16 @@
 from __future__ import absolute_import
 from celery import shared_task
+from pwd import getpwnam
 import time
+import os
+import encodings.idna 
+
+
 @shared_task()
 def add(x,y):
     return x+ y 
 
+'''
 @shared_task()
 def sendmail(mail):
     print("+++++++++++++++++++++++++++")
@@ -13,12 +19,10 @@ def sendmail(mail):
     print('mail sent.')
     print("---------------------------")
     return mail['to']
+'''
 
-from pwd import getpwnam
-import os
 
-import encodings.idna 
-
+'''
 @shared_task()
 def test_safty( username , cmd ) :
     ngid = getpwnam( username ).pw_gid
@@ -35,4 +39,4 @@ def test_safty( username , cmd ) :
         ret = output.read()
         return ret.encode('utf-8')
     return 'error'
-
+'''

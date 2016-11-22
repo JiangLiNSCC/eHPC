@@ -2,11 +2,11 @@ from django.test import TestCase
 from django.conf import settings
 from django.test.client import Client
 import json
-newt_base_url = "http://172.16.22.14:1990/api"
+newt_base_url = "http://localhost/api"
 try:
     from local_settings import test_login as login
 except ImportError:
-    login = {"username": "nimonly", "password": "testpassword"}
+    login = {"username": "nscc-gz_jiangli", "password": "***"}
 
 class MyTestClient(Client):
     def request(self, **request):
@@ -24,6 +24,8 @@ class MyTestClient(Client):
         response.status_code = int(response.status_code)
         #print( response )
         return response
+
+
 
 class BasicTests(TestCase):
     def setUp(self):

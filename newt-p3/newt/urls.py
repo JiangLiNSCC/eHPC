@@ -35,7 +35,8 @@ urlpatterns =[
     url(r'^api/file', include('file.urls')),
     url(r'^api/auth', include('authnz.urls')),
     url(r'^api/command', include('command.urls')),
-    url(r'^api/store/', include('store.urls')),
-    url(r'^api/account/', include('account.urls')),
-    url(r'^api/job/', include('job.urls')),
+    url(r'^api/store', include('store.urls')),
+    url(r'^api/account', include('account.urls')),
+    url(r'^api/job', include('job.urls')),
+    url(r'^api/async',include('async.urls')),
 ]

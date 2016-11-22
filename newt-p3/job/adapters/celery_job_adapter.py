@@ -23,14 +23,14 @@ from common import slurmutil
 #from common.slurmutil import GlobusHelper
 from common.shell import run_command
 import tempfile
-from common.decorators import login_required
+from common.decorators import login_required , safty_task
 
-from common.celeryutil import celery_request
+#from common.celeryutil import celery_request
 
 @login_required
 def get_machines(request):
     """Returns the available machines that jobs can run on
-
+     such as the yhi but on different machines ? : TO-DO NEXT 
     Keyword arguments:
     request - Django HttpRequest
     """
@@ -42,8 +42,14 @@ def get_machines(request):
     return machines
 
 @shared_task(bind=True , track_started=True )
-def view_queue_task(self ,  machine = None):
+def view_queue_task(self , taskenv):
+    return view_queue_task_unsafty(self , taskenv)    
+
+@safty_task
+def view_queue_task_unsafty(self , taskenv):
     """ Celery task for view_queue to call"""
+    #mycmd = machine["qstat"]["bin"]
+    mycmd = "/usr/bin/squeue"
     (output, error, retcode) = run_command( mycmd )
     if retcode !=0 :
         return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
@@ -66,24 +72,16 @@ def view_queue(request, machine_name):
     machine_name -- name of the machine
     """
     pass
-    machine = slurmutil.GRID_RESOURCE_TABLE.get(machine_name, None)
-    if not machine:
-        return json_response(status="ERROR", status_code=400, error="Invalid machine name: %s" % machine_name)
-    env = slurmutil.get_cred_env(request.user)
+    taskenv = { "user" : request.user.username , "machine" : machine_name }
+    rest = view_queue_task.delay( taskenv   )
+    return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
+    #machine = slurmutil.GRID_RESOURCE_TABLE.get(machine_name, None)
+    #if not machine:
+    #    return json_response(status="ERROR", status_code=400, error="Invalid machine name: %s" % machine_name)
+    #env = slurmutil.get_cred_env(request.user)
     #mycmd = "ssh " + machine["hostname"]   +   " ' " + machine["qstat"]["bin"]  + " '"
-    mycmd = machine["qstat"]["bin"] 
-    return celery_request(  request , view_queue_task , machine = machine_name  )
-
-    #(output, error, retcode) = run_command( mycmd )
-    #if retcode !=0 : 
-    #    return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
-    #patt = re.compile(r'(?P<jobid>[^\s]+)\s+(?P<partition>[^\s]+)\s+(?P<job_name>[^\s]+)\s+(?P<user>[^\s]+)\s+(?P<state>[^\s]+)\s+(?P<time>[^\s]+)\s+(?P<nodes>\d+)\s+(?P<nodelist>.*)$')
-    #output = output.splitlines()
-    #output = [x.strip() for x in output]
-    #output = filter(lambda line: patt.match(line), output)
-    #output = map(lambda x: patt.match(x).groupdict(), output)
-    #print( list(output)  )
-    #return list(output)
+    #mycmd = machine["qstat"]["bin"] 
+    #return celery_request(  request , view_queue_task , machine = machine_name  )
 
 @login_required
 def submit_job(request, machine_name):

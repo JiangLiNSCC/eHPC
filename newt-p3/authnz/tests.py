@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.conf import settings
 import json
 from newt.tests import MyTestClient, newt_base_url, login
-
+#from Cookie import SimpleCookie
 
 class AuthTests(TestCase):
     fixtures = ["test_fixture.json"]
@@ -24,13 +24,17 @@ class AuthTests(TestCase):
         r = self.client.post(newt_base_url + "/auth", data=login)
         self.assertEquals(r.status_code, 200)
         json_response = r.json()
+        #print('cookies 1 : ' ,  self.client.cookies )
         self.assertEquals(json_response['output']['auth'], True)
         self.assertEquals(json_response['output']['username'], login['username'])
-
+        cookies= self.client.cookies 
         # Loggen in self.client should return user info
-        r = self.client.get(newt_base_url + "/auth")
+        #print( 'session id :' , json_response["output"]["newt_sessionid"])
+        #self.client.session['newt_sessionid'] =  json_response["output"]["newt_sessionid"]
+        r = self.client.get(newt_base_url + "/auth" )
         self.assertEquals(r.status_code, 200)
         json_response = r.json()
+        #print( 'cookies 2 : ' , self.client.cookies )
         self.assertEquals(json_response['output']['auth'], True)
         self.assertEquals(json_response['output']['username'], login['username'])
 

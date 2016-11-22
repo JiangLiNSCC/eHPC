@@ -30,21 +30,15 @@ def login(request):
     try:
         username = request.POST['username']
         password = request.POST['password']
-        print( username , password )
         ldap_host = 'mn5-gn0' # TO-DO , Should be get from settings .
         server = Server( ldap_host )
         connstr = 'uid=%s,ou=people,dc=yhpc' % username  #dn:uid=nscc-gz_jiangli,ou=people,dc=yhpc
         conn = Connection(server, connstr , password , auto_bind=True)
-        print( conn.extend.standard.who_am_i() )
         if conn.extend.standard.who_am_i() != ( 'dn:' + connstr  ) :
-            print( 'error ldap auth ' )
             return is_logged_in(request)            
         try:
-            print( "here" )
             myuser = User.objects.get(username=username)
-            print( "create user ")
         except ObjectDoesNotExist :
-            print( "no user need create ")
             email = ""
             #email = "%s@%s" % (username, settings.NEWT_DOMAIN)
             try:
@@ -56,7 +50,6 @@ def login(request):
         myuser.backend = 'django.contrib.auth.backends.ModelBackend'
         user = myuser #auth.login(request, myuser)           
     except Exception as ex :
-        print("error here : %s" % ex)
         logger.debug("Login error : %s" % ex)
         pass
     logger.debug("Attemping to log in user: %s" % username)

@@ -5,14 +5,17 @@ from common.response import json_response
 from django.conf import settings
 from celery.result import AsyncResult
 import logging
-from common.decorators import machine_check , login_required
+from common.decorators import  login_required , safty_task
 import time
 logger = logging.getLogger("newt." + __name__)
 
-#app = Celery()
 
 @shared_task(bind=True , track_started=True )
-def execute_task(self , command  , machine = None):
+def execute_task(self , task_env, command  ):
+    return execute_task_unsafy(self , task_env,  command  )
+
+@safty_task
+def execute_task_unsafy(self , task_env,  command  ):
     try :
         (output, error, retcode) = run_command(command)
         response = {
@@ -24,12 +27,16 @@ def execute_task(self , command  , machine = None):
     except Exception as e:
         return json_response(error="Could not run command: %s" % str(e), status="ERROR", status_code=500)
 
-from common.celeryutil import celery_request
-
+#from common.celeryutil import celery_request
+@login_required
 def execute(request, machine_name='', command=''   ):
-    return celery_request(  request , execute_task , command , machine = machine_name  )
+    print( command )
+    taskenv = { "user" : request.user.username , "machine" : machine_name }
+    rest = execute_task.delay( taskenv  , command   )
+    return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
+    #return celery_request(  request , execute_task , command , machine = machine_name  )
 
-
+'''
 @login_required
 @machine_check
 def execute_old(request, machine_name='', command='' , waittime = 0.03  ):
@@ -58,8 +65,10 @@ def execute_old(request, machine_name='', command='' , waittime = 0.03  ):
     except Exception as e:
         logger.error("Could not run command: %s" % str(e))
         return json_response(error="Could not run command: %s" % str(e), status="ERROR", status_code=500)
+'''
 
 
+# May auto config by celery workers . TO-DO ?
 def get_systems(request):
     conf = settings.NEWT_CONFIG
     return [ x["NAME"]  for x in  conf['SYSTEMS'] ]

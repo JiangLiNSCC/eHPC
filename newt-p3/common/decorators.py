@@ -3,7 +3,8 @@ from django.http import HttpRequest
 import json
 import inspect
 from django.conf import settings
-
+from pwd import getpwnam
+import os
 def login_required(view_func):
     """
     Use this for class based views (i.e. first argument is self)
@@ -67,4 +68,50 @@ def machine_check( view_func  ):
     return wrapper
 
 
+def safty_task( task_func ):
+    def wrapper(*args,**kwargs):
+        #return( args , kwargs )  
+        if not isinstance(args[1] , dict) :
+            return json_response(status="ERROR",
+                                 status_code=500,
+                                 error="not a safty task: no taskenv")
+        if ( "user" not in args[1].keys()  ) or ( "machine" not in args[1].keys() ) : 
+           return json_response(status="ERROR",
+                                 status_code=500,
+                                 error="not a safty task: no taskenv")
+        # chuid :
+        username = args[1]["user"]
+        ngid = getpwnam( username ).pw_gid
+        nuid = getpwnam( username ).pw_uid
+        if nuid == 0 :
+           return json_response(status="ERROR",
+                                 status_code=500,
+                                 error="dangerous action ! ")
+        os.setgid(ngid)
+        os.setuid(nuid)
+        return [ username  ,  task_func( *args,**kwargs ) ] 
+    return wrapper
 
+def unsafty_task( task_func ):
+    def wrapper(*args,**kwargs):
+        #return( args , kwargs )  
+        if not isinstance(args[1] , dict) :
+            return json_response(status="ERROR",
+                                 status_code=500,
+                                 error="not a safty task: no taskenv")
+        if ( "user" not in args[1].keys()  ) or ( "machine" not in args[1].keys() ) :
+           return json_response(status="ERROR",
+                                 status_code=500,
+                                 error="not a safty task: no taskenv")
+        # chuid :
+        username = args[1]["user"]
+        ngid = getpwnam( username ).pw_gid
+        nuid = getpwnam( username ).pw_uid
+        if nuid == 0 :
+           return json_response(status="ERROR",
+                                 status_code=500,
+                                 error="dangerous action ! ")
+        #os.setgid(ngid)
+        #os.setuid(nuid)
+        return [ username  ,  task_func( *args,**kwargs ) ]
+    return wrapper

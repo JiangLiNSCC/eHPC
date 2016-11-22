@@ -21,9 +21,20 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
-    }
+    },
+    'mysqldb':{
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS':{
+               'read_default_file': '/HOME/nscc-gz_jiangli/virtualenv/config/my.cnf',
+        },
+    },
 }
 
+DATABASE_APPS_MAPPING = {
+     'authnz' : 'default',
+     'job' : 'default',
+     'outerdb' : 'mysqldb',
+}
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -145,6 +156,8 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     # for django-celery
     'djcelery',
+    'outerdb',
+    'async',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -251,7 +264,7 @@ NEWT_CONFIG = {
             'models': '',
         },
         'FILE': {
-            'adapter': 'file.adapters.localfile_adapter',
+            'adapter': 'file.adapters.celery_file_adapter',
             'models': "",
         }, 
         'AUTH': {
@@ -271,7 +284,7 @@ NEWT_CONFIG = {
             'models': '',
         },
         'JOB': {
-            'adapter': 'job.adapters.slurm_job_adapter',
+            'adapter': 'job.adapters.slurm_celery_adapter',
             'models': 'job.adapters.job_models',
         },
     },

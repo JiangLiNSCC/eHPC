@@ -1,0 +1,629 @@
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#     * Rearrange models' order
+#     * Make sure each model has one field with primary_key=True
+# Feel free to rename the models, but don't rename db_table values or field names.
+#
+# Also note: You'll have to insert the output of 'django-admin.py sqlcustom [appname]'
+# into your database.
+from __future__ import unicode_literals
+
+from django.db import models
+
+class AcctCoordTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField(null=True, blank=True)
+    acct = models.TextField()
+    user = models.TextField()
+    class Meta:
+        db_table = 'acct_coord_table'
+
+class AcctTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField(null=True, blank=True)
+    name = models.TextField(primary_key=True)
+    description = models.TextField()
+    organization = models.TextField()
+    class Meta:
+        db_table = 'acct_table'
+
+class AuthGroup(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=80, unique=True)
+    class Meta:
+        db_table = 'auth_group'
+
+class AuthGroupPermissions(models.Model):
+    id = models.IntegerField(primary_key=True)
+    group_id = models.IntegerField()
+    permission_id = models.IntegerField()
+    class Meta:
+        db_table = 'auth_group_permissions'
+
+class AuthPermission(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=50)
+    content_type_id = models.IntegerField()
+    codename = models.CharField(max_length=100)
+    class Meta:
+        db_table = 'auth_permission'
+
+class AuthUsageTime(models.Model):
+    id = models.IntegerField(primary_key=True)
+    account = models.CharField(max_length=100)
+    how_much_time = models.CharField(max_length=100)
+    update_date = models.DateField()
+    class Meta:
+        db_table = 'auth_usage_time'
+
+class AuthUser(models.Model):
+    id = models.IntegerField(primary_key=True)
+    password = models.CharField(max_length=128)
+    last_login = models.DateTimeField()
+    is_superuser = models.IntegerField()
+    username = models.CharField(max_length=30, unique=True)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    email = models.CharField(max_length=75)
+    is_staff = models.IntegerField()
+    is_active = models.IntegerField()
+    date_joined = models.DateTimeField()
+    class Meta:
+        db_table = 'auth_user'
+
+class AuthUserGroups(models.Model):
+    id = models.IntegerField(primary_key=True)
+    user_id = models.IntegerField()
+    group_id = models.IntegerField()
+    class Meta:
+        db_table = 'auth_user_groups'
+
+class AuthUserUserPermissions(models.Model):
+    id = models.IntegerField(primary_key=True)
+    user_id = models.IntegerField()
+    permission_id = models.IntegerField()
+    class Meta:
+        db_table = 'auth_user_user_permissions'
+
+class ClusterTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField(null=True, blank=True)
+    name = models.TextField(primary_key=True)
+    control_host = models.TextField()
+    control_port = models.IntegerField()
+    last_port = models.IntegerField()
+    rpc_version = models.IntegerField()
+    classification = models.IntegerField(null=True, blank=True)
+    dimensions = models.IntegerField(null=True, blank=True)
+    plugin_id_select = models.IntegerField(null=True, blank=True)
+    flags = models.IntegerField(null=True, blank=True)
+    class Meta:
+        db_table = 'cluster_table'
+
+class ContractTable(models.Model):
+    db_inx = models.IntegerField()
+    unit = models.CharField(max_length=255)
+    cluster = models.CharField(max_length=255)
+    account = models.CharField(max_length=255)
+    type = models.IntegerField()
+    uplimit = models.FloatField()
+    grpnodes = models.IntegerField()
+    start_date = models.DateTimeField()
+    stop_date = models.DateTimeField()
+    status = models.IntegerField()
+    activate_time = models.DateTimeField()
+    lock_time = models.DateTimeField()
+    previous_limit = models.FloatField()
+    delete = models.IntegerField()
+    class Meta:
+        db_table = 'contract_table'
+
+class DjangoAdminLog(models.Model):
+    id = models.IntegerField(primary_key=True)
+    action_time = models.DateTimeField()
+    user_id = models.IntegerField()
+    content_type_id = models.IntegerField(null=True, blank=True)
+    object_id = models.TextField(blank=True)
+    object_repr = models.CharField(max_length=200)
+    action_flag = models.IntegerField()
+    change_message = models.TextField()
+    class Meta:
+        db_table = 'django_admin_log'
+
+class DjangoContentType(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=100)
+    app_label = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+    class Meta:
+        db_table = 'django_content_type'
+
+class DjangoSession(models.Model):
+    session_key = models.CharField(max_length=40, primary_key=True)
+    session_data = models.TextField()
+    expire_date = models.DateTimeField()
+    class Meta:
+        db_table = 'django_session'
+
+class DjangoSite(models.Model):
+    id = models.IntegerField(primary_key=True)
+    domain = models.CharField(max_length=100)
+    name = models.CharField(max_length=50)
+    class Meta:
+        db_table = 'django_site'
+
+class DjkombuMessage(models.Model):
+    id = models.IntegerField(primary_key=True)
+    visible = models.IntegerField()
+    sent_at = models.DateTimeField(null=True, blank=True)
+    payload = models.TextField()
+    queue_id = models.IntegerField()
+    class Meta:
+        db_table = 'djkombu_message'
+
+class DjkombuQueue(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=200, unique=True)
+    class Meta:
+        db_table = 'djkombu_queue'
+
+class FileFileform(models.Model):
+    id = models.IntegerField(primary_key=True)
+    filename = models.CharField(max_length=100)
+    class Meta:
+        db_table = 'file_fileform'
+
+class LfsQuotaTable(models.Model):
+    id = models.BigIntegerField(primary_key=True)
+    username = models.CharField(max_length=255)
+    account = models.CharField(max_length=255)
+    file_system = models.CharField(max_length=255)
+    usage_kb = models.BigIntegerField(null=True, db_column='usage_KB', blank=True) # Field name made lowercase.
+    g_usage_kb = models.BigIntegerField(null=True, db_column='g_usage_KB', blank=True) # Field name made lowercase.
+    soft_limit = models.BigIntegerField(null=True, blank=True)
+    hard_limit = models.BigIntegerField(null=True, blank=True)
+    g_soft_limit = models.BigIntegerField(null=True, blank=True)
+    g_hard_limit = models.BigIntegerField(null=True, blank=True)
+    files = models.BigIntegerField(null=True, blank=True)
+    g_files = models.BigIntegerField(null=True, blank=True)
+    class Meta:
+        db_table = 'lfs_quota_table'
+
+class NodePayment(models.Model):
+    id = models.IntegerField(primary_key=True)
+    acct = models.CharField(max_length=24)
+    nodes = models.IntegerField()
+    start_date = models.DateField()
+    end_date = models.DateField()
+    class Meta:
+        db_table = 'node_payment'
+
+class NodePaymentHistory(models.Model):
+    id = models.IntegerField(primary_key=True)
+    acct = models.CharField(max_length=24)
+    nodes = models.IntegerField()
+    start_date = models.DateField()
+    end_date = models.DateField()
+    class Meta:
+        db_table = 'node_payment_history'
+
+class NodeUsageTable(models.Model):
+    id = models.BigIntegerField(primary_key=True)
+    number = models.IntegerField()
+    time_record = models.IntegerField()
+    cpu_times_before = models.FloatField()
+    class Meta:
+        db_table = 'node_usage_table'
+
+class QosTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField(null=True, blank=True)
+    id = models.IntegerField(primary_key=True)
+    name = models.TextField(unique=True)
+    description = models.TextField(blank=True)
+    flags = models.IntegerField(null=True, blank=True)
+    grace_time = models.IntegerField(null=True, blank=True)
+    max_jobs_per_user = models.IntegerField(null=True, blank=True)
+    max_submit_jobs_per_user = models.IntegerField(null=True, blank=True)
+    max_cpus_per_job = models.IntegerField(null=True, blank=True)
+    max_cpus_per_user = models.IntegerField(null=True, blank=True)
+    max_nodes_per_job = models.IntegerField(null=True, blank=True)
+    max_nodes_per_user = models.IntegerField(null=True, blank=True)
+    max_wall_duration_per_job = models.IntegerField(null=True, blank=True)
+    max_cpu_mins_per_job = models.BigIntegerField(null=True, blank=True)
+    max_cpu_run_mins_per_user = models.BigIntegerField(null=True, blank=True)
+    grp_jobs = models.IntegerField(null=True, blank=True)
+    grp_submit_jobs = models.IntegerField(null=True, blank=True)
+    grp_cpus = models.IntegerField(null=True, blank=True)
+    grp_mem = models.IntegerField(null=True, blank=True)
+    grp_nodes = models.IntegerField(null=True, blank=True)
+    grp_wall = models.IntegerField(null=True, blank=True)
+    grp_cpu_mins = models.BigIntegerField(null=True, blank=True)
+    grp_cpu_run_mins = models.BigIntegerField(null=True, blank=True)
+    preempt = models.TextField()
+    preempt_mode = models.IntegerField(null=True, blank=True)
+    priority = models.IntegerField(null=True, blank=True)
+    usage_factor = models.FloatField()
+    usage_thres = models.FloatField(null=True, blank=True)
+    class Meta:
+        db_table = 'qos_table'
+
+class TableDefsTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    table_name = models.TextField(primary_key=True)
+    definition = models.TextField()
+    class Meta:
+        db_table = 'table_defs_table'
+
+class Tianhe2CAssocTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    is_def = models.IntegerField()
+    id_assoc = models.IntegerField(primary_key=True)
+    user = models.TextField()
+    acct = models.TextField()
+    partition = models.TextField()
+    parent_acct = models.TextField()
+    lft = models.IntegerField()
+    rgt = models.IntegerField()
+    shares = models.IntegerField()
+    max_jobs = models.IntegerField(null=True, blank=True)
+    max_submit_jobs = models.IntegerField(null=True, blank=True)
+    max_cpus_pj = models.IntegerField(null=True, blank=True)
+    max_nodes_pj = models.IntegerField(null=True, blank=True)
+    max_wall_pj = models.IntegerField(null=True, blank=True)
+    max_cpu_mins_pj = models.BigIntegerField(null=True, blank=True)
+    max_cpu_run_mins = models.BigIntegerField(null=True, blank=True)
+    grp_jobs = models.IntegerField(null=True, blank=True)
+    grp_submit_jobs = models.IntegerField(null=True, blank=True)
+    grp_cpus = models.IntegerField(null=True, blank=True)
+    grp_mem = models.IntegerField(null=True, blank=True)
+    grp_nodes = models.IntegerField(null=True, blank=True)
+    grp_wall = models.IntegerField(null=True, blank=True)
+    grp_cpu_mins = models.BigIntegerField(null=True, blank=True)
+    grp_cpu_run_mins = models.BigIntegerField(null=True, blank=True)
+    def_qos_id = models.IntegerField(null=True, blank=True)
+    qos = models.TextField()
+    delta_qos = models.TextField()
+    class Meta:
+        db_table = 'tianhe2-c_assoc_table'
+
+class Tianhe2CAssocUsageDayTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    id_assoc = models.IntegerField()
+    time_start = models.IntegerField()
+    alloc_cpu_secs = models.BigIntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_assoc_usage_day_table'
+
+class Tianhe2CAssocUsageHourTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    id_assoc = models.IntegerField()
+    time_start = models.IntegerField()
+    alloc_cpu_secs = models.BigIntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_assoc_usage_hour_table'
+
+class Tianhe2CAssocUsageMonthTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    id_assoc = models.IntegerField()
+    time_start = models.IntegerField()
+    alloc_cpu_secs = models.BigIntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_assoc_usage_month_table'
+
+class Tianhe2CEventTable(models.Model):
+    time_start = models.IntegerField()
+    time_end = models.IntegerField()
+    node_name = models.TextField()
+    cluster_nodes = models.TextField()
+    cpu_count = models.IntegerField()
+    reason = models.TextField()
+    reason_uid = models.IntegerField()
+    state = models.IntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_event_table'
+
+class Tianhe2CJobTable(models.Model):
+    job_db_inx = models.IntegerField(primary_key=True)
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    account = models.TextField(blank=True)
+    cpus_req = models.IntegerField()
+    cpus_alloc = models.IntegerField()
+    derived_ec = models.IntegerField()
+    derived_es = models.TextField(blank=True)
+    exit_code = models.IntegerField()
+    job_name = models.TextField()
+    id_assoc = models.IntegerField()
+    id_block = models.TextField(blank=True)
+    id_job = models.IntegerField()
+    id_qos = models.IntegerField()
+    id_resv = models.IntegerField()
+    id_wckey = models.IntegerField()
+    id_user = models.IntegerField()
+    id_group = models.IntegerField()
+    kill_requid = models.IntegerField()
+    mem_req = models.IntegerField()
+    nodelist = models.TextField(blank=True)
+    nodes_alloc = models.IntegerField()
+    node_inx = models.TextField(blank=True)
+    partition = models.TextField()
+    priority = models.IntegerField()
+    state = models.IntegerField()
+    timelimit = models.IntegerField()
+    time_submit = models.IntegerField()
+    time_eligible = models.IntegerField()
+    time_start = models.IntegerField()
+    time_end = models.IntegerField()
+    time_suspended = models.IntegerField()
+    gres_req = models.TextField()
+    gres_alloc = models.TextField()
+    gres_used = models.TextField()
+    wckey = models.TextField()
+    track_steps = models.IntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_job_table'
+
+class Tianhe2CLastRanTable(models.Model):
+    hourly_rollup = models.IntegerField()
+    daily_rollup = models.IntegerField()
+    monthly_rollup = models.IntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_last_ran_table'
+
+class Tianhe2CResvTable(models.Model):
+    id_resv = models.IntegerField()
+    deleted = models.IntegerField()
+    assoclist = models.TextField()
+    cpus = models.IntegerField()
+    flags = models.IntegerField()
+    nodelist = models.TextField()
+    node_inx = models.TextField()
+    resv_name = models.TextField()
+    time_start = models.IntegerField()
+    time_end = models.IntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_resv_table'
+
+class Tianhe2CStepTable(models.Model):
+    job_db_inx = models.IntegerField()
+    deleted = models.IntegerField()
+    cpus_alloc = models.IntegerField()
+    exit_code = models.IntegerField()
+    id_step = models.IntegerField()
+    kill_requid = models.IntegerField()
+    nodelist = models.TextField()
+    nodes_alloc = models.IntegerField()
+    node_inx = models.TextField(blank=True)
+    state = models.IntegerField()
+    step_name = models.TextField()
+    task_cnt = models.IntegerField()
+    task_dist = models.IntegerField()
+    time_start = models.IntegerField()
+    time_end = models.IntegerField()
+    time_suspended = models.IntegerField()
+    user_sec = models.IntegerField()
+    user_usec = models.IntegerField()
+    sys_sec = models.IntegerField()
+    sys_usec = models.IntegerField()
+    max_pages = models.IntegerField()
+    max_pages_task = models.IntegerField()
+    max_pages_node = models.IntegerField()
+    ave_pages = models.FloatField()
+    max_rss = models.BigIntegerField()
+    max_rss_task = models.IntegerField()
+    max_rss_node = models.IntegerField()
+    ave_rss = models.FloatField()
+    max_vsize = models.BigIntegerField()
+    max_vsize_task = models.IntegerField()
+    max_vsize_node = models.IntegerField()
+    ave_vsize = models.FloatField()
+    min_cpu = models.IntegerField()
+    min_cpu_task = models.IntegerField()
+    min_cpu_node = models.IntegerField()
+    ave_cpu = models.FloatField()
+    act_cpufreq = models.FloatField()
+    consumed_energy = models.FloatField()
+    req_cpufreq = models.IntegerField()
+    max_disk_read = models.FloatField()
+    max_disk_read_task = models.IntegerField()
+    max_disk_read_node = models.IntegerField()
+    ave_disk_read = models.FloatField()
+    max_disk_write = models.FloatField()
+    max_disk_write_task = models.IntegerField()
+    max_disk_write_node = models.IntegerField()
+    ave_disk_write = models.FloatField()
+    class Meta:
+        db_table = 'tianhe2-c_step_table'
+
+class Tianhe2CSuspendTable(models.Model):
+    job_db_inx = models.IntegerField()
+    id_assoc = models.IntegerField()
+    time_start = models.IntegerField()
+    time_end = models.IntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_suspend_table'
+
+class Tianhe2CUsageDayTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    time_start = models.IntegerField(primary_key=True)
+    cpu_count = models.IntegerField()
+    alloc_cpu_secs = models.BigIntegerField()
+    down_cpu_secs = models.BigIntegerField()
+    pdown_cpu_secs = models.BigIntegerField()
+    idle_cpu_secs = models.BigIntegerField()
+    resv_cpu_secs = models.BigIntegerField()
+    over_cpu_secs = models.BigIntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_usage_day_table'
+
+class Tianhe2CUsageHourTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    time_start = models.IntegerField(primary_key=True)
+    cpu_count = models.IntegerField()
+    alloc_cpu_secs = models.BigIntegerField()
+    down_cpu_secs = models.BigIntegerField()
+    pdown_cpu_secs = models.BigIntegerField()
+    idle_cpu_secs = models.BigIntegerField()
+    resv_cpu_secs = models.BigIntegerField()
+    over_cpu_secs = models.BigIntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_usage_hour_table'
+
+class Tianhe2CUsageMonthTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    time_start = models.IntegerField(primary_key=True)
+    cpu_count = models.IntegerField()
+    alloc_cpu_secs = models.BigIntegerField()
+    down_cpu_secs = models.BigIntegerField()
+    pdown_cpu_secs = models.BigIntegerField()
+    idle_cpu_secs = models.BigIntegerField()
+    resv_cpu_secs = models.BigIntegerField()
+    over_cpu_secs = models.BigIntegerField()
+    class Meta:
+        db_table = 'tianhe2-c_usage_month_table'
+
+class Tianhe2CWckeyTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    is_def = models.IntegerField()
+    id_wckey = models.IntegerField(primary_key=True)
+    wckey_name = models.TextField()
+    user = models.TextField()
+    class Meta:
+        db_table = 'tianhe2-c_wckey_table'
+
+class Tianhe2CWckeyUsageDayTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    id_wckey = models.IntegerField()
+    time_start = models.IntegerField()
+    alloc_cpu_secs = models.BigIntegerField(null=True, blank=True)
+    resv_cpu_secs = models.BigIntegerField(null=True, blank=True)
+    over_cpu_secs = models.BigIntegerField(null=True, blank=True)
+    class Meta:
+        db_table = 'tianhe2-c_wckey_usage_day_table'
+
+class Tianhe2CWckeyUsageHourTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    id_wckey = models.IntegerField()
+    time_start = models.IntegerField()
+    alloc_cpu_secs = models.BigIntegerField(null=True, blank=True)
+    resv_cpu_secs = models.BigIntegerField(null=True, blank=True)
+    over_cpu_secs = models.BigIntegerField(null=True, blank=True)
+    class Meta:
+        db_table = 'tianhe2-c_wckey_usage_hour_table'
+
+class Tianhe2CWckeyUsageMonthTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField()
+    id_wckey = models.IntegerField()
+    time_start = models.IntegerField()
+    alloc_cpu_secs = models.BigIntegerField(null=True, blank=True)
+    resv_cpu_secs = models.BigIntegerField(null=True, blank=True)
+    over_cpu_secs = models.BigIntegerField(null=True, blank=True)
+    class Meta:
+        db_table = 'tianhe2-c_wckey_usage_month_table'
+
+class Tianhe2EEventTable(models.Model):
+    time_start = models.IntegerField()
+    time_end = models.IntegerField()
+    node_name = models.TextField()
+    cluster_nodes = models.TextField()
+    cpu_count = models.IntegerField()
+    reason = models.TextField()
+    reason_uid = models.IntegerField()
+    state = models.IntegerField()
+    class Meta:
+        db_table = 'tianhe2-e_event_table'
+
+class TxnTable(models.Model):
+    id = models.IntegerField(primary_key=True)
+    timestamp = models.IntegerField()
+    action = models.IntegerField()
+    name = models.TextField()
+    actor = models.TextField()
+    cluster = models.TextField()
+    info = models.TextField(blank=True)
+    class Meta:
+        db_table = 'txn_table'
+
+class UsageLimit(models.Model):
+    id = models.IntegerField(primary_key=True)
+    unit = models.CharField(max_length=200, blank=True)
+    acct = models.CharField(max_length=24)
+    up_limit = models.BigIntegerField()
+    paid = models.CharField(max_length=4)
+    over = models.IntegerField()
+    deadline = models.DateField(null=True, blank=True)
+    warning_interval = models.BigIntegerField(null=True, blank=True)
+    prev_limit = models.BigIntegerField(null=True, blank=True)
+    active_date = models.DateField(null=True, blank=True)
+    inactive_date = models.DateField(null=True, blank=True)
+    create_date = models.DateField(null=True, blank=True)
+    class Meta:
+        db_table = 'usage_limit'
+
+class UsageSummary(models.Model):
+    id = models.IntegerField(primary_key=True)
+    host = models.CharField(max_length=8)
+    account = models.CharField(max_length=24)
+    how_much_time = models.BigIntegerField()
+    update_date = models.DateField()
+    class Meta:
+        db_table = 'usage_summary'
+
+class UsageTime(models.Model):
+    id = models.IntegerField(primary_key=True)
+    account = models.CharField(max_length=24)
+    how_much_time = models.BigIntegerField()
+    update_date = models.DateField()
+    class Meta:
+        db_table = 'usage_time'
+
+class UserTable(models.Model):
+    creation_time = models.IntegerField()
+    mod_time = models.IntegerField()
+    deleted = models.IntegerField(null=True, blank=True)
+    name = models.TextField(primary_key=True)
+    admin_level = models.IntegerField()
+    class Meta:
+        db_table = 'user_table'
+
+class VUserCputimes(models.Model):
+    id_assoc = models.IntegerField()
+    user = models.TextField()
+    acct = models.TextField()
+    id_job = models.IntegerField()
+    time_start = models.IntegerField()
+    time_end = models.IntegerField()
+    cpus_alloc = models.IntegerField()
+    state = models.IntegerField()
+    part = models.TextField()
+    class Meta:
+        db_table = 'v_user_cputimes'
+

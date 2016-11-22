@@ -1,12 +1,12 @@
 HTTP/1.0 200 OK
-Date: Fri, 11 Nov 2016 01:20:55 GMT
+Date: Fri, 18 Nov 2016 09:14:32 GMT
 Server: WSGIServer/0.2 CPython/3.4.3
-Access-Control-Allow-Headers: x-requested-with, content-type
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: POST,GET,OPTIONS,PUT,DELETE,HEAD
-Access-Control-Allow-Origin: *
 Vary: Cookie
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: x-requested-with, content-type
 Content-Type: application/json
-Set-Cookie:  newt_sessionid=qd43mfxi9er54n4b4dy4fywui1edlpjn; expires=Fri, 25-Nov-2016 01:20:55 GMT; HttpOnly; Max-Age=1209600; Path=/
-Set-Cookie:  csrftoken=xT6HnwNillSYQcTctsyb2epw90owFWGrPTKHmQjkm4vftTzI2OToS7uNapsQzFK9; expires=Fri, 10-Nov-2017 01:20:55 GMT; Max-Age=31449600; Path=/
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,PUT,DELETE,HEAD
+Set-Cookie:  csrftoken=oHDjI3aNkHy1lLwD7qe56XT58noXahsQU6C0nO3Y2l3NFXhBQEowpkQSA3JSYvRp; expires=Fri, 17-Nov-2017 09:14:32 GMT; Max-Age=31449600; Path=/
+Set-Cookie:  newt_sessionid=n3zi83tonups8xfziohkxvo8yd56v5wh; expires=Fri, 02-Dec-2016 09:14:32 GMT; HttpOnly; Max-Age=1209600; Path=/
 

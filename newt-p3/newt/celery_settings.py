@@ -3,8 +3,8 @@ import os
 
 import djcelery
 djcelery.setup_loader()
-BROKER_URL= 'redis://cn16357:6379/0'
-CELERY_RESULT_BACKEND = 'redis://cn16357:6379/0'
+BROKER_URL= 'redis://cn16356:6379/0'
+CELERY_RESULT_BACKEND = 'redis://cn16356:6379/0'
 from kombu import Queue,Exchange
 CELERY_DEFAULT_QUEUE = 'default'
 default_exchange = Exchange( 'default' , type='direct' )

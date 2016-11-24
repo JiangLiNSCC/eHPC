@@ -67,8 +67,8 @@ class RootView(JSONRestView):
         The top level NEWT URL
         """
         response = {
-                "text": "Welcome to NEWT",
-                "version": settings.NEWT_VERSION
+                "text": "Welcome to eHPC ",
+                "version": settings.EHPC_VERSION
         }
 
         return response

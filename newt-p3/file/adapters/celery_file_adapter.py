@@ -49,7 +49,11 @@ def is_readable( path , user):
      ( mode & stat.S_IROTH )
     )
 
+@login_required
 def download_path(request, machine_name, path):
+    return json_response(status="ERROR",
+                             status_code=500,
+                             error="This API is forbidden yet. ")
     try:
         if not os.path.isfile( path ) :
             return json_response(status="ERROR",
@@ -57,7 +61,7 @@ def download_path(request, machine_name, path):
                              error=" no such file ")
         if not is_readable( path , request.user.username ): 
             return json_response(status="ERROR",
-                             status_code=500,
+                             status_code=403,
                              error="file not readable ")
         file_handle = open(path, 'r')
         content_type = get_mime_type(machine_name, path, file_handle)
@@ -88,7 +92,8 @@ def put_file_task_unsafty(self, task_env, temphost ,  src, dest):
         return json_response(content=output, status="ERROR", status_code=500, error=error)
     return {'location': dest}
     pass
-   
+
+@login_required   
 def put_file(request, machine, path):
     data = request.read()
     # Write data to temporary location

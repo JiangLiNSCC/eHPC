@@ -87,8 +87,13 @@ def safty_task( task_func ):
            return json_response(status="ERROR",
                                  status_code=500,
                                  error="dangerous action ! ")
-        os.setgid(ngid)
-        os.setuid(nuid)
+        if nuid != os.getuid():
+            os.setgroups([])
+            os.setgid(ngid)
+            os.setuid(nuid)
+            old_umask = os.umask( 0o077 )
+        #os.seteuid(nuid)
+        #os.setegid(nuid)
         return [ username  ,  task_func( *args,**kwargs ) ] 
     return wrapper
 

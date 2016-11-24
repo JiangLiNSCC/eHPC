@@ -228,6 +228,9 @@ LOGGING = {
     }
 }
 
+# Base eHPC Settings
+EHPC_VERSION = "0.0.2"
+
 # Base NEWT Settings
 NEWT_VERSION = '2.0.0'
 NEWT_HOST = 'localhost'

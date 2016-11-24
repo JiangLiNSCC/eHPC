@@ -28,6 +28,7 @@ from django.contrib.auth.models import User
 from job.adapters.job_models import HPCJob
 import os
 from pwd import getpwnam
+import sys
 @login_required
 def get_machines(request):
     """Returns the available machines that jobs can run on
@@ -81,10 +82,13 @@ def view_queue(request, machine_name):
 def submit_job_task(self , task_env , HPCJobid ):
     return submit_job_task_unsafty(self , task_env , HPCJobid )
 
-@unsafty_task
+@safty_task
 def submit_job_task_unsafty(self , taskenv , HPCJobid ):
     pass
-    job = HPCJob.objects.get( id = HPCJobid  )
+    try :
+        job = HPCJob.objects.get( id = HPCJobid  )
+    except ImportError :
+        return sys.path
     if  job.jobid : 
         return json_response(status="ERROR",
                              status_code=500,
@@ -105,7 +109,7 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid ):
         else :
             job.jobfile = dest 
             job.state = "unsubmit"
-            job.save()
+            #job.save() // can not save as readonly
     qsub = "/usr/bin/sbatch"
     cmd_str = "%s %s %s" % (qsub, job.jobfile , job.jobfile_args)
     os.environ['PWD'] = os.path.dirname( job.jobfile  )
@@ -117,7 +121,7 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid ):
                              error="qsub failed with error: %s" % error)
     job.jobid = output.strip().split(' ')[-1]
     job.state = "submited"
-    job.save()
+    #job.save() // can not save as readonly 
     return {"jobid":job.jobid}
 
 

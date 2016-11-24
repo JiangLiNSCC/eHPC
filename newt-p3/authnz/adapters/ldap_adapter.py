@@ -27,7 +27,10 @@ def get_status(request):
 
 def login(request):
     user = None
+    username = ''
     try:
+        print( request.POST )
+        print( request.body )
         username = request.POST['username']
         password = request.POST['password']
         ldap_host = 'mn5-gn0' # TO-DO , Should be get from settings .

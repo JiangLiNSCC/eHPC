@@ -91,6 +91,8 @@ def safty_task( task_func ):
             os.setgroups([])
             os.setgid(ngid)
             os.setuid(nuid)
+            os.putenv( "HOME" , getpwnam( username ).pw_dir )
+            os.chdir( getpwnam( username ).pw_dir )
             old_umask = os.umask( 0o077 )
         #os.seteuid(nuid)
         #os.setegid(nuid)

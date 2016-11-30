@@ -14,6 +14,7 @@ from pwd import getpwnam
 import socket
 from django.http import HttpResponse
 from django.utils.encoding import smart_str
+from django.conf import settings
 
 logger = logging.getLogger("newt." + __name__)
 
@@ -49,26 +50,58 @@ def is_readable( path , user):
      ( mode & stat.S_IROTH )
     )
 
+@shared_task(bind=True , track_started=True )
+def download_path_task(self, taskenv , path ):
+    return download_path_task_unsafty(self, taskenv , path )
+
+@safty_task
+def download_path_task_unsafty(self, taskenv , path ):
+    src = path 
+    temphost = taskenv["host"]
+    dest =  '/tmp/tmpfile/'+ self.request.id 
+    (output, error, retcode) = run_command(" scp %s %s:%s " % (  src , temphost,  dest))
+    if retcode != 0:
+        return json_response(content=output, status="ERROR", status_code=500, error=error)
+    return  self.request.id 
+    pass
+
+
 @login_required
 def download_path(request, machine_name, path):
-    return json_response(status="ERROR",
-                             status_code=500,
-                             error="This API is forbidden yet. ")
+    #return json_response(status="ERROR",
+    #                         status_code=500,
+    #                         error="This API is forbidden yet. ")
     try:
-        if not os.path.isfile( path ) :
-            return json_response(status="ERROR",
-                             status_code=500,
-                             error=" no such file ")
-        if not is_readable( path , request.user.username ): 
-            return json_response(status="ERROR",
+        taskenv = { "user" : request.user.username , "machine" : machine_name , "host" :  settings.TASKENV_HOST }
+        #if not os.path.isfile( path ) :
+        #    return json_response(status="ERROR",
+        #                     status_code=500,
+        #                     error=" no such file ")
+        #if not is_readable( path , request.user.username ): 
+        #    return json_response(status="ERROR",
+        #                     status_code=403,
+        #                     error="file not readable ")
+        if os.path.dirname(path) == '/' :
+            tmpfile = os.path.join('/tmp/tmpfile' , os.path.basename(path))
+            if not is_readable( tmpfile , request.user.username ):
+                return json_response(status="ERROR",
                              status_code=403,
                              error="file not readable ")
-        file_handle = open(path, 'r')
-        content_type = get_mime_type(machine_name, path, file_handle)
-        logger.debug("File download requested: %s" % path)
-        if content_type is None:
-            content_type = "application/octet-stream"
-        return StreamingHttpResponse(file_handle, content_type=content_type)
+            # could download tmpfile ^ ^ 
+            file_handle = open(tmpfile, 'r')
+            content_type = get_mime_type(machine_name, tmpfile, file_handle)
+            logger.debug("File download requested: %s" % path)
+            if content_type is None:
+                content_type = "application/octet-stream"
+            return StreamingHttpResponse(file_handle, content_type=content_type)
+        #file_handle = open(path, 'r')
+        #content_type = get_mime_type(machine_name, path, file_handle)
+        #logger.debug("File download requested: %s" % path)
+        #if content_type is None:
+        #    content_type = "application/octet-stream"
+        #return StreamingHttpResponse(file_handle, content_type=content_type)
+        rest = download_path_task.delay( taskenv , path   )
+        return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
     except Exception as e:
         logger.error("Could not get file %s" % str(e))
         return json_response(status="ERROR",

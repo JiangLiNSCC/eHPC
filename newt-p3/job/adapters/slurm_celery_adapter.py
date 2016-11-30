@@ -29,6 +29,9 @@ from job.adapters.job_models import HPCJob
 import os
 from pwd import getpwnam
 import sys
+from django.core.cache import cache
+
+
 @login_required
 def get_machines(request):
     """Returns the available machines that jobs can run on
@@ -76,6 +79,7 @@ def view_queue(request, machine_name):
         return json_response(status="ERROR", status_code=400, error="Invalid machine name: %s" % machine_name)
     taskenv = { "user" : request.user.username , "machine" : machine_name }
     rest = view_queue_task.delay( taskenv    )
+    cache.set("async-" + rest.id , "AsyncJob" , 3600 )
     return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
 
 @shared_task(bind=True , track_started=True )
@@ -109,19 +113,20 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid ):
         else :
             job.jobfile = dest 
             job.state = "unsubmit"
-            #job.save() // can not save as readonly
+            job.save() # can not save as readonly
     qsub = "/usr/bin/sbatch"
+    #cmd_str = ''' bash -c -l "%s %s %s"  ''' % (qsub, job.jobfile , job.jobfile_args )
     cmd_str = "%s %s %s" % (qsub, job.jobfile , job.jobfile_args)
     os.environ['PWD'] = os.path.dirname( job.jobfile  )
     os.chdir( os.path.dirname( job.jobfile  )  )
-    (output, error, retcode) = run_command(cmd_str)
+    (output, error, retcode) = run_command(cmd_str , bash = True)
     if retcode != 0:
         return json_response(status="ERROR", 
                              status_code=500, 
                              error="qsub failed with error: %s" % error)
     job.jobid = output.strip().split(' ')[-1]
     job.state = "submited"
-    #job.save() // can not save as readonly 
+    job.save() # can not save as readonly 
     return {"jobid":job.jobid}
 
 
@@ -169,6 +174,7 @@ def submit_job(request, machine_name):
         pass
         taskenv["host"] = socket.gethostname()
     rest = submit_job_task.delay( taskenv , job.id   )
+    cache.set("async-" + rest.id , "AsyncJob" , 3600 )
     return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
 
 
@@ -181,19 +187,21 @@ def get_info_task_unsafty(self , taskenv , HPCJobid):
     job = HPCJob.objects.get( id = HPCJobid )
     job_id = job.jobid
     mycmd =  ' sacct -j  '  + str(job_id ) 
-    (output, error, retcode) = run_command( mycmd )
+    (output, error, retcode) = run_command( mycmd  , bash = True )
     if retcode !=0 :
         return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
     patt = re.compile(r'(?P<jobid>[^\s]+)\s+(?P<jobname>[^\s]+)\s+(?P<partition>[^\s]+)\s+(?P<account>[^\s]+)\s+(?P<alloccpus>[^\s]+)\s+(?P<state>[^\s]+)\s+(?P<exitcode>.*)$')
+    #return output
     output = output.splitlines()
     output = [x.strip() for x in output]
     output = filter(lambda line: patt.match(line), output)
     output = list(map(lambda x: patt.match(x).groupdict(), output))[2:]
-    job.partition = output[0]["partition"]
-    job.exit_code = output[0]["exitcode"].split(':')[1]
-    job.job_name = output[0]["jobname"]
-    job.state = output[0]["state"]
-    job.save()
+    if output :
+        job.partition = output[0]["partition"]
+        job.exit_code = output[0]["exitcode"].split(':')[1]
+        job.job_name = output[0]["jobname"]
+        job.state = output[0]["state"]
+        job.save()
     return output
 
     
@@ -217,20 +225,36 @@ def get_info(request, machine_name, job_id):
     if job.state == "COMPLETED" or job.state == "FAILED" :
         return {"partition": job.state , "jobid": job.jobid, "state": job.state, "exitcode": job.exit_code, "jobname": job.job_name }
     rest = get_info_task.delay( taskenv , job.id   )
+    cache.set("async-" + rest.id , "AsyncJob" , 3600 )
     return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
 
+@shared_task(bind=True , track_started=True )
+def delete_job_task( self , taskenv , job_id  ):
+    return delete_job_task_unsafty( self , taskenv , job_id  )
+
+@safty_task
+def delete_job_task_unsafty( self , taskenv , job_id  ):
+    mycmd = ' scancel  '  + str( job_id ) 
+    (output, error, retcode) = run_command( mycmd , bash = True )
+    if retcode !=0 :
+        return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
+    return (output)
 
 @login_required
 def delete_job(request, machine_name, job_id):
     machine = slurmutil.GRID_RESOURCE_TABLE.get(machine_name, None)
     if not machine:
         return json_response(status="ERROR", status_code=400, error="Invalid machine name: %s" % machine_name)
-    env = slurmutil.get_cred_env(request.user)
-    mycmd = "ssh " + machine["hostname"]   +   " ' " + ' scancel  '  + job_id  + " '"
-    (output, error, retcode) = run_command( mycmd )
-    if retcode !=0 :
-        return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
-    return (output)
+    taskenv = { "user" : request.user.username , "machine" : machine_name }   
+    rest = delete_job_task.delay( taskenv , job_id   )
+    cache.set("async-" + rest.id , "AsyncJob" , 3600 )
+    return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
+    #env = slurmutil.get_cred_env(request.user)
+    #mycmd = "ssh " + machine["hostname"]   +   " ' " + ' scancel  '  + job_id  + " '"
+    #(output, error, retcode) = run_command( mycmd )
+    #if retcode !=0 :
+    #    return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
+    #return (output)
 
 
 patterns = (

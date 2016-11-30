@@ -28,9 +28,17 @@ try:
 except ValueError as e:
     logger.warning('setting alarm handler failed: "%s"' %e)
 
-@shared_task
-def run_command(command, env=None, timeout=600 , decode ='utf-8' ):
-    args = shlex.split(smart_str(command))
+#@shared_task
+def run_command(command, env=None, timeout=600 , decode ='utf-8' , bash = False ):
+    #args = shlex.split(smart_str(command))
+    if bash :
+        #command =  ''' bash -c -l ' %s '  ''' % command  # [ 'bash' , '-c' , '-l' , ' " ' + command + ' " ' ]
+        env_backup = os.environ.copy()
+        for i in os.environ.keys() :
+            os.unsetenv( i )
+        args = [ "bash" , "-c" , "-l" , command ]
+    else :
+        args = shlex.split(smart_str(command))
     try:
         p = Popen(args, stdout=PIPE, stderr=PIPE, env=env)
     except OSError as  ex:

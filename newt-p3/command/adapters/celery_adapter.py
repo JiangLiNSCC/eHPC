@@ -7,6 +7,7 @@ from celery.result import AsyncResult
 import logging
 from common.decorators import  login_required , safty_task
 import time
+from django.core.cache import cache
 logger = logging.getLogger("newt." + __name__)
 
 
@@ -17,7 +18,7 @@ def execute_task(self , task_env, command  ):
 @safty_task
 def execute_task_unsafy(self , task_env,  command  ):
     try :
-        (output, error, retcode) = run_command(command)
+        (output, error, retcode) = run_command(command , bash = True)
         response = {
                 'output': output,
                 'error': error,
@@ -33,6 +34,7 @@ def execute(request, machine_name='', command=''   ):
     print( command )
     taskenv = { "user" : request.user.username , "machine" : machine_name }
     rest = execute_task.delay( taskenv  , command   )
+    cache.set("async-" + rest.id , "AsyncJob" , 3600 )
     return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
     #return celery_request(  request , execute_task , command , machine = machine_name  )
 

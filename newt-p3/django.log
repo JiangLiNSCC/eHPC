@@ -9552,3 +9552,346 @@ Traceback (most recent call last):
   File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
     'url': request.get_host() + new_path,
 RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 10.127.48.5:8000/api/job/ln3/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[ERROR] 2016-11-28 09:40:30,619 django.request : Internal Server Error: /api/command/ln3
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/contrib/sessions/backends/base.py", line 202, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/backends/mysql/base.py", line 110, in execute
+    return self.cursor.execute(query, args)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/connections.py", line 42, in defaulterrorhandler
+    raise errorvalue
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/connections.py", line 270, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.ProgrammingError: (1146, "Table 'ehpc_db.django_session' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/views.py", line 30, in post
+    return command_adapter.execute(request, machine_name, command)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 24, in wrapper
+    if request.user.is_authenticated():
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/utils/functional.py", line 234, in inner
+    self._setup()
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/utils/functional.py", line 380, in _setup
+    self._wrapped = self._setupfunc()
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/contrib/auth/__init__.py", line 180, in get_user
+    user_id = _get_user_session_key(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/contrib/sessions/backends/base.py", line 57, in __getitem__
+    return self._session[key]
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/contrib/sessions/backends/base.py", line 207, in _get_session
+    self._session_cache = self.load()
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/contrib/sessions/backends/db.py", line 35, in load
+    expire_date__gt=timezone.now()
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/query.py", line 379, in get
+    num = len(clone)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/query.py", line 238, in __len__
+    self._fetch_all()
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/query.py", line 1087, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql()
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/models/sql/compiler.py", line 835, in execute_sql
+    cursor.execute(sql, params)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/db/backends/mysql/base.py", line 110, in execute
+    return self.cursor.execute(query, args)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/connections.py", line 42, in defaulterrorhandler
+    raise errorvalue
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/MySQLdb/connections.py", line 270, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'ehpc_db.django_session' doesn't exist")
+[ERROR] 2016-11-29 17:24:39,145 django.request : Internal Server Error: /api/async/9ebdbb28-bf63-4031-9b87-b1c4927ba26c
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 15, in get
+    check_cache = cache.get("async-" + async_id , "None" )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:28:23,246 django.request : Internal Server Error: /api/async/8c6a44ee-89b7-4ffa-be7d-a2b525b7deea
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 15, in get
+    check_cache = cache.get("async-" + async_id , "None" )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:33:55,522 django.request : Internal Server Error: /api/async/3611a5eb-4cd4-40a3-ae1f-e3fcf76289f2
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 15, in get
+    check_cache = cache.get("async-" + async_id , "None" )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:33:56,641 django.request : Internal Server Error: /api/async/ba546ef4-720a-4bfe-9826-96ab28e83341
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 15, in get
+    check_cache = cache.get("async-" + async_id , "None" )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:33:57,759 django.request : Internal Server Error: /api/async/cbac2099-6b8c-4859-9f9e-6dd8ad2bf560
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 15, in get
+    check_cache = cache.get("async-" + async_id , "None" )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:33:58,918 django.request : Internal Server Error: /api/async/9d7746b5-bfaf-437a-a0c7-1f2a2a0a872b
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 15, in get
+    check_cache = cache.get("async-" + async_id , "None" )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:34:00,043 django.request : Internal Server Error: /api/async/eacaa39d-9d99-4861-bedf-3b4e61e3ef30
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 15, in get
+    check_cache = cache.get("async-" + async_id , "None" )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:34:01,164 django.request : Internal Server Error: /api/async/cb140a09-0406-4c30-b873-c977e5d989ca
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 15, in get
+    check_cache = cache.get("async-" + async_id , "None" )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:34:02,316 django.request : Internal Server Error: /api/async/97fa27ad-5cab-4982-a120-fafb1f67efb1
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 15, in get
+    check_cache = cache.get("async-" + async_id , "None" )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:41:16,290 django.request : Internal Server Error: /api/command/ln3
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/views.py", line 30, in post
+    return command_adapter.execute(request, machine_name, command)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/adapters/celery_adapter.py", line 36, in execute
+    cache.set("async-" + rest.id , "AsyncJob" , 3600 )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:41:17,073 django.request : Internal Server Error: /api/command/ln3
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/views.py", line 30, in post
+    return command_adapter.execute(request, machine_name, command)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/adapters/celery_adapter.py", line 36, in execute
+    cache.set("async-" + rest.id , "AsyncJob" , 3600 )
+NameError: name 'cache' is not defined
+[ERROR] 2016-11-29 17:41:17,272 django.request : Internal Server Error: /api/command/ln3
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/views.py", line 30, in post
+    return command_adapter.execute(request, machine_name, command)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/adapters/celery_adapter.py", line 36, in execute
+    cache.set("async-" + rest.id , "AsyncJob" , 3600 )
+NameError: name 'cache' is not defined

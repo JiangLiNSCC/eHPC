@@ -6,18 +6,21 @@ import random , string
 base_url = "http://10.127.48.5:8000/api"
 login_url = "/auth"
 async_url = "/async"
-async_wait_time = 5
-login_data = {"username": "sysu_dwu_1" , "password" : "******"}
+async_first_wait_time = 1
+async_wait_time = 100
+login_data = {"username": "sysu_dwu_1" , "password" : "ae0a22c8b3695ce8"}
 DEBUG_ASYNC = True
 test_batchfile = "/HOME/sysu_dwu_1/apitests/pytest/job.sh"
 test_batchstr = '''#!/bin/sh
 #SBATCH -N 2
-srun -N 2 -n 4 hostname
+#SBATCH -p free
+srun -p free -N 2 -n 4 hostname
 whoami
 '''
 test_batchstr_long = '''#!/bin/sh
 #SBATCH -N 2
-srun -N 2 -n 4 hostname
+#SBATCH -p free
+srun -p free -N 2 -n 4 hostname
 sleep 100
 whoami
 '''
@@ -68,14 +71,17 @@ class Client:
             self.output = self.data["output"]
         except ValueError :
             self.data = rdata
-            self.status_code = resp.getcode()
+            try : 
+                self.status_code = resp.getcode()
+            except Exception :
+                self.status_code = 403
             self.status = "unknown"
             self.output = self.data
             if self.status_code == 200 : self.status = "OK"
         if self.status_code == 201 and async_get: # It's a async task !
             #print async_url + '/' + self.output
             self.async_wait_time = async_wait_time
-            time.sleep(1)
+            time.sleep( async_first_wait_time  )
             if DEBUG_ASYNC : print "jump to async"
             self.open( async_url + '/' + self.output )
         if self.status_code == 100 and async_wait and self.async_wait_time > 0 : #  async task is running !
@@ -181,7 +187,10 @@ if True:
         print "test api: GET /api/file/<macchine>/<path>?download=True"
         rep = mc.open("/file/" + machine_name + '/etc/resolv.conf?download=True'   )
         if DEBUG_ALL  : print mc.data , mc.status_code
-        if mc.ret200()  : print_PASS()
+        if mc.ret200()  : 
+            rep = mc.open("/file/" + machine_name + '/' + mc.data["output"] + '?download=True'   )
+            if DEBUG_ALL  : print mc.data , mc.status_code
+            print_PASS()
         else : print_NOTPASS()
         rep = mc.open("/file/" + machine_name + '/root/.bashrc?download=True'   )
         if DEBUG_ALL  : print mc.data , mc.status_code , mc.resp.geturl()
@@ -209,7 +218,7 @@ if True:
         if DEBUG_ALL : print mc.data
         if mc.ret403() : print_PASS()
         else : print_NOTPASS() 
-        rep = mc.open("/command/" + machine_name  , data = {"command" : "date" })
+        rep = mc.open("/command/" + machine_name  , data = {"command" : '''bash  -c -l  "pwd;hostname;env" ''' })
         if DEBUG_ALL : print mc.data
         if mc.ret200()  : print_PASS()
         else : print_NOTPASS() 
@@ -249,19 +258,76 @@ if True:
         if mc.ret200()  : 
             myjobid = mc.data["output"]["jobid"]
             print "submit job: " , myjobid
+            time.sleep( 5 )
             rep = mc.open("/job/" + machine_name + '/' + str(myjobid) + '/')
             if DEBUG_ALL : print mc.data
-            if mc.ret200()  : print_PASS()
+            if mc.ret200()  : 
+                # check output 
+                print_PASS()
             else : print_NOTPASS()
         
         
     def test_delete_job_machine():
-        print "NOT Imp Yet"
+        print "test api: DELETE /api/job/<machine>"
+        rep = mc.open("/job/" + machine_name + '/' , data = {"jobscript" : test_batchstr_long })
+        if mc.ret200()  :
+            myjobid = mc.data["output"]["jobid"]
+            print "submited job: " , myjobid
+            rep = mc.open("/job/" + machine_name + '/' + str(myjobid) + '/' , method = "DELETE" )
+            if DEBUG_ALL : print mc.data
+            if mc.ret200()  :
+                # check output
+                print_PASS()
+                return 
+            else : print_NOTPASS()
         print_NOTPASS()
         pass 
-         
+    def test_run( cmd ):
+        print " run cmd :  %s" % cmd
+        rep = mc.open("/command/" + machine_name  , data = {"command" : cmd })
+        if DEBUG_ALL : print mc.data
+        if mc.ret200()  : 
+            print ( mc.data["output"]["output"] )
+        else : print_NOTPASS()
+import sys         
 if __name__ == '__main__' :
-    
+    tests = {
+        'auth' : [ 
+            test_get_root , 
+            test_get_auth,
+            test_delete_auth,],
+        'file' : [
+            test_get_file_machine_path,          
+            test_get_file_machine_path_download,
+            test_put_file_machine_path,
+            ],
+        'job' : [
+            test_post_command_machine,
+            test_post_job_machine,
+            test_get_job_machine,
+            test_delete_job_machine,
+            ],
+     }
+    if  sys.argv[1] == 'run' :
+        test_run( sys.argv[2] )
+        exit()
+    if len( sys.argv ) < 2  or sys.argv[ 1 ] == 'all' :
+        pass ;
+        print ("test all ")
+        testlist = [x for j in tests.values() for x in j ]
+    elif sys.argv[1]   in tests.keys() :
+        testlist = tests[ sys.argv[1] ]
+        if len( sys.argv ) > 2 and  sys.argv[2].isdigit() and int(sys.argv[2]) < len( testlist )  :
+            testlist = [ testlist[ int(sys.argv[2]) ]  ]        
+        pass ;
+        print ("test :" , sys.argv[1])
+    else :
+        print( "Usage: python main.py [all/<test name >]" )
+        print( "<test name > could be : " , tests.keys())
+        exit()
+        #testlist = tests[ sys.argv[1] ]
+    for eachtest in testlist :
+        eachtest()
     #test_get_root()
     #test_post_auth()
     #test_get_auth()
@@ -271,8 +337,8 @@ if __name__ == '__main__' :
     #test_put_file_machine_path()
     #test_post_command_machine()
     #test_post_job_machine()    
-    test_get_job_machine()
-    test_delete_job_machine()
+    #test_get_job_machine()
+    #test_delete_job_machine()
     print "Total PASS : " , count_pass
     print "Total NOT PASS : " , count_notpass
 

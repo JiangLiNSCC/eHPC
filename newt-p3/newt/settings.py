@@ -1,6 +1,6 @@
 # Django settings for newt project.
 import os
-
+import socket
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -11,17 +11,34 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+CACHES = {
+   'default' : {
+       'BACKEND' : 'django_redis.cache.RedisCache' ,
+       'LOCATION' : 'redis://12.10.133.132:6379',
+       "OPTIONS" : { 
+           "CLIENT_CLASS" : "django_redis.client.DefaultClient",
+       },
+   },
+}
+
+
 DATABASES = {
-    'default': {
-        'TEST_NAME': 'test_sqlite.db',
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'newtdb.sqlite',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
-    },
+'default':{
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS':{
+               'read_default_file': '/HOME/nscc-gz_jiangli/virtualenv/config/myd.cnf',
+        },
+},
+#    'default': {
+#        'TEST_NAME': 'test_sqlite.db',
+#        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#        'NAME': 'newtdb.sqlite',                      # Or path to database file if using sqlite3.
+#        # The following settings are not used with sqlite3:
+#        'USER': '',
+#        'PASSWORD': '',
+#        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+#        'PORT': '',                      # Set to empty string for default.
+#    },
     'mysqldb':{
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS':{
@@ -232,12 +249,13 @@ LOGGING = {
 EHPC_VERSION = "0.0.2"
 
 # Base NEWT Settings
-NEWT_VERSION = '2.0.0'
-NEWT_HOST = 'localhost'
-NEWT_DOMAIN = 'nersc.gov'
-NEWT_COOKIE_LIFETIME=43200
-MYPROXY_SERVER = 'nerscca2.nersc.gov'
+#NEWT_VERSION = '2.0.0'
+#NEWT_HOST = 'localhost'
+#NEWT_DOMAIN = 'nersc.gov'
+#NEWT_COOKIE_LIFETIME=43200
+#MYPROXY_SERVER = 'nerscca2.nersc.gov'
 
+TASKENV_HOST = socket.gethostname()
 
 # SESSION_COOKIE_DOMAIN = NEWT_HOST
 # SESSION_COOKIE_SECURE = True
@@ -248,9 +266,11 @@ SESSION_COOKIE_NAME = 'newt_sessionid'
 XS_SHARING_ALLOWED_ORIGINS='*'
 XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE', 'HEAD']
 # ALLOWED Networks for cross domain stuff
-ALLOWED_CIDRS = [ '128.3.0.0/16', '131.243.0.0/16', '128.55.0.0/16', '198.128.0.0/14' ]
+#ALLOWED_CIDRS = [ '128.3.0.0/16', '131.243.0.0/16', '128.55.0.0/16', '198.128.0.0/14' ]
 # Allow specific hostnames not included in ALLOWED_CIDRS
 ALLOWED_HOSTS = [ 'localhost', '127.0.0.1' ]
+
+
 
 NEWT_CONFIG = {
     'SYSTEMS': [

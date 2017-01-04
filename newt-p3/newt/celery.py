@@ -17,7 +17,11 @@ app = Celery('proj')
 app.config_from_object('newt.celery_settings' )
 #app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
-
+#app.conf.update(
+#    result_expires = 3600 ,
+#    result_serializer = "pickle" , 
+#    accept_content = ['pickle' , 'json']
+#)
 
 @app.task(bind=True)
 def debug_task(self):

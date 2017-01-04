@@ -9895,3 +9895,1458 @@ Traceback (most recent call last):
   File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/command/adapters/celery_adapter.py", line 36, in execute
     cache.set("async-" + rest.id , "AsyncJob" , 3600 )
 NameError: name 'cache' is not defined
+[ERROR] 2016-12-02 17:30:06,904 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/code/2_3.c
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_yv3cok00'
+[ERROR] 2016-12-02 17:30:33,837 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/code/2_3.c
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_w4bqosp5'
+[ERROR] 2016-12-02 22:21:27,127 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/code/4_1.c
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_ii3m5plm'
+[ERROR] 2016-12-02 23:20:02,635 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/code/4_1.c
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_312ep4_q'
+[ERROR] 2016-12-03 09:27:33,210 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/code/2_1.c
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_yr5vt016'
+[ERROR] 2016-12-03 09:27:55,250 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/code/2_1.c
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_gp3c2dup'
+[ERROR] 2016-12-03 09:31:40,494 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_tf0vvu9d'
+[ERROR] 2016-12-03 09:33:44,494 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_t9gcwtmt'
+[ERROR] 2016-12-03 09:35:28,616 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_cz3sjve0'
+[ERROR] 2016-12-03 09:36:24,276 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_djslqjz6'
+[ERROR] 2016-12-03 09:41:43,042 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_4cydix2d'
+[ERROR] 2016-12-03 09:42:30,010 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_zuv0dxka'
+[ERROR] 2016-12-03 09:42:54,145 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_mf_048qi'
+[ERROR] 2016-12-03 09:43:40,668 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_hyysnc0n'
+[ERROR] 2016-12-03 09:44:46,598 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_6xcx7_qf'
+[ERROR] 2016-12-03 09:45:16,525 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_4gexo6sj'
+[ERROR] 2016-12-03 09:55:24,976 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/code/2_1.c
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_pe1jlbsl'
+[ERROR] 2016-12-03 09:55:50,202 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/code/2_1.c
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_fa52p_lk'
+[ERROR] 2016-12-03 12:08:58,549 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_61y80r8h'
+[ERROR] 2016-12-03 12:20:38,701 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_o0sc2rp8'
+[ERROR] 2016-12-03 12:23:33,632 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_c_k1bksp'
+[ERROR] 2016-12-03 12:24:22,687 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_pqme_x_6'
+[ERROR] 2016-12-03 12:26:10,061 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_hck8veeo'
+[ERROR] 2016-12-03 12:30:40,169 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_ry3o6_fz'
+[ERROR] 2016-12-03 12:32:18,760 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_bp5ipr_v'
+[ERROR] 2016-12-03 12:33:09,983 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_s2____es'
+[ERROR] 2016-12-03 12:34:00,447 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt__6xk7p2k'
+[ERROR] 2016-12-03 13:38:39,011 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_lstp877r'
+[ERROR] 2016-12-03 13:40:18,756 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_bh1r90fu'
+[ERROR] 2016-12-03 13:44:32,355 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_wlphb4wy'
+[ERROR] 2016-12-03 13:47:34,342 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_r2vpd3ui'
+[ERROR] 2016-12-03 14:05:43,145 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_d1891b61'
+[ERROR] 2016-12-03 14:06:07,249 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_h79m2bp8'
+[ERROR] 2016-12-03 14:07:17,975 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_e5ppj7jc'
+[ERROR] 2016-12-03 14:08:32,114 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main_1.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_635nlapr'
+[ERROR] 2016-12-04 13:03:18,876 django.request : Internal Server Error: /api/file/ln3/HOME/sysu_dwu_1/coreos/main_1.cpp
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 148, in put_file
+    os.chown( src  , nuid , ngid )
+PermissionError: [Errno 1] Operation not permitted: '/tmp/newt_px0gx_lg'
+[ERROR] 2016-12-16 16:10:35,460 django.request : Internal Server Error: /api/async/32871665-2641-44d7-bbd6-15f4b573a6eb
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 55, in _reraise_errors
+    yield
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 184, in loads
+    return decode(data)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 345, in unpickle
+    return pickle_loads(str_to_bytes(s))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 64, in pickle_loads
+    return load(BytesIO(s))
+_pickle.UnpicklingError: invalid load key, '{'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 14, in get
+    if rest.state == 'PENDING' :
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/result.py", line 394, in state
+    return self._get_task_meta()['status']
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/result.py", line 339, in _get_task_meta
+    return self._maybe_set_cache(self.backend.get_task_meta(self.id))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 292, in get_task_meta
+    meta = self._get_task_meta_for(task_id)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 506, in _get_task_meta_for
+    return self.decode_result(meta)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 191, in decode_result
+    return self.meta_from_decoded(self.decode(payload))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 198, in decode
+    accept=self.accept)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 184, in loads
+    return decode(data)
+  File "/HOME/nscc-gz_jiangli/virtualenv/localpython/lib/python3.4/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 59, in _reraise_errors
+    reraise(wrapper, wrapper(exc), sys.exc_info()[2])
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/five.py", line 131, in reraise
+    raise value.with_traceback(tb)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 55, in _reraise_errors
+    yield
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 184, in loads
+    return decode(data)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 345, in unpickle
+    return pickle_loads(str_to_bytes(s))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 64, in pickle_loads
+    return load(BytesIO(s))
+kombu.exceptions.DecodeError: invalid load key, '{'.
+[ERROR] 2016-12-16 16:11:19,917 django.request : Internal Server Error: /api/async/32871665-2641-44d7-bbd6-15f4b573a6eb
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 55, in _reraise_errors
+    yield
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 184, in loads
+    return decode(data)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 345, in unpickle
+    return pickle_loads(str_to_bytes(s))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 64, in pickle_loads
+    return load(BytesIO(s))
+_pickle.UnpicklingError: invalid load key, '{'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 14, in get
+    if rest.state == 'PENDING' :
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/result.py", line 394, in state
+    return self._get_task_meta()['status']
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/result.py", line 339, in _get_task_meta
+    return self._maybe_set_cache(self.backend.get_task_meta(self.id))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 292, in get_task_meta
+    meta = self._get_task_meta_for(task_id)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 506, in _get_task_meta_for
+    return self.decode_result(meta)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 191, in decode_result
+    return self.meta_from_decoded(self.decode(payload))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 198, in decode
+    accept=self.accept)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 184, in loads
+    return decode(data)
+  File "/HOME/nscc-gz_jiangli/virtualenv/localpython/lib/python3.4/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 59, in _reraise_errors
+    reraise(wrapper, wrapper(exc), sys.exc_info()[2])
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/five.py", line 131, in reraise
+    raise value.with_traceback(tb)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 55, in _reraise_errors
+    yield
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 184, in loads
+    return decode(data)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 345, in unpickle
+    return pickle_loads(str_to_bytes(s))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 64, in pickle_loads
+    return load(BytesIO(s))
+kombu.exceptions.DecodeError: invalid load key, '{'.
+[ERROR] 2016-12-16 16:18:26,774 django.request : Internal Server Error: /api/async/c93b9a02-4aea-4bb1-95c2-b2a6cce05a6b
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 55, in _reraise_errors
+    yield
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 184, in loads
+    return decode(data)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 345, in unpickle
+    return pickle_loads(str_to_bytes(s))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 64, in pickle_loads
+    return load(BytesIO(s))
+_pickle.UnpicklingError: invalid load key, '{'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/async/views.py", line 14, in get
+    if rest.state == 'PENDING' :
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/result.py", line 394, in state
+    return self._get_task_meta()['status']
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/result.py", line 339, in _get_task_meta
+    return self._maybe_set_cache(self.backend.get_task_meta(self.id))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 292, in get_task_meta
+    meta = self._get_task_meta_for(task_id)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 506, in _get_task_meta_for
+    return self.decode_result(meta)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 191, in decode_result
+    return self.meta_from_decoded(self.decode(payload))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/backends/base.py", line 198, in decode
+    accept=self.accept)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 184, in loads
+    return decode(data)
+  File "/HOME/nscc-gz_jiangli/virtualenv/localpython/lib/python3.4/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 59, in _reraise_errors
+    reraise(wrapper, wrapper(exc), sys.exc_info()[2])
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/five.py", line 131, in reraise
+    raise value.with_traceback(tb)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 55, in _reraise_errors
+    yield
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 184, in loads
+    return decode(data)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 345, in unpickle
+    return pickle_loads(str_to_bytes(s))
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/serialization.py", line 64, in pickle_loads
+    return load(BytesIO(s))
+kombu.exceptions.DecodeError: invalid load key, '{'.
+[ERROR] 2016-12-22 09:22:12,018 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_2v_yvb5v'
+[ERROR] 2016-12-22 09:22:15,496 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_du1_11hr'
+[ERROR] 2016-12-22 09:22:16,192 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_twc3v129'
+[ERROR] 2016-12-22 09:23:36,671 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_uw_lqr16'
+[ERROR] 2016-12-22 09:23:39,112 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_xb_r75x3'
+[ERROR] 2016-12-22 09:23:39,906 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_jwpgun23'
+[ERROR] 2016-12-22 09:35:01,473 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_q2riy4ll'
+[ERROR] 2016-12-22 09:35:04,084 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_m12kwt8s'
+[ERROR] 2016-12-22 09:35:05,231 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_fn2vw33g'
+[ERROR] 2016-12-22 09:41:23,531 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_mbwjl2q1'
+[ERROR] 2016-12-22 09:41:40,997 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_5bj6_8zs'
+[ERROR] 2016-12-22 15:40:16,350 django.request : Internal Server Error: /api/file/ln3/root/eHPC_test_HTSXs80U
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 152, in put_file
+    rest = put_file_task.delay( taskenv , temphost ,  src, dest   )
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/app/task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/app/task.py", line 559, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/app/base.py", line 353, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/app/amqp.py", line 305, in publish_task
+    **kwargs
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/connection.py", line 449, in _ensured
+    return fun(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/messaging.py", line 188, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/transport/virtual/__init__.py", line 521, in basic_publish
+    message, exchange, routing_key, **kwargs
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/transport/virtual/exchange.py", line 60, in deliver
+    for queue in _lookup(exchange, routing_key):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/transport/virtual/__init__.py", line 612, in _lookup
+    self.get_table(exchange),
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/transport/redis.py", line 760, in get_table
+    raise InconsistencyError(NO_ROUTE_ERROR.format(exchange, key))
+kombu.exceptions.InconsistencyError: 
+Cannot route message for exchange 'ln': Table empty or key no longer exists.
+Probably the key ('_kombu.binding.ln') has been removed from the Redis database.
+
+[ERROR] 2016-12-22 15:40:18,916 django.request : Internal Server Error: /api/file/ln3/tmp/eHPC_test_HTSXs80U
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/views.py", line 34, in put
+    return file_adapter.put_file(request, machine_name, path)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/file/adapters/celery_file_adapter.py", line 152, in put_file
+    rest = put_file_task.delay( taskenv , temphost ,  src, dest   )
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/app/task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/app/task.py", line 559, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/app/base.py", line 353, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/celery/app/amqp.py", line 305, in publish_task
+    **kwargs
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/connection.py", line 449, in _ensured
+    return fun(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/messaging.py", line 188, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/transport/virtual/__init__.py", line 521, in basic_publish
+    message, exchange, routing_key, **kwargs
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/transport/virtual/exchange.py", line 60, in deliver
+    for queue in _lookup(exchange, routing_key):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/transport/virtual/__init__.py", line 612, in _lookup
+    self.get_table(exchange),
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/kombu/transport/redis.py", line 760, in get_table
+    raise InconsistencyError(NO_ROUTE_ERROR.format(exchange, key))
+kombu.exceptions.InconsistencyError: 
+Cannot route message for exchange 'ln': Table empty or key no longer exists.
+Probably the key ('_kombu.binding.ln') has been removed from the Redis database.
+
+[ERROR] 2016-12-22 16:39:19,166 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_1qmfoxmj'
+[ERROR] 2016-12-22 16:41:05,959 django.request : Internal Server Error: /api/job/ln3/
+Traceback (most recent call last):
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/newt/views.py", line 24, in dispatch
+    response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/views.py", line 23, in post
+    return job_adapter.submit_job(request, machine)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/common/decorators.py", line 25, in wrapper
+    return view_func(*args, **kwargs)
+  File "/HOME/nscc-gz_jiangli/virtualenv/eHPC/newt-p3/job/adapters/slurm_celery_adapter.py", line 154, in submit_job
+    tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 460, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags)
+  File "/HOME/nscc-gz_jiangli/virtualenv/py34env/lib/python3.4/tempfile.py", line 200, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/jobfile/newt_je8pwmbi'

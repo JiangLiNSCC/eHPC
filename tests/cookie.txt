@@ -1,12 +1,14 @@
-HTTP/1.0 200 OK
-Date: Fri, 18 Nov 2016 09:14:32 GMT
-Server: WSGIServer/0.2 CPython/3.4.3
-Vary: Cookie
-Access-Control-Allow-Credentials: true
+HTTP/1.1 200 OK
+Server: gunicorn/19.6.0
+Date: Thu, 22 Dec 2016 03:37:10 GMT
+Connection: keep-alive
+Transfer-Encoding: chunked
 Access-Control-Allow-Headers: x-requested-with, content-type
-Content-Type: application/json
+Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST,GET,OPTIONS,PUT,DELETE,HEAD
-Set-Cookie:  csrftoken=oHDjI3aNkHy1lLwD7qe56XT58noXahsQU6C0nO3Y2l3NFXhBQEowpkQSA3JSYvRp; expires=Fri, 17-Nov-2017 09:14:32 GMT; Max-Age=31449600; Path=/
-Set-Cookie:  newt_sessionid=n3zi83tonups8xfziohkxvo8yd56v5wh; expires=Fri, 02-Dec-2016 09:14:32 GMT; HttpOnly; Max-Age=1209600; Path=/
+Vary: Cookie
+Content-Type: application/json
+Set-Cookie: csrftoken=BFfkA08CkA4dsJLF5pJ1ljQdND6zETr6cFAIaANpcYn2quPBrOcVyAES28LrVS21; expires=Thu, 21-Dec-2017 03:37:10 GMT; Max-Age=31449600; Path=/
+Set-Cookie: newt_sessionid=yulev6p5jtfsbpzlnsuidbqkvuhla0om; expires=Thu, 05-Jan-2017 03:37:10 GMT; HttpOnly; Max-Age=1209600; Path=/
 

@@ -15,6 +15,7 @@ import socket
 from django.http import HttpResponse
 from django.utils.encoding import smart_str
 from django.conf import settings
+from django.core.cache import cache
 
 logger = logging.getLogger("newt." + __name__)
 
@@ -81,6 +82,9 @@ def download_path(request, machine_name, path):
         #    return json_response(status="ERROR",
         #                     status_code=403,
         #                     error="file not readable ")
+        if not os.path.isdir('/tmp/tmpfile'):
+            os.makedirs( '/tmp/tmpfile' )
+            os.chmod('/tmp/tmpfile' , stat.S_IWOTH + stat.S_IXOTH + stat.S_IROTH)
         if os.path.dirname(path) == '/' :
             tmpfile = os.path.join('/tmp/tmpfile' , os.path.basename(path))
             if not is_readable( tmpfile , request.user.username ):
@@ -101,6 +105,7 @@ def download_path(request, machine_name, path):
         #    content_type = "application/octet-stream"
         #return StreamingHttpResponse(file_handle, content_type=content_type)
         rest = download_path_task.delay( taskenv , path   )
+        cache.set("async-" + rest.id , "AsyncJob" , 3600 )
         return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
     except Exception as e:
         logger.error("Could not get file %s" % str(e))
@@ -147,6 +152,7 @@ def put_file(request, machine, path):
     nuid = getpwnam( username ).pw_uid
     os.chown( src  , nuid , ngid )
     rest = put_file_task.delay( taskenv , temphost ,  src, dest   )
+    cache.set("async-" + rest.id , "AsyncJob" , 3600 )
     return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
 
 #@shared_task(bind=True , track_started=True )
@@ -195,6 +201,7 @@ def get_dir(request, machine_name, path):
         # need no more check , just test open the celery task to read dir 
         taskenv = { "user" : request.user.username , "machine" : machine_name }
         rest = get_dir_task.delay( taskenv , path   )
+        cache.set("async-" + rest.id , "AsyncJob" , 3600 )
         return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
     except Exception as e:
         logger.error("Could not get directory %s" % str(e))

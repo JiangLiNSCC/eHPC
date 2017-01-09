@@ -2,7 +2,7 @@
 import os
 import socket
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+#TEMPLATE_DEBUG = DEBUG
 PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
 
 ADMINS = (
@@ -11,10 +11,19 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+ 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.exmail.qq.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'jiang.li@nscc-gz.cn'
+EMAIL_HOST_PASSWORD = 'lj2014'
+DEFAULT_FROM_EMAIL = 'jiang.li@nscc-gz.cn'
+
 CACHES = {
    'default' : {
        'BACKEND' : 'django_redis.cache.RedisCache' ,
-       'LOCATION' : 'redis://12.10.133.132:6379',
+       'LOCATION' : 'redis://localhsot:6379',
        "OPTIONS" : { 
            "CLIENT_CLASS" : "django_redis.client.DefaultClient",
        },
@@ -23,35 +32,35 @@ CACHES = {
 
 
 DATABASES = {
-'default':{
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS':{
-               'read_default_file': '/HOME/nscc-gz_jiangli/virtualenv/config/myd.cnf',
-        },
-},
-#    'default': {
-#        'TEST_NAME': 'test_sqlite.db',
-#        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': 'newtdb.sqlite',                      # Or path to database file if using sqlite3.
-#        # The following settings are not used with sqlite3:
+#'default':{
+#        'ENGINE': 'django.db.backends.mysql',
+#        'OPTIONS':{
+#               'read_default_file': '/HOME/nscc-gz_jiangli/virtualenv/config/myd.cnf',
+#        },
+#},
+    'default': {
+        'TEST_NAME': 'test_sqlite.db',
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'newtdb.sqlite',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
 #        'USER': '',
 #        'PASSWORD': '',
 #        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
 #        'PORT': '',                      # Set to empty string for default.
-#    },
-    'mysqldb':{
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS':{
-               'read_default_file': '/HOME/nscc-gz_jiangli/virtualenv/config/my.cnf',
-        },
     },
+#    'mysqldb':{
+#        'ENGINE': 'django.db.backends.mysql',
+#        'OPTIONS':{
+#               'read_default_file': '/HOME/nscc-gz_jiangli/virtualenv/config/my.cnf',
+#        },
+#    },
 }
 
-DATABASE_APPS_MAPPING = {
-     'authnz' : 'default',
-     'job' : 'default',
-     'outerdb' : 'mysqldb',
-}
+#DATABASE_APPS_MAPPING = {
+#     'authnz' : 'default',
+#     'job' : 'default',
+#     'outerdb' : 'mysqldb',
+#}
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -172,7 +181,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     # for django-celery
-    'djcelery',
+    #'djcelery',
     'outerdb',
     'async',
 )
@@ -188,7 +197,8 @@ AUTHENTICATION_BACKENDS = (
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
-if DEBUG:
+if True : 
+#if DEBUG:
     _LOGDIR = PROJECT_DIR
 else:
     _LOGDIR = "/var/log/httpd/"
@@ -291,7 +301,7 @@ NEWT_CONFIG = {
             'models': "",
         }, 
         'AUTH': {
-            'adapter': 'authnz.adapters.ldap_adapter',
+            'adapter': 'authnz.adapters.mix_adapter',
             'models': '',
         },
         'COMMAND': {
@@ -303,8 +313,8 @@ NEWT_CONFIG = {
             'models': 'store.adapters.dbstore_models',
         },
         'ACCOUNT': {
-            'adapter': 'account.adapters.django_adapter',
-            'models': '',
+            'adapter': 'account.adapters.th_adapter',
+            'models': 'account.adapters.th_models',
         },
         'JOB': {
             'adapter': 'job.adapters.slurm_celery_adapter',

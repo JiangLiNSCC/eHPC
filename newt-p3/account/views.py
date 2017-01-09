@@ -10,6 +10,12 @@ logger = logging.getLogger("newt." + __name__)
 from importlib import import_module
 acct_adapter = import_module(settings.NEWT_CONFIG['ADAPTERS']['ACCOUNT']['adapter'])
 
+class AccountInfoView(JSONRestView):
+    def get(self, request, *args, **kwargs):
+        return "get account list"
+    def post(self, request, *args, **kwargs):
+        return "create account"
+
 # /api/account/user/<user_name>/
 # /api/account/user/id/<uid>/
 class UserInfoView(AuthJSONRestView):

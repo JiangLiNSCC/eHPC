@@ -20,6 +20,7 @@ def get_user_info(user_name, uid):
         else:
             raise Exception()
         user_dict = model_to_dict(user)
+
         del user_dict["password"]
         return user_dict
     except Exception:

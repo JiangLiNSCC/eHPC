@@ -1,6 +1,6 @@
 #from django.conf.urls import patterns , url 
 from django.conf.urls import * 
-from authnz.views import AuthView, ExtraAuthView
+from authnz.views import AuthView, ExtraAuthView , active
 
 '''
 urlpatterns = patterns('auth.views',
@@ -12,5 +12,7 @@ urlpatterns = patterns('auth.views',
 '''
 urlpatterns =[
     url( r'^$',AuthView.as_view()  ),
-     url( r'^(?P<query>.+)/$', ExtraAuthView.as_view()  ),
+    url(r'^/active/(?P<token>[^/]+)$', active ),
+    # url( r'^/reg$',AuthRegView.as_view()  ),
+    url( r'^(?P<query>.+)/$', ExtraAuthView.as_view()  ),
 ] 

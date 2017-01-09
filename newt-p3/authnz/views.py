@@ -23,8 +23,16 @@ class AuthView(JSONRestView):
     def delete(self, request):
         logger.debug("Entering %s:%s" % (self.__class__.__name__, __name__))
         return auth_adapter.logout(request)
+    def put(self , request):
+        logger.debug("Entering %s:%s" % (self.__class__.__name__, __name__))
+        return auth_adapter.signup(request )
+
 
 # /api/auth/<query>/
 class ExtraAuthView(JSONRestView):
     def get(self, request, query):
-        return acct_adapter.extras_router(request, query)
+        return auth_adapter.extras_router(request, query)
+
+def active(request , token ):
+    return auth_adapter.active(request , token)
+

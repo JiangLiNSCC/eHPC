@@ -83,11 +83,11 @@ def view_queue(request, machine_name):
     return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
 
 @shared_task(bind=True , track_started=True )
-def submit_job_task(self , task_env , HPCJobid ):
-    return submit_job_task_unsafty(self , task_env , HPCJobid )
+def submit_job_task(self , task_env , HPCJobid ,  jobfilepath ):
+    return submit_job_task_unsafty(self , task_env , HPCJobid ,  jobfilepath )
 
 @safty_task
-def submit_job_task_unsafty(self , taskenv , HPCJobid ):
+def submit_job_task_unsafty(self , taskenv , HPCJobid , jobfilepath):
     pass
     try :
         job = HPCJob.objects.get( id = HPCJobid  )
@@ -101,8 +101,13 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid ):
         # mv jobfile to user dir 
         src = job.jobfile
         temphost = taskenv["host"]
-        dest = os.path.join(  getpwnam( job.user.username ).pw_dir , 'newt' , str(job.id)  , os.path.basename( job.jobfile  ) )
-        os.makedirs( os.path.dirname( dest ) )
+        if jobfilepath : 
+            dest = jobfilepath
+        else :
+            dest = os.path.join(  getpwnam( job.user.username ).pw_dir , 'newt' , str(job.id)  , os.path.basename( job.jobfile  ) )
+        dest_dir = os.path.dirname( dest )
+        if not os.path.isdir(dest_dir):
+            os.makedirs( dest_dir )
         put_file_task( taskenv, temphost ,  src, dest )
         pass
         #dest = os.path.join(  getpwnam( job.user.username ).pw_dir , 'newt' , str(job.id)  , os.path.basename( job.jobfile  ) )
@@ -141,6 +146,7 @@ def submit_job(request, machine_name):
     pass
     user = request.user # User.objects.get(username=username)
     job = HPCJob( user = user,jobfile = '' , machine = machine_name )
+    jobfilepath = request.POST.get("jobfilepath", None  )
     if request.POST.get("jobfile", False):
         # Create command for sbatch on an existing slurm file
         job_file_path = request.POST.get("jobfile")
@@ -173,7 +179,7 @@ def submit_job(request, machine_name):
     if job.state == "tempfile" :
         pass
         taskenv["host"] = socket.gethostname()
-    rest = submit_job_task.delay( taskenv , job.id   )
+    rest = submit_job_task.delay( taskenv , job.id ,jobfilepath  )
     cache.set("async-" + rest.id , "AsyncJob" , 3600 )
     return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
 
@@ -186,23 +192,33 @@ def get_info_task(self , taskenv , HPCJobid):
 def get_info_task_unsafty(self , taskenv , HPCJobid):
     job = HPCJob.objects.get( id = HPCJobid )
     job_id = job.jobid
-    mycmd =  ' sacct -j  '  + str(job_id ) 
+    mycmd =  ' sacct -lPj  '  + str(job_id ) 
     (output, error, retcode) = run_command( mycmd  , bash = True )
     if retcode !=0 :
         return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
-    patt = re.compile(r'(?P<jobid>[^\s]+)\s+(?P<jobname>[^\s]+)\s+(?P<partition>[^\s]+)\s+(?P<account>[^\s]+)\s+(?P<alloccpus>[^\s]+)\s+(?P<state>[^\s]+)\s+(?P<exitcode>.*)$')
-    #return output
     output = output.splitlines()
-    output = [x.strip() for x in output]
-    output = filter(lambda line: patt.match(line), output)
-    output = list(map(lambda x: patt.match(x).groupdict(), output))[2:]
-    if output :
-        job.partition = output[0]["partition"]
-        job.exit_code = output[0]["exitcode"].split(':')[1]
-        job.job_name = output[0]["jobname"]
-        job.state = output[0]["state"]
-        job.save()
-    return output
+    output = [x.split('|') for x in output]
+    outputdir = {}
+    for linei in range(len(output)):
+        if linei == 0 : continue 
+        outputdir[ output[linei][0]  ] = {}
+        for itemi in range(len( output[linei] )) :
+            name = output[0][itemi]
+            value = output[linei][itemi]
+            outputdir[ output[linei][0]  ][ name ] = value
+    #patt = re.compile(r'(?P<jobid>[^\s]+)\s+(?P<jobname>[^\s]+)\s+(?P<partition>[^\s]+)\s+(?P<account>[^\s]+)\s+(?P<alloccpus>[^\s]+)\s+(?P<state>[^\s]+)\s+(?P<exitcode>.*)$')
+    #return output
+    #output = output.splitlines()
+    #output = [x.strip() for x in output]
+    #output = filter(lambda line: patt.match(line), output)
+    #output = list(map(lambda x: patt.match(x).groupdict(), output))[2:]
+    #if output :
+    #    job.partition = output[0]["partition"]
+    #    job.exit_code = output[0]["exitcode"].split(':')[1]
+    #    job.job_name = output[0]["jobname"]
+    #    job.state = output[0]["state"]
+    #    job.save()
+    return outputdir
 
     
 @login_required

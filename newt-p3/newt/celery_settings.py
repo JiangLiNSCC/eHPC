@@ -3,8 +3,18 @@ import os
 
 import djcelery
 djcelery.setup_loader()
-BROKER_URL= 'redis://cn16356:6379/0'
-CELERY_RESULT_BACKEND = 'redis://cn16356:6379/0'
+
+REDIS_SERVER = os.environ.get('REDIS_SERVER' , None)
+
+if REDIS_SERVER :
+    redis_ip , redis_port = REDIS_SERVER.split()
+    BROKER_URL= 'redis://%s:%s/0' %( redis_ip , redis_port )
+    CELERY_RESULT_BACKEND =  BROKER_URL
+else :
+    BROKER_URL= 'redis://cn16358:6379/0' 
+    #BROKER_URL= ['redis://cn16356:6379//' ,    'redis://cn16355:6379//' ,     'redis://cn16354:6379//' ,    ]
+    #CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+    CELERY_RESULT_BACKEND =  BROKER_URL
 from kombu import Queue,Exchange
 CELERY_DEFAULT_QUEUE = 'default'
 default_exchange = Exchange( 'default' , type='direct' )

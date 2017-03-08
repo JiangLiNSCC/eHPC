@@ -30,6 +30,9 @@ import os
 from pwd import getpwnam
 import sys
 from django.core.cache import cache
+from django.conf import settings
+
+tempdir = settings.NEWT_CONFIG["TEMPDIR"]
 
 
 @login_required
@@ -99,7 +102,7 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid , jobfilepath):
                              error="The Job have submit once : %s" % job.jobid )
     if job.state == "tempfile" :
         # mv jobfile to user dir 
-        src = job.jobfile
+        src = os.path.basename(job.jobfile)
         temphost = taskenv["host"]
         if jobfilepath : 
             dest = jobfilepath
@@ -157,8 +160,8 @@ def submit_job(request, machine_name):
         # Create command for qsub from stdin data
         job_script = request.POST.get("jobscript").encode()
         # Creates a temporary job file
-        tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = '/tmp/jobfile' , delete = False)
-        print(job_script)
+        tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = tempdir , delete = False)
+        #print(job_script)
         tmp_job_file.write(job_script)
         tmp_job_file.flush()
         tmp_job_file.close()
@@ -166,9 +169,9 @@ def submit_job(request, machine_name):
         job.state = "tempfile"
         #cmd = "%s %s" % (qsub, tmp_job_file.name)
         username = user.username #taskenv["user"]
-        ngid = getpwnam( username ).pw_gid
-        nuid = getpwnam( username ).pw_uid
-        os.chown( job.jobfile  , nuid , ngid )
+        #ngid = getpwnam( username ).pw_gid
+        #nuid = getpwnam( username ).pw_uid
+        #os.chown( job.jobfile  , nuid , ngid )
     else:
         return json_response(status="ERROR", 
                              status_code=400, 

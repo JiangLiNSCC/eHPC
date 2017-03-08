@@ -10,7 +10,7 @@ from common.response import json_response
 import tempfile
 from common.decorators import login_required , safty_task
 import os ,stat
-from pwd import getpwnam
+from pwd import getpwnam , getpwuid
 import socket
 from django.http import HttpResponse
 from django.utils.encoding import smart_str
@@ -18,8 +18,9 @@ from django.conf import settings
 from django.core.cache import cache
 
 logger = logging.getLogger("newt." + __name__)
-
-
+tempdir = settings.NEWT_CONFIG["TEMPDIR"]
+localcookies = settings.NEWT_CONFIG["LOCALCOOKIES"]
+machine_default = settings.NEWT_CONFIG["MACHINE_DEFAULT"]
 def get_mime_type(machine_name=None, path=None, file_handle=None):
     if file_handle:
         try:
@@ -39,17 +40,20 @@ def get_mime_type(machine_name=None, path=None, file_handle=None):
     return content_type   
 
 def is_readable( path , user):
-    print( path , user ) 
-    user_info = getpwnam( user )
-    uid = user_info.pw_uid
-    gid = user_info.pw_gid
-    s = os.stat( path )
-    mode = s[ stat.ST_MODE ]
-    return (
-     ((s[stat.ST_UID] == uid) and ( mode & stat.S_IRUSR >0 )) or
-     ( (s[stat.ST_GID] == gid) and ( mode & stat.S_IRGRP >0 ) ) or
-     ( mode & stat.S_IROTH )
-    )
+    #print( path , user ) 
+    try : 
+       user_info = getpwnam( user )
+       uid = user_info.pw_uid
+       gid = user_info.pw_gid
+       s = os.stat( path )
+       mode = s[ stat.ST_MODE ]
+       return (
+        ((s[stat.ST_UID] == uid) and ( mode & stat.S_IRUSR >0 )) or
+        ( (s[stat.ST_GID] == gid) and ( mode & stat.S_IRGRP >0 ) ) or
+        ( mode & stat.S_IROTH )
+       )
+    except Exception as ex :
+       return False
 
 @shared_task(bind=True , track_started=True )
 def download_path_task(self, taskenv , path ):
@@ -59,8 +63,11 @@ def download_path_task(self, taskenv , path ):
 def download_path_task_unsafty(self, taskenv , path ):
     src = path 
     temphost = taskenv["host"]
-    dest =  '/tmp/tmpfile/'+ self.request.id 
-    (output, error, retcode) = run_command(" scp %s %s:%s " % (  src , temphost,  dest))
+    #dest =  '/tmp/tmpfile/'+ self.request.id 
+    cookie_file =  os.path.join( getpwuid(os.getuid()).pw_dir , localcookies)
+    command = '''  curl -b %s  -T %s  "%s://%s:%s/api/file/%s/%s?local=True" ''' % ( cookie_file , src , 'http' , temphost , '8000' , machine_default  , self.request.id  )
+    #(output, error, retcode) = run_command(" scp %s %s:%s " % (  src , temphost,  dest))
+    (output, error, retcode) = run_command( command )
     if retcode != 0:
         return json_response(content=output, status="ERROR", status_code=500, error=error)
     return  self.request.id 
@@ -82,15 +89,16 @@ def download_path(request, machine_name, path):
         #    return json_response(status="ERROR",
         #                     status_code=403,
         #                     error="file not readable ")
-        if not os.path.isdir('/tmp/tmpfile'):
-            os.makedirs( '/tmp/tmpfile' )
-            os.chmod('/tmp/tmpfile' , stat.S_IWOTH + stat.S_IXOTH + stat.S_IROTH)
+        if not os.path.isdir(tempdir):
+            os.makedirs( tempdir )
+            os.chmod( tempdir , stat.S_IWOTH + stat.S_IXOTH + stat.S_IROTH)
         if os.path.dirname(path) == '/' :
-            tmpfile = os.path.join('/tmp/tmpfile' , os.path.basename(path))
-            if not is_readable( tmpfile , request.user.username ):
-                return json_response(status="ERROR",
-                             status_code=403,
-                             error="file not readable ")
+            tmpfile = os.path.join( tempdir , os.path.basename(path))
+            logger.error("tempfile %s" % tmpfile )
+            #if not is_readable( tmpfile , request.user.username ):
+            #    return json_response(status="ERROR",
+            #                 status_code=403,
+            #                 error="file not readable ")
             # could download tmpfile ^ ^ 
             file_handle = open(tmpfile, 'r')
             content_type = get_mime_type(machine_name, tmpfile, file_handle)
@@ -122,38 +130,45 @@ def put_file_task( *args , **kwargs ):
 
 def put_file_task_unsafty(self, task_env, temphost ,  src, dest): 
     #  safy task . cp , ...  , rm tmp file , return 
-    (output, error, retcode) = run_command(" scp %s:%s %s " % ( temphost,  src, dest))
+    cookie_file =  os.path.join( getpwuid(os.getuid()).pw_dir , localcookies)
+    command_src = ''' curl -X GET -s -b %s  "%s://%s:%s/api/file/%s/%s?&download=True" -o %s ''' % ( cookie_file  , 'http' , temphost , '8000' , machine_default ,src , dest   )
+    #(output, error, retcode) = run_command(" scp %s:%s %s " % ( temphost,  src, dest))
+    (output, error, retcode) = run_command( command_src )
     if retcode != 0:
         return json_response(content=output, status="ERROR", status_code=500, error=error)
-    (output, error, retcode) = run_command(" ssh %s rm  %s " % ( temphost,  src))
-    if retcode != 0:
-        return json_response(content=output, status="ERROR", status_code=500, error=error)
+    #(output, error, retcode) = run_command(" ssh %s rm  %s " % ( temphost,  src))
+    #if retcode != 0:
+    #    return json_response(content=output, status="ERROR", status_code=500, error=error)
     return {'location': dest}
     pass
 
 @login_required   
-def put_file(request, machine, path):
+def put_file(request, machine, path , local = False):
     data = request.read()
     # Write data to temporary location
     # TODO: Get temporary path from settings.py 
     #tmp_file = tempfile.NamedTemporaryFile(prefix="newt_" ) )
-    print( request.FILES )
-    tmp_file = tempfile.NamedTemporaryFile(prefix="newt_" , delete = False )
+    #print( request.FILES )
+    tmp_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = tempdir, delete = False )
     tmp_file.write(data)
     tmp_file.file.flush()
-    tmp_file.close()   
-    src = tmp_file.name
-    dest = path   # TO-DO need to check path is ok . 
-    temphost = socket.gethostname()
-    taskenv = { "user" : request.user.username , "machine" : machine }
-    # CHOWN 
-    username = taskenv["user"]
-    ngid = getpwnam( username ).pw_gid
-    nuid = getpwnam( username ).pw_uid
-    os.chown( src  , nuid , ngid )
-    rest = put_file_task.delay( taskenv , temphost ,  src, dest   )
-    cache.set("async-" + rest.id , "AsyncJob" , 3600 )
-    return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
+    tmp_file.close()
+    if not local :   
+        src = tmp_file.name
+        dest = path   # TO-DO need to check path is ok . 
+        temphost = socket.gethostname()
+        taskenv = { "user" : request.user.username , "machine" : machine }
+        # CHOWN 
+        #username = taskenv["user"]
+        #ngid = getpwnam( username ).pw_gid
+        #nuid = getpwnam( username ).pw_uid
+        #os.chown( src  , nuid , ngid )
+        rest = put_file_task.delay( taskenv , temphost ,  src, dest   )
+        cache.set("async-" + rest.id , "AsyncJob" , 3600 )
+        return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
+    else : 
+        os.rename( tmp_file.name , os.path.join( tempdir  , path ))
+        return {'location' : tmp_file.name }
 
 #@shared_task(bind=True , track_started=True )
 @app.task( bind=True , track_started=True ) # @safty_task

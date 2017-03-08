@@ -1,3 +1,6 @@
+from __future__ import absolute_import
+from celery import shared_task
+from newt.celery import app
 from django.contrib import auth
 import logging
 import re
@@ -5,8 +8,13 @@ from ldap3 import Server , Connection
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from django.conf import settings
-logger = logging.getLogger("newt." + __name__)
+from common.decorators import  safty_task
+import os
+from pwd import getpwuid
 
+logger = logging.getLogger("newt." + __name__)
+localcookies = settings.NEWT_CONFIG["LOCALCOOKIES"]
+machine_default = settings.NEWT_CONFIG["MACHINE_DEFAULT"]
 def is_logged_in(request):
     if (request.user is not None) and (request.user.is_authenticated()):
         output=dict(auth=True,
@@ -23,6 +31,18 @@ def is_logged_in(request):
 
 def get_status(request):
     return is_logged_in(request)
+
+@shared_task(bind=True  )
+def create_local_cookie_task(self,taskenv,token):
+    return create_local_cookie_unsafty(self , taskenv,token)
+
+
+@safty_task
+def create_local_cookie_unsafty(self, taskenv , token ):
+    filename =  os.path.join( getpwuid(os.getuid()).pw_dir , localcookies)
+    with open(  filename   , 'w'  ) as fp :
+        fp.write( "Set-Cookie: newt_sessionid=%s;" % token  )
+    pass
 
 
 def login(request):
@@ -59,6 +79,8 @@ def login(request):
     if user is not None:
         auth.login(request, user)
         logger.info("Successfully logged in user: %s" % username)
+        taskenv = { "user" : request.user.username , "machine" : machine_default }
+        create_local_cookie_task.delay( taskenv , request.session.session_key )
     return is_logged_in(request)
 
 def logout(request):

@@ -31,6 +31,8 @@ class FileView(JSONRestView):
         
     def put(self, request, machine_name, path):
         logger.debug("Entering %s:%s" % (self.__class__.__name__, __name__))
+        if request.GET.get("local", False):
+            return file_adapter.put_file(request, machine_name, path, local = True)
         return file_adapter.put_file(request, machine_name, path)
 
 # /api/file/<query>/

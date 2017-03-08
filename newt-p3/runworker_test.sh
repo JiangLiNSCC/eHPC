@@ -14,7 +14,8 @@ fi
 REDIS_SERVER=`/HOME/nscc-gz_jiangli/virtualenv/3.2.4/bin/redis-cli -p 26379 sentinel get-master-addr-by-name mymaster`
 export REDIS_SERVER
 cd /HOME/nscc-gz_jiangli/virtualenv/eHPC_ln9_dev/newt-p3
-C_FORCE_ROOT=1   celery -A newt worker -Q ln3 -l info --maxtasksperchild=1    &> ../../logs/$HOSTNAME.worker
+ celery -A newt inspect stats
+#C_FORCE_ROOT=1   celery -A newt worker -Q ln3 -l info --maxtasksperchild=1    &> ../../logs/$HOSTNAME.worker
 
 
 

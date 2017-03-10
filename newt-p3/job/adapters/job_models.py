@@ -55,7 +55,7 @@ class HPCJob(models.Model):
     time_start = models.DateTimeField( null=True)
     time_end = models.DateTimeField( null=True)
     time_hold = models.TimeField( null=True)
-    time_limit = models.TimeField( null=True) # timelimit
+    time_limit = models.IntegerField( null=True) # timelimit by min 
     partition = models.CharField(max_length=255) # partition
     scale_cores = models.IntegerField( null=True,default=1)  #cpus_req
     scale_memGB = models.IntegerField( null=True,default = 0) # mem_req  
@@ -63,6 +63,17 @@ class HPCJob(models.Model):
     info = models.TextField( ) # other infomations in json dict , such as software/app , ... 
     def __str__(self):
         return self.machine + ':' + str(self.jobid)
+    def configure(self , jobconf) :
+        confable = [ "job_wdir" , "job_name" , "time_limit" , "partition" , "scale_cores" , "scale_memGB" , "scale_Nodes"  ]
+        for itemi in jobconf : 
+            if itemi in confable :
+                self.__dict__[ itemi ] = jobconf.get( itemi )
+    #def gen_args(self):
+    #    arg_list=[]
+    #    if  self.partition : arg_list.append( " -p %s " % self.partition  )
+    #    if  self.scale_Nodes : arg_list.append(  " -N %s " % self.scale_Nodes )
+    #    if self.job_name : arg_list.append(  " -J %s " % self.job_name )
+    #    return "".join( arg_list )
     #def __init__(self , user , jobfile) :
     #    self.user = user
     #    self.jobfile = jobfile 

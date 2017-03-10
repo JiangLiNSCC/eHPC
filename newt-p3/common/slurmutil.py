@@ -6,6 +6,9 @@ import re
 import logging
 logger = logging.getLogger("newt." + __name__)
 from common.shell import run_command
+from common.tools import ResultParser
+from common.parser import SlurmStatResultParser , SlurmAcctResultParser , SlurmHPCJobHandler
+
 
 GRID_RESOURCE_TABLE = dict(
     ln3=dict(
@@ -13,11 +16,22 @@ GRID_RESOURCE_TABLE = dict(
        jobmanagers=dict(fork=dict(url="ln3-gn0/jobmanager"), 
                          batch=dict(url="ln3-gn0/jobmanager-slurm")),
         #gridftp_servers=['genepool01.nersc.gov'],
-        qstat=dict(bin='/usr/bin/squeue -o "%.18i %.18P %.18j %.32u %.2t %.10M %.6D %R" ', scheduler='slurm'),
-        qsub=dict(bin='/usr/bin/sbatch', scheduler='slurm'),
+        qstat=dict(bin='/usr/bin/squeue -o "%.18i %.18P %.18j %.32u %.2t %.10M %.6D %R" ', scheduler='slurm', index = 'JOBID' , parser_cls=SlurmStatResultParser ,  ),
+        qsub=dict(bin='/usr/bin/sbatch', scheduler='slurm' , parser_cls = SlurmHPCJobHandler),
         qdel=dict(bin='/usr/bin/scancel', scheduler='slurm'),
+        qjobstat=dict(bin='/usr/bin/sacct -lPj', scheduler='slurm' , split='|' , index = 'JobID' , parser_cls=SlurmAcctResultParser , ),
+
     ),
 )
+
+
+
+#class SlurmStatResultParser( ResultParser ):
+#    filter = {
+#         'from' : [ 'NAME' , 'PARTITION' , 'JOBID'   ]
+#    }
+
+
 """
     edison=dict(
         hostname='edisongrid.nersc.gov', 

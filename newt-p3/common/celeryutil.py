@@ -3,6 +3,10 @@ import logging
 import time
 from common.response import json_response
 logger = logging.getLogger("newt." + __name__)
+
+# This comand is not used any more !
+
+'''
 def celery_request(  request , task_func ,  *args , **kwargs ):
     ''' *args , **kwargs must have the keyword machine !  '''
     try:
@@ -31,3 +35,4 @@ def celery_request(  request , task_func ,  *args , **kwargs ):
     except Exception as e:
         logger.error("Error: %s" % str(e))
         return json_response(error="Error: %s" % str(e), status="ERROR", status_code=500)
+'''

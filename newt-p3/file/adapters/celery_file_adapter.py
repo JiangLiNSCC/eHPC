@@ -21,6 +21,7 @@ logger = logging.getLogger("newt." + __name__)
 tempdir = settings.NEWT_CONFIG["TEMPDIR"]
 localcookies = settings.NEWT_CONFIG["LOCALCOOKIES"]
 machine_default = settings.NEWT_CONFIG["MACHINE_DEFAULT"]
+conf_connection = settings.NEWT_CONFIG["CONNECTION"]
 def get_mime_type(machine_name=None, path=None, file_handle=None):
     if file_handle:
         try:
@@ -65,7 +66,7 @@ def download_path_task_unsafty(self, taskenv , path ):
     temphost = taskenv["host"]
     #dest =  '/tmp/tmpfile/'+ self.request.id 
     cookie_file =  os.path.join( getpwuid(os.getuid()).pw_dir , localcookies)
-    command = '''  curl -b %s  -T %s  "%s://%s:%s/api/file/%s/%s?local=True" ''' % ( cookie_file , src , 'http' , temphost , '8000' , machine_default  , self.request.id  )
+    command = '''  curl -b %s  -T %s  "%s://%s:%s/api/file/%s/%s?local=True" ''' % ( cookie_file , src , conf_connection['protocol'] , temphost , conf_connection['port'] , machine_default  , self.request.id  )
     #(output, error, retcode) = run_command(" scp %s %s:%s " % (  src , temphost,  dest))
     (output, error, retcode) = run_command( command )
     if retcode != 0:
@@ -131,7 +132,7 @@ def put_file_task( *args , **kwargs ):
 def put_file_task_unsafty(self, task_env, temphost ,  src, dest): 
     #  safy task . cp , ...  , rm tmp file , return 
     cookie_file =  os.path.join( getpwuid(os.getuid()).pw_dir , localcookies)
-    command_src = ''' curl -X GET -s -b %s  "%s://%s:%s/api/file/%s/%s?&download=True" -o %s ''' % ( cookie_file  , 'http' , temphost , '8000' , machine_default ,src , dest   )
+    command_src = ''' curl -X GET -s -b %s  "%s://%s:%s/api/file/%s/%s?&download=True" -o %s ''' % ( cookie_file  , conf_connection['protocol'] , temphost , conf_connection['port'] , machine_default ,src , dest   )
     #(output, error, retcode) = run_command(" scp %s:%s %s " % ( temphost,  src, dest))
     (output, error, retcode) = run_command( command_src )
     if retcode != 0:
@@ -146,7 +147,7 @@ def put_file_task_unsafty(self, task_env, temphost ,  src, dest):
 def put_file(request, machine, path , local = False):
     data = request.read()
     # Write data to temporary location
-    # TODO: Get temporary path from settings.py 
+    # 
     #tmp_file = tempfile.NamedTemporaryFile(prefix="newt_" ) )
     #print( request.FILES )
     tmp_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = tempdir, delete = False )
@@ -155,7 +156,7 @@ def put_file(request, machine, path , local = False):
     tmp_file.close()
     if not local :   
         src = tmp_file.name
-        dest = path   # TO-DO need to check path is ok . 
+        dest = path   # 
         temphost = socket.gethostname()
         taskenv = { "user" : request.user.username , "machine" : machine }
         # CHOWN 
@@ -167,7 +168,7 @@ def put_file(request, machine, path , local = False):
         cache.set("async-" + rest.id , "AsyncJob" , 3600 )
         return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
     else : 
-        os.rename( tmp_file.name , os.path.join( tempdir  , path ))
+        os.rename( tmp_file.name , os.path.join( tempdir  , os.path.basename(path )))
         return {'location' : tmp_file.name }
 
 #@shared_task(bind=True , track_started=True )
@@ -224,8 +225,9 @@ def get_dir(request, machine_name, path):
     
       
 def get_systems(request):
-    return { 'ln3' : ['HOME' , 'WORK' ] , 'ln4' : ['HOME' , 'VIP'] , 'LN6' : ['HOME' , 'NSFCGZ']  }
-    # TO-DO should be read from common-config-file 
+    return  settings.NEWT_CONFIG["FILE_SYSTEM"]
+    #return { 'ln3' : ['HOME' , 'WORK' ] , 'ln4' : ['HOME' , 'VIP'] , 'LN6' : ['HOME' , 'NSFCGZ']  }
+
 patterns = (
 )
 

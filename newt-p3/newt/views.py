@@ -24,7 +24,7 @@ class JSONRestView(View):
         response = super(JSONRestView, self).dispatch(request, *args, **kwargs)
         # If this is not an HTTPResponseBase object (Base class for responses) 
         if not isinstance(response, HttpResponseBase):
-            response = json_response(response)
+            response = json_response( content =  response )
 
         return response
 

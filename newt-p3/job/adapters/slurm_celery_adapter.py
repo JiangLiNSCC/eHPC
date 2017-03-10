@@ -31,7 +31,8 @@ from pwd import getpwnam
 import sys
 from django.core.cache import cache
 from django.conf import settings
-
+from common.tools import str_to_dataframe
+import json
 tempdir = settings.NEWT_CONFIG["TEMPDIR"]
 
 
@@ -54,19 +55,14 @@ def view_queue_task(self,task_env):
     return view_queue_task_unsafty(self,task_env )
 
 @safty_task
-def view_queue_task_unsafty(self,task_env ):
-    mycmd = 'squeue'
+def view_queue_task_unsafty(self,taskenv ):
+    mycmd_conf =  slurmutil.GRID_RESOURCE_TABLE.get( taskenv["machine"] ).get('qstat')
     #mycmd = "ssh " + machine["hostname"]   +   " ' " + machine["qstat"]["bin"]  + " '"
-    (output, error, retcode) = run_command( mycmd )
+    (output, error, retcode) = run_command( mycmd_conf['bin'] )
     if retcode !=0 :
         return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
-    patt = re.compile(r'(?P<jobid>[^\s]+)\s+(?P<partition>[^\s]+)\s+(?P<job_name>[^\s]+)\s+(?P<user>[^\s]+)\s+(?P<state>[^\s]+)\s+(?P<time>[^\s]+)\s+(?P<nodes>\d+)\s+(?P<nodelist>.*)$')
-    output = output.splitlines()
-    output = [x.strip() for x in output]
-    output = filter(lambda line: patt.match(line), output)
-    output = map(lambda x: patt.match(x).groupdict(), output)
-    #print( list(output)  )
-    return list(output)
+    df = str_to_dataframe( output , index = mycmd_conf.get('index' , None ) , split=  mycmd_conf.get('split' , None ) , parser_cls = mycmd_conf.get('parser_cls' , None ) )
+    return json.loads(df.to_json())
 
 @login_required
 def view_queue(request, machine_name):
@@ -122,9 +118,15 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid , jobfilepath):
             job.jobfile = dest 
             job.state = "unsubmit"
             job.save() # can not save as readonly
-    qsub = "/usr/bin/sbatch"
+    qsub_conf = slurmutil.GRID_RESOURCE_TABLE.get( taskenv["machine"] ).get('qsub') 
+    if qsub_conf.get( 'parser_cls' , False  ) :
+        cmd_sub_arg = qsub_conf[ "parser_cls" ].gen_args( job ) 
+    else :
+        cmd_sub_arg = ""
+    #cmd_sub_arg = qsub_conf.parser_cls.gen_args( job )  if qsub_conf.get( 'parser_cls' , False  ) else ""
+    qsub = qsub_conf['bin']
     #cmd_str = ''' bash -c -l "%s %s %s"  ''' % (qsub, job.jobfile , job.jobfile_args )
-    cmd_str = "%s %s %s" % (qsub, job.jobfile , job.jobfile_args)
+    cmd_str = "%s %s %s %s" % (qsub, cmd_sub_arg , job.jobfile , job.jobfile_args)
     os.environ['PWD'] = os.path.dirname( job.jobfile  )
     os.chdir( os.path.dirname( job.jobfile  )  )
     (output, error, retcode) = run_command(cmd_str , bash = True)
@@ -155,28 +157,31 @@ def submit_job(request, machine_name):
         job_file_path = request.POST.get("jobfile")
         job.jobfile = job_file_path
         job.state = "unsubmit"
-        #cmd = "%s %s" % (qsub, job_file_path)
     elif request.POST.get("jobscript", False):
         # Create command for qsub from stdin data
         job_script = request.POST.get("jobscript").encode()
         # Creates a temporary job file
         tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = tempdir , delete = False)
-        #print(job_script)
         tmp_job_file.write(job_script)
         tmp_job_file.flush()
         tmp_job_file.close()
         job.jobfile = tmp_job_file.name
         job.state = "tempfile"
-        #cmd = "%s %s" % (qsub, tmp_job_file.name)
         username = user.username #taskenv["user"]
-        #ngid = getpwnam( username ).pw_gid
-        #nuid = getpwnam( username ).pw_uid
-        #os.chown( job.jobfile  , nuid , ngid )
     else:
         return json_response(status="ERROR", 
                              status_code=400, 
                              error="No data received")
     #job = HPCJob( user = user,jobfile = jobfile , machine = machine_name )
+    if request.POST.get("jobconf" , False) :
+        try :
+            print( request.POST.get("jobconf") )
+            #job.configure( request.POST.get("jobconf") )
+            job.configure( json.loads( request.POST.get("jobconf") )   )
+        except Exception as ex :
+            return json_response(status="ERROR",
+                             status_code=403,
+                             error="Error jobconf : %s" % ex)
     job.save()
     taskenv = { "user" : request.user.username , "machine" : machine_name }
     if job.state == "tempfile" :
@@ -195,33 +200,14 @@ def get_info_task(self , taskenv , HPCJobid):
 def get_info_task_unsafty(self , taskenv , HPCJobid):
     job = HPCJob.objects.get( id = HPCJobid )
     job_id = job.jobid
-    mycmd =  ' sacct -lPj  '  + str(job_id ) 
+    command_conf = slurmutil.GRID_RESOURCE_TABLE.get( taskenv["machine"] ).get('qjobstat')
+    mycmd =  '%s %s' % ( command_conf['bin'] , job_id  ) #' sacct -lPj  '  + str(job_id ) 
     (output, error, retcode) = run_command( mycmd  , bash = True )
     if retcode !=0 :
         return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
-    output = output.splitlines()
-    output = [x.split('|') for x in output]
-    outputdir = {}
-    for linei in range(len(output)):
-        if linei == 0 : continue 
-        outputdir[ output[linei][0]  ] = {}
-        for itemi in range(len( output[linei] )) :
-            name = output[0][itemi]
-            value = output[linei][itemi]
-            outputdir[ output[linei][0]  ][ name ] = value
-    #patt = re.compile(r'(?P<jobid>[^\s]+)\s+(?P<jobname>[^\s]+)\s+(?P<partition>[^\s]+)\s+(?P<account>[^\s]+)\s+(?P<alloccpus>[^\s]+)\s+(?P<state>[^\s]+)\s+(?P<exitcode>.*)$')
-    #return output
-    #output = output.splitlines()
-    #output = [x.strip() for x in output]
-    #output = filter(lambda line: patt.match(line), output)
-    #output = list(map(lambda x: patt.match(x).groupdict(), output))[2:]
-    #if output :
-    #    job.partition = output[0]["partition"]
-    #    job.exit_code = output[0]["exitcode"].split(':')[1]
-    #    job.job_name = output[0]["jobname"]
-    #    job.state = output[0]["state"]
-    #    job.save()
-    return outputdir
+    df = str_to_dataframe( output , split = command_conf.get('split' , None)  , index =  command_conf.get( 'index' , None) , parser_cls = command_conf.get('parser_cls' , None ) )
+    return json.loads(df.to_json())
+
 
     
 @login_required
@@ -253,7 +239,9 @@ def delete_job_task( self , taskenv , job_id  ):
 
 @safty_task
 def delete_job_task_unsafty( self , taskenv , job_id  ):
-    mycmd = ' scancel  '  + str( job_id ) 
+    #mycmd = ' scancel  '  + str( job_id ) 
+    bincommand = slurmutil.GRID_RESOURCE_TABLE.get( taskenv["machine"] ).get('qdel')['bin']
+    mycmd = ' %s %s ' % ( bincommand , str( job_id ) )
     (output, error, retcode) = run_command( mycmd , bash = True )
     if retcode !=0 :
         return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
@@ -268,12 +256,6 @@ def delete_job(request, machine_name, job_id):
     rest = delete_job_task.delay( taskenv , job_id   )
     cache.set("async-" + rest.id , "AsyncJob" , 3600 )
     return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
-    #env = slurmutil.get_cred_env(request.user)
-    #mycmd = "ssh " + machine["hostname"]   +   " ' " + ' scancel  '  + job_id  + " '"
-    #(output, error, retcode) = run_command( mycmd )
-    #if retcode !=0 :
-    #    return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
-    #return (output)
 
 
 patterns = (

@@ -24,6 +24,7 @@ def json_response(content="", status="OK", status_code=200, error=""):
         'error': error
     }
     #print( type( wrapper) , wrapper )
-    response = json.dumps((wrapper)) 
+    print( wrapper)
+    response = json.dumps(wrapper) 
     #response = json.dumps((wrapper), cls=DjangoJSONEncoder, indent=4) 
     return HttpResponse(response, content_type='application/json', status=status_code)

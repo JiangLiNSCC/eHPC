@@ -15,6 +15,7 @@ from pwd import getpwuid
 logger = logging.getLogger("newt." + __name__)
 localcookies = settings.NEWT_CONFIG["LOCALCOOKIES"]
 machine_default = settings.NEWT_CONFIG["MACHINE_DEFAULT"]
+ldap_conf = settings.NEWT_CONFIG["LDAP"]
 def is_logged_in(request):
     if (request.user is not None) and (request.user.is_authenticated()):
         output=dict(auth=True,
@@ -49,13 +50,11 @@ def login(request):
     user = None
     username = ''
     try:
-        print( request.POST )
-        print( request.body )
         username = request.POST['username']
         password = request.POST['password']
-        ldap_host = 'mn5-gn0' # TO-DO , Should be get from settings .
+        ldap_host = ldap_conf["host"] 
         server = Server( ldap_host )
-        connstr = 'uid=%s,ou=people,dc=yhpc' % username  #dn:uid=nscc-gz_jiangli,ou=people,dc=yhpc
+        connstr = 'uid=%s,ou=%s,dc=%s' % (username ,ldap_conf["ou"] , ldap_conf["dc"]) #dn:uid=nscc-gz_jiangli,ou=people,dc=yhpc
         conn = Connection(server, connstr , password , auto_bind=True)
         if conn.extend.standard.who_am_i() != ( 'dn:' + connstr  ) :
             return is_logged_in(request)            

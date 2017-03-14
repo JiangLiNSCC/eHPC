@@ -164,7 +164,7 @@ def put_file(request, machine, path , local = False):
         #ngid = getpwnam( username ).pw_gid
         #nuid = getpwnam( username ).pw_uid
         #os.chown( src  , nuid , ngid )
-        rest = put_file_task.delay( taskenv , temphost ,  src, dest   )
+        rest = put_file_task.delay( taskenv , temphost , os.path.basename( src), dest   )
         cache.set("async-" + rest.id , "AsyncJob" , 3600 )
         return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)
     else : 

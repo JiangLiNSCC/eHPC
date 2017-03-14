@@ -64,7 +64,7 @@ class HPCJob(models.Model):
     def __str__(self):
         return self.machine + ':' + str(self.jobid)
     def configure(self , jobconf) :
-        confable = [ "job_wdir" , "job_name" , "time_limit" , "partition" , "scale_cores" , "scale_memGB" , "scale_Nodes"  ]
+        confable = [ "job_wdir" , "job_name" , "time_limit" , "partition" , "scale_cores" , "scale_memGB" , "scale_Nodes" , "jobfile_args" ]
         for itemi in jobconf : 
             if itemi in confable :
                 self.__dict__[ itemi ] = jobconf.get( itemi )

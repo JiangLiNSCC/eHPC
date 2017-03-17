@@ -1,0 +1,7 @@
+[test] 
+url = http://10.127.48.5:8000/api
+username = xxxxxx
+password = yyyyyy
+machine = ln3
+
+[sec_b] 

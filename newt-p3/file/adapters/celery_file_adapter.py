@@ -62,13 +62,16 @@ def download_path_task(self, taskenv , path ):
 
 @safty_task
 def download_path_task_unsafty(self, taskenv , path ):
+    if path.startswith('/~') :
+        path = os.path.join( getpwuid(os.getuid()).pw_dir , path[3:])
     src = path 
     temphost = taskenv["host"]
     #dest =  '/tmp/tmpfile/'+ self.request.id 
     cookie_file =  os.path.join( getpwuid(os.getuid()).pw_dir , localcookies)
     command = '''  curl -b %s  -T %s  "%s://%s:%s/api/file/%s/%s?local=True" ''' % ( cookie_file , src , conf_connection['protocol'] , temphost , conf_connection['port'] , machine_default  , self.request.id  )
     #(output, error, retcode) = run_command(" scp %s %s:%s " % (  src , temphost,  dest))
-    (output, error, retcode) = run_command( command )
+    (output, error, retcode) = run_command( command , bash = True)
+    print( output, error, retcode , command )
     if retcode != 0:
         return json_response(content=output, status="ERROR", status_code=500, error=error)
     return  self.request.id 
@@ -81,6 +84,8 @@ def download_path(request, machine_name, path):
     #                         status_code=500,
     #                         error="This API is forbidden yet. ")
     try:
+        if path.startswith('/~') :
+            path = path[1:]
         taskenv = { "user" : request.user.username , "machine" : machine_name , "host" :  settings.TASKENV_HOST }
         #if not os.path.isfile( path ) :
         #    return json_response(status="ERROR",
@@ -134,7 +139,7 @@ def put_file_task_unsafty(self, task_env, temphost ,  src, dest):
     cookie_file =  os.path.join( getpwuid(os.getuid()).pw_dir , localcookies)
     command_src = ''' curl -X GET -s -b %s  "%s://%s:%s/api/file/%s/%s?&download=True" -o %s ''' % ( cookie_file  , conf_connection['protocol'] , temphost , conf_connection['port'] , machine_default ,src , dest   )
     #(output, error, retcode) = run_command(" scp %s:%s %s " % ( temphost,  src, dest))
-    (output, error, retcode) = run_command( command_src )
+    (output, error, retcode) = run_command( command_src ,  bash = True)
     if retcode != 0:
         return json_response(content=output, status="ERROR", status_code=500, error=error)
     #(output, error, retcode) = run_command(" ssh %s rm  %s " % ( temphost,  src))
@@ -146,6 +151,8 @@ def put_file_task_unsafty(self, task_env, temphost ,  src, dest):
 @login_required   
 def put_file(request, machine, path , local = False):
     data = request.read()
+    if path.startswith('/~') :
+        path = path[1:]
     # Write data to temporary location
     # 
     #tmp_file = tempfile.NamedTemporaryFile(prefix="newt_" ) )
@@ -178,7 +185,10 @@ def get_dir_task(*args , **kwargs):
 
 def get_dir_task_unsafty( self , task_env , path ):
     # decorder chown 
+    output = []
     try :
+        if path.startswith('~') :
+            path = os.path.join( getpwuid(os.getuid()).pw_dir , path[2:])
         if os.path.isfile(path) :
             dirlist = [ os.path.basename(path) ]
             path = os.path.dirname(path)
@@ -188,8 +198,9 @@ def get_dir_task_unsafty( self , task_env , path ):
             return json_response(status="ERROR", status_code=500, error="path is not a directory" )
         output = []
         for filei in dirlist :
-            i_stat = os.stat( os.path.join( path , filei ) )
-            output.append({
+            try:
+                i_stat = os.stat( os.path.join( path , filei ) )               
+                output.append({
                 'name' : filei ,
                 'date(m)' : i_stat.st_mtime , # last modify
                 'date(a)' : i_stat.st_atime , # last access
@@ -199,7 +210,19 @@ def get_dir_task_unsafty( self , task_env , path ):
                 'hardlinks' : i_stat.st_nlink ,
                 'uid' : i_stat.st_uid ,
                 'gid' : i_stat.st_gid ,
-            })
+                })
+            except PermissionError as ex :
+                output.append({
+                'name' : filei ,
+                'date(m)' : None , # last modify
+                'date(a)' : None , # last access
+                'date(c)' : None , # create
+                'size(B)': None,
+                'perms' : None ,
+                'hardlinks' : None ,
+                'uid' : None ,
+                'gid' : None ,
+                })
         return(output)
     except Exception as e:
         logger.error("Could not get directory %s" % str(e))
@@ -211,9 +234,10 @@ def get_dir_task_unsafty( self , task_env , path ):
 @login_required   
 def get_dir(request, machine_name, path):
     try:
-        pass
-        if ( not os.path.isdir( path ) ) and ( not os.path.isfile( path )):
-            return json_response(status="ERROR", status_code=500, error="path is not a directory" )
+        if path.startswith('/~') :
+            path = path[1:]
+        #if ( not os.path.isdir( path ) ) and ( not os.path.isfile( path )):
+        #    return json_response(status="ERROR", status_code=500, error="path is not a directory" )
         # need no more check , just test open the celery task to read dir 
         taskenv = { "user" : request.user.username , "machine" : machine_name }
         rest = get_dir_task.delay( taskenv , path   )

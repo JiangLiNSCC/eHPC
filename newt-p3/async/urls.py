@@ -10,6 +10,7 @@ urlpatterns = patterns('command.views',
 )
 '''
 urlpatterns = [
-    url(r'^/(?P<async_id>[^/]+)$', AsyncView.as_view()),
+    url(r'^(?P<async_id>[^/]+)/$', AsyncView.as_view()),
+    url(r'^(?P<async_id>[^/]+)$', AsyncView.as_view()),
     url(r'^(?P<query>.+)/$', ExtraAsyncView.as_view()),
 ]

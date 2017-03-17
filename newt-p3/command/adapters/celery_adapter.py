@@ -30,7 +30,7 @@ def execute_task_unsafy(self , task_env,  command  ):
 
 @login_required
 def execute(request, machine_name='', command=''   ):
-    print( command )
+    logger.debug( command )
     taskenv = { "user" : request.user.username , "machine" : machine_name }
     rest = execute_task.delay( taskenv  , command   )
     cache.set("async-" + rest.id , "AsyncJob" , 3600 )

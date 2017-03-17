@@ -11,6 +11,7 @@ urlpatterns = patterns('command.views',
 '''
 urlpatterns = [
     url(r'^$', CommandRootView.as_view()),
-    url(r'^/(?P<machine_name>[^/]+)$', CommandView.as_view()),
+    url(r'^(?P<machine_name>[^/]+)/$', CommandView.as_view()),
+    url(r'^(?P<machine_name>[^/]+)$', CommandView.as_view()),
     url(r'^(?P<query>.+)/$', ExtraCommandView.as_view()),
 ]

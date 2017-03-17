@@ -110,6 +110,8 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid , jobfilepath):
         put_file_task( taskenv, temphost ,  src, dest )
         pass
         #dest = os.path.join(  getpwnam( job.user.username ).pw_dir , 'newt' , str(job.id)  , os.path.basename( job.jobfile  ) )
+        if dest.startswith('~'):
+            dest = os.path.join(  getpwnam( job.user.username ).pw_dir , dest[2:] ) 
         if not  os.path.isfile( dest) :
             return json_response(status="ERROR",
                              status_code=500,

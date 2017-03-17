@@ -33,13 +33,23 @@ class SlurmStatResultParser( ResultParser ):
 
     }
 
+def split_convert_status(x , convert_status ):
+    pass
+    if isinstance(  convert_status ,dict) :
+        xsplit = x.split()[0]
+        if xsplit in convert_status :
+            return convert_status.get( xsplit )
+    return x
+ 
+
+
 class SlurmAcctResultParser( ResultParser ):
     filter = {
         'from' : [ 'JobID' , 'NTasks' , 'Elapsed' , 'Partition' , 'JobName' , 'State', 'AllocCPUS', 'ExitCode'  ] ,
         'to'   : [ 'id' , 'tasks' , 'time' , 'partition' , 'name' , 'status' , 'nodes' , 'exitcode'],
     }
     convert = {
-        'status' :  slurm_convert_status , 
+        'status' : lambda x : split_convert_status(x, slurm_convert_status)  , 
         'nodes' : lambda x : int(x)/24,
     }
 

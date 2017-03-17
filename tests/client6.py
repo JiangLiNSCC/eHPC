@@ -8,7 +8,9 @@ import logging
 import logging.config
 if six.PY3 :
     from http.client import HTTPException 
-from six.moves.urllib.error import HTTPError
+else :
+    HTTPException = Exception
+from six.moves.urllib.error import HTTPError , URLError
 logging.config.fileConfig("logger.conf")
 logger = logging.getLogger("test")
 
@@ -77,8 +79,16 @@ class newtAPIClient:
             rdata = resp.read()
         except HTTPError as e :
             rdata=e.fp.read()
+        except URLError as e :
+            self.status_code = 500
+            self.status = "ERROR"
+            self.output = str(e)
+            return 
         except HTTPException as e :
-            rdata = e.args[0]
+            if six.PY3:
+                rdata = e.args[0]
+            else :
+                raise e
         if not retjson :
             logger.debug(dict(resp))
             self.data = rdata

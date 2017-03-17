@@ -150,13 +150,13 @@ def put_file_task_unsafty(self, task_env, temphost ,  src, dest):
 
 @login_required   
 def put_file(request, machine, path , local = False):
+    content_length = int(request.META.get('CONTENT_LENGTH', 0))
+    #print("content_length:" , content_length )
+    if content_length > 1048000 :
+        return json_response(status="ERROR", status_code=500, error="The file is too big ,please use other ways to upload!" )
     data = request.read()
     if path.startswith('/~') :
         path = path[1:]
-    # Write data to temporary location
-    # 
-    #tmp_file = tempfile.NamedTemporaryFile(prefix="newt_" ) )
-    #print( request.FILES )
     tmp_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir = tempdir, delete = False )
     tmp_file.write(data)
     tmp_file.file.flush()
@@ -166,11 +166,6 @@ def put_file(request, machine, path , local = False):
         dest = path   # 
         temphost = socket.gethostname()
         taskenv = { "user" : request.user.username , "machine" : machine }
-        # CHOWN 
-        #username = taskenv["user"]
-        #ngid = getpwnam( username ).pw_gid
-        #nuid = getpwnam( username ).pw_uid
-        #os.chown( src  , nuid , ngid )
         rest = put_file_task.delay( taskenv , temphost , os.path.basename( src), dest   )
         cache.set("async-" + rest.id , "AsyncJob" , 3600 )
         return json_response(status="ACCEPT", status_code=201, error="" , content=rest.id)

@@ -141,7 +141,7 @@ class JobTest(BaseTest):
         status = self.mc.output["status"][str(jobid)]
         self.assertEqual( status , "Failed" , "testJobWorkFlow Failed"  )
         
-    def testJobWorkFlow2(self):
+    def _testJobWorkFlow2(self):
         self._testPostJob( file = "~/test.sh"  , conf  = job_conf_1 )
         jobid = self._testPostJob( script = script_hello  , conf  = job_conf_1 , test = False )
         self._testGetJobId(jobid , test = False)

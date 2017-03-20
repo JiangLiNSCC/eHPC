@@ -24,6 +24,18 @@ class AsyncView(JSONRestView):
             return json_response(error= "async task failure : %s " % rest.result , status="ERROR", status_code=500)
         elif rest.state == "SUCCESS" :
             if rest.result[0] == request.user.username:
+                if isinstance( rest.result[1] ,dict ):
+                    restdict = rest.result[1]
+                    print(restdict)
+                    if "error" not in restdict :
+                        restdict["error"] = ""
+                    if "status" not in restdict :
+                        restdict["status"] = "OK"
+                    if "status_code" not in restdict :
+                        restdict["status_code"] = 200
+                    if  "content" not in  restdict :
+                        restdict["content"] = ""
+                    return json_response(error=  restdict["error"] , status= restdict["status"] , status_code=restdict["status_code"] , content=restdict["content"] )
                 return rest.result[1]
             else :
                 return json_response(error= "Error : Not Your task. "  , status= "ERROR" , status_code=550 )

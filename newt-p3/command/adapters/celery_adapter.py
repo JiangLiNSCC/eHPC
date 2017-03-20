@@ -19,14 +19,17 @@ def execute_task(self , task_env, command  ):
 def execute_task_unsafy(self , task_env,  command  ):
     try :
         (output, error, retcode) = run_command(command , bash = True)
-        response = {
+        response = { "content" : {
                 'output': output,
                 'error': error,
                 'retcode': retcode
-            }
+            } }
         return response
     except Exception as e:
-        return json_response(error="Could not run command: %s" % str(e), status="ERROR", status_code=500)
+        #return json_response(error="Could not run command: %s" % str(e), status="ERROR", status_code=500)
+        return { "error" : "Could not run command: %s" % str(e),
+                 "status":"ERROR", 
+                 "status_code":500  }
 
 @login_required
 def execute(request, machine_name='', command=''   ):

@@ -15,7 +15,7 @@ from __future__ import absolute_import
 from celery import shared_task
 from celery.result import AsyncResult
 
-from common.response import json_response
+from common.response import json_response , worker_json_response
 import logging
 import re
 logger = logging.getLogger("newt." + __name__)
@@ -52,14 +52,14 @@ def view_queue_task_unsafty(self , taskenv):
     mycmd = "/usr/bin/squeue"
     (output, error, retcode) = run_command( mycmd )
     if retcode !=0 :
-        return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
+        return worker_json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
     patt = re.compile(r'(?P<jobid>[^\s]+)\s+(?P<partition>[^\s]+)\s+(?P<job_name>[^\s]+)\s+(?P<user>[^\s]+)\s+(?P<state>[^\s]+)\s+(?P<time>[^\s]+)\s+(?P<nodes>\d+)\s+(?P<nodelist>.*)$')
     output = output.splitlines()
     output = [x.strip() for x in output]
     output = filter(lambda line: patt.match(line), output)
     output = map(lambda x: patt.match(x).groupdict(), output)
     #print( list(output)  )
-    return list(output)
+    return worker_json_response(list(output))
 
 
 

@@ -13,7 +13,7 @@ Notes:
 """
 from __future__ import absolute_import
 from celery import shared_task , chain , chord
-from common.response import json_response
+from common.response import json_response , worker_json_response
 import logging
 import re
 logger = logging.getLogger("newt." + __name__)
@@ -60,9 +60,10 @@ def view_queue_task_unsafty(self,taskenv ):
     #mycmd = "ssh " + machine["hostname"]   +   " ' " + machine["qstat"]["bin"]  + " '"
     (output, error, retcode) = run_command( mycmd_conf['bin'] )
     if retcode !=0 :
-        return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
+        return worker_json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
     df = str_to_dataframe( output , index = mycmd_conf.get('index' , None ) , split=  mycmd_conf.get('split' , None ) , parser_cls = mycmd_conf.get('parser_cls' , None ) )
-    return json.loads(df.to_json())
+    return worker_json_response( json.loads(df.to_json()) )
+
 
 @login_required
 def view_queue(request, machine_name):
@@ -93,7 +94,7 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid , jobfilepath):
     except ImportError :
         return sys.path
     if  job.jobid : 
-        return json_response(status="ERROR",
+        return worker_json_response(status="ERROR",
                              status_code=500,
                              error="The Job have submit once : %s" % job.jobid )
     if job.state == "tempfile" :
@@ -113,7 +114,7 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid , jobfilepath):
         if dest.startswith('~'):
             dest = os.path.join(  getpwnam( job.user.username ).pw_dir , dest[2:] ) 
         if not  os.path.isfile( dest) :
-            return json_response(status="ERROR",
+            return worker_json_response(status="ERROR",
                              status_code=500,
                              error="Cannot find tmpfile : %s" % dest )
         else :
@@ -133,13 +134,13 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid , jobfilepath):
     os.chdir( os.path.dirname( job.jobfile  )  )
     (output, error, retcode) = run_command(cmd_str , bash = True)
     if retcode != 0:
-        return json_response(status="ERROR", 
+        return worker_json_response(status="ERROR", 
                              status_code=500, 
                              error="qsub failed with error: %s" % error)
     job.jobid = output.strip().split(' ')[-1]
     job.state = "submited"
     job.save() # can not save as readonly 
-    return {"jobid":job.jobid}
+    return worker_json_response( {"jobid":job.jobid} )
 
 
 @login_required
@@ -206,9 +207,9 @@ def get_info_task_unsafty(self , taskenv , HPCJobid):
     mycmd =  '%s %s' % ( command_conf['bin'] , job_id  ) #' sacct -lPj  '  + str(job_id ) 
     (output, error, retcode) = run_command( mycmd  , bash = True )
     if retcode !=0 :
-        return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
+        return worker_json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
     df = str_to_dataframe( output , split = command_conf.get('split' , None)  , index =  command_conf.get( 'index' , None) , parser_cls = command_conf.get('parser_cls' , None ) )
-    return json.loads(df.to_json())
+    return worker_json_response(  content=  json.loads(df.to_json()) )
 
 
     
@@ -246,8 +247,8 @@ def delete_job_task_unsafty( self , taskenv , job_id  ):
     mycmd = ' %s %s ' % ( bincommand , str( job_id ) )
     (output, error, retcode) = run_command( mycmd , bash = True )
     if retcode !=0 :
-        return json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
-    return (output)
+        return worker_json_response(status="ERROR", status_code=500, error="Unable to get queue: %s" % error)
+    return worker_json_response(output)
 
 @login_required
 def delete_job(request, machine_name, job_id):

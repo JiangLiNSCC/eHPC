@@ -73,7 +73,9 @@ def download_path_task_unsafty(self, taskenv , path ):
     (output, error, retcode) = run_command( command , bash = True)
     print( output, error, retcode , command )
     if retcode != 0:
-        return json_response(content=output, status="ERROR", status_code=500, error=error)
+        return { "content" : output, "status":"ERROR", "status_code" : 500, "error" :error , 
+                }
+        #return json_response(content=output, status="ERROR", status_code=500, error=error)
     return  self.request.id 
     pass
 
@@ -141,11 +143,12 @@ def put_file_task_unsafty(self, task_env, temphost ,  src, dest):
     #(output, error, retcode) = run_command(" scp %s:%s %s " % ( temphost,  src, dest))
     (output, error, retcode) = run_command( command_src ,  bash = True)
     if retcode != 0:
-        return json_response(content=output, status="ERROR", status_code=500, error=error)
+        #return json_response(content=output, status="ERROR", status_code=500, error=error)
+        return { 'content' : output, 'status' : "ERROR", 'status_code' : 500, 'error' :error  }
     #(output, error, retcode) = run_command(" ssh %s rm  %s " % ( temphost,  src))
     #if retcode != 0:
     #    return json_response(content=output, status="ERROR", status_code=500, error=error)
-    return {'location': dest}
+    return  { 'content': {'location': dest} } 
     pass
 
 @login_required   
@@ -190,7 +193,8 @@ def get_dir_task_unsafty( self , task_env , path ):
         elif os.path.isdir(path) :
             dirlist = os.listdir(path)
         else :
-            return json_response(status="ERROR", status_code=500, error="path is not a directory" )
+            return { "status" : "ERROR", "status_code" : 500, "error" : "path is not a directory"  }
+            pass#return json_response(status="ERROR", status_code=500, error="path is not a directory" )
         output = []
         for filei in dirlist :
             try:
@@ -221,7 +225,8 @@ def get_dir_task_unsafty( self , task_env , path ):
         return(output)
     except Exception as e:
         logger.error("Could not get directory %s" % str(e))
-        return json_response(status="ERROR", status_code=500, error="Could not get directory: %s" % str(e))
+        return  { "status" : "ERROR", "status_code" : 500, "error" : "Could not get directory: %s" % str(e)  }
+        #return json_response(status="ERROR", status_code=500, error="Could not get directory: %s" % str(e))
     
 
 

@@ -26,4 +26,6 @@ C_FORCE_ROOT=1   celery -A newt worker -Q ln3 -l info --maxtasksperchild=1    &>
 # with SSL :
 gunicorn --worker-class=gevent -w 24 --certfile=../../ssl/www.test.com.crt  --keyfile=../../ssl/www.test.com.key   newt.wsgi -b 0.0.0.0:8000
 
-# 
+# run with supervisor : 
+supervisord -c supervisor_ehpc.conf
+

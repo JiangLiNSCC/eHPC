@@ -4,4 +4,13 @@ username = xxxxxx
 password = yyyyyy
 machine = ln3
 
-[sec_b] 
+[manager]
+mail_host = smtp.126.com
+mail_user = xxxx@126.com
+mail_pass = xxxx
+mail_recivers = xxxxx@nscc-gz.cn xxxx@126.com
+conf_email = False
+conf_email_level = WARNNING
+conf_restart =  False
+conf_test = discover
+

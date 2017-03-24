@@ -10,14 +10,14 @@ import argparse
 cf = configparser.ConfigParser() 
 cf.read("../../config/test.conf")
 
-worker_list = [ 'ln2' ]
-server_list = [ 'cn16356' ]
+worker_list = cf.get('manager' ,'workers' ).split()  #[ 'ln2' ]
+server_list = cf.get('manager' ,'servers' ).split()  #[ 'cn16356' ]
 
 conf = {
   'email' : True ,  # -e --email
-  'email_level' : 'WARNNING' , # -l --level  info 1 , warnning  2, error 3  ; if 3 > email_level , sent email_error  
+  'email_level' : cf.get('manager' ,'conf_email_level' ) , # -l --level  info 1 , warnning  2, error 3  ; if 3 > email_level , sent email_error  
   'restart' : False , # -r -- restart
-  'test'  : 'always_false' , # -t --test
+  'test'  : cf.get('manager' ,'conf_test' ) , # -t --test
 }
 
 LEVEL_SET = {
@@ -28,6 +28,18 @@ LEVEL_SET = {
 'warnning' : 2 ,
 'info' : 3 ,
 }
+
+def str2bool(bools):
+    if bools.lower()  in ['true', '1', 't', 'y', 'yes', 'yeah', 'yup', 'certainly', 'uh-huh']:
+        return True
+    elif  bools.lower()  in ['false', '0', 'f', 'n', 'no', 'noop', 'not', 'fou', 'bu']:
+        return False
+    else :
+        return None 
+
+
+conf['email'] = str2bool( cf.get('manager' ,'conf_email' ) )
+conf['restart'] = str2bool( cf.get('manager' ,'conf_restart' ) )
 
 def run_discover():
     if conf['test'] == 'discover' :
@@ -88,10 +100,10 @@ def restart( node , ctype = 'worker'):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-e' ,'--email' , default = conf['email'] , action='store_true' , dest = 'email' , help = 'Send email , default is %s .' %  conf['email'] )
+    parser.add_argument('-e' ,'--email' , default = conf['email'] , action='store_true' , dest = 'email' , help = 'Send email , default is [ %s ] .' %  conf['email'] )
     parser.add_argument('-ne' ,'--noemail' , default = conf['email'] , action='store_false' , dest = 'email' , help = 'not Send email but just print logs .' )
     parser.add_argument('-l','--level' , default= conf['email_level'] ,dest='level' ,choices=('INFO','ERROR','WARNNING'), help = 'which level will send email [%s] ' % conf['email_level'] )
-    parser.add_argument('-r' ,'--restart' , default = conf['restart'] , action='store_true' , dest = 'restart' , help = 'Try restart if test fail, default is %s .' %  conf['restart'] )
+    parser.add_argument('-r' ,'--restart' , default = conf['restart'] , action='store_true' , dest = 'restart' , help = 'Try restart if test fail, default is [ %s] .' %  conf['restart'] )
     parser.add_argument('-nr' ,'--norestart' , default = conf['restart'] , action='store_false' , dest = 'restart' , help = 'Not Try restart if test fail' )
     parser.add_argument('-t','--test' , default= conf['test'] ,dest='test' , help = 'which test will be used.  [%s] ' % conf['test'] )
     args = parser.parse_args()
@@ -124,7 +136,7 @@ if __name__ == '__main__':
         msg.append( "avail_servers : " + str( avail_servers )  )
         msg.append( "avail workers : " + str( avail_workers))
         if not  conf['restart'] :
-            msg.append('No restart tryed by conf restart = %s ' % conf['restart'])
+            msg.append('No restart tried by conf restart = %s ' % conf['restart'])
             email( 'newt Error!','\n'.join(msg ) , level = 'ERROR')
         if avail_workers == [] and avail_servers == [] :
             msg.append('No available nodes for workers and nodes ')

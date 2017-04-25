@@ -3,12 +3,17 @@ import logging
 logger = logging.getLogger("newt." + __name__)
 from common.shell import run_command
 import re
-from bson.objectid import ObjectId
+#from bson.objectid import ObjectId
 from subprocess import Popen, PIPE
 from django.conf import settings
 from datetime import datetime
 import pytz
+import tempfile
+import os
+from common.decorators import login_required 
+from common.response import json_response , worker_json_response
 
+@login_required
 def get_machines(request):
     """Returns the available machines that jobs can run on
 
@@ -17,7 +22,7 @@ def get_machines(request):
     """
     return {"localhost": {}}
 
-
+@login_required
 def view_queue(request, machine_name):
     """Returns the current state of the queue in a list
 
@@ -31,9 +36,20 @@ def view_queue(request, machine_name):
     processes = output.splitlines()[1:]
     #print( processes )
     processes = list(map(lambda x: patt.match(x).groupdict(), processes))
-    return processes
+    outjs = { 'status' : {} ,  'name' : {} , 'partition' : {} , 'user' : {} , 'time' : {} , 'id' : {} }
+    for ari in processes :
+        arid = ari['jobid']
+        outjs['status'][arid] = 'Running'
+        outjs['name'][arid] = ari['command'].split()[0]
+        outjs['partition'][arid] = 'local'
+        outjs['user'][arid] = ari['user']
+        outjs['time'][arid] = ari['time']
+        outjs['id'][arid] = ari['jobid']
+    #return worker_json_response( outjs )
+    return outjs
+    #return worker_json_response(list(output))
 
-
+@login_required
 def submit_job(request, machine_name):
     """Submits a job to the queue
 
@@ -42,38 +58,44 @@ def submit_job(request, machine_name):
     machine_name -- name of the machine
     """
     # Get data from POST
+    jobfilepath = request.POST.get("jobfilepath", None  )
     if request.POST.get("jobfile", False):
-        try:
-            f = open(request.POST.get("jobfile"), 'r')
-            data = f.read()
-        except Exception as e:
-            return json_response(status="ERROR", 
+        with open( os.path.expanduser(  request.POST.get("jobfile")), 'r') as f :
+            try :
+                jobjobfile = f.read()
+            except Exception as e:
+                return json_response(status="ERROR", 
                                  status_code=400, 
                                  error="Unable to open job file. Be sure you gave an absolute path.")
-        finally:
-            f.close()
     elif request.POST.get("jobscript", False):
         data = request.POST.get("jobscript")
+        tmp_job_file = tempfile.NamedTemporaryFile(prefix="newt_" , dir =settings.NEWT_CONFIG["TEMPDIR"] , delete = False)
+        tmp_job_file.write(data.encode())
+        tmp_job_file.flush()
+        tmp_job_file.close()
+        jobjobfile =tmp_job_file.name
     else:
         return json_response(status="ERROR", 
                              status_code=400, 
                              error="No data received")
 
     # Generate unique outfile name
-    tmp_job_name = str(ObjectId())
+    tmpname = tempfile.mktemp( dir = settings.NEWT_CONFIG['TEMPDIR'] )
+    print("tmpname : ", tmpname)
+    tmp_job_name = os.path.basename( tmpname )  # str(ObjectId())
 
     # Get job emulator path
     job_emu = settings.PROJECT_DIR + "/job/adapters/emulate_job_run.sh"
 
     # Run job with the commands in data
-    job = Popen([job_emu, tmp_job_name, request.user.username, data], stdout=PIPE)
+    job = Popen([job_emu, tmp_job_name, request.user.username, jobjobfile], stdout=PIPE)
 
     # Get/return the job_id from stdout
     job_id = job.stdout.readline().rstrip().decode('utf-8')
     logger.debug("Spawned process: %s" % job_id)
     return {"jobid": job_id}    
 
-
+@login_required
 def get_info(request, machine_name, job_id):
     """Gets the information of a job, given the id
 
@@ -115,7 +137,7 @@ def get_info(request, machine_name, job_id):
     }
     return info    
 
-
+@login_required
 def delete_job(request, machine_name, job_id):
     """Gets the information of a job, given the id
 

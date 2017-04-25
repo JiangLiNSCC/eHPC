@@ -75,6 +75,12 @@ class newtAPIClient:
             req.get_method = lambda:method
         try:
             resp = request.urlopen(req)
+            #print("CT:" , resp.info().getheader("Content-Type") )
+            if resp.info().getheader("Content-Type") != 'application/json' :
+                retjson = False
+                self.retjson = False
+            else :
+                self.retjson = True
             self.resp = resp
             rdata = resp.read()
         except HTTPError as e :

@@ -20,7 +20,7 @@ touch "/tmp/newt_processes/$tmpfile.out"
 touch "/tmp/newt_processes/$tmpfile.err"
 
 # Run the command
-eval "$cmd 2>/tmp/newt_processes/$tmpfile.err 1>/tmp/newt_processes/$tmpfile.out"&
+eval "bash $cmd 2>/tmp/newt_processes/$tmpfile.err 1>/tmp/newt_processes/$tmpfile.out"&
 
 process_pid=$!
 

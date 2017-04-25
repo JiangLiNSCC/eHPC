@@ -1,8 +1,8 @@
 # Django settings for newt project.
 import os
 
-import djcelery
-djcelery.setup_loader()
+#import djcelery
+#djcelery.setup_loader()
 
 REDIS_SERVER = os.environ.get('REDIS_SERVER' , None)
 
@@ -11,7 +11,7 @@ if REDIS_SERVER :
     BROKER_URL= 'redis://%s:%s/0' %( _redis_ip , _redis_port )
     CELERY_RESULT_BACKEND =  BROKER_URL
 else :
-    BROKER_URL= 'redis://cn16358:6379/0' 
+    BROKER_URL= 'redis://127.0.0.1:6379/0' 
     #BROKER_URL= ['redis://cn16356:6379//' ,    'redis://cn16355:6379//' ,     'redis://cn16354:6379//' ,    ]
     #CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
     CELERY_RESULT_BACKEND =  BROKER_URL
@@ -21,8 +21,9 @@ default_exchange = Exchange( 'default' , type='direct' )
 #ln_exchange = Exchange('ln' , type='topic')
 CELERY_QUEUES=(
  Queue('default',Exchange('default'),routing_key='task.#'),
- Queue('ln3' ,Exchange('ln'), routing_key='ln.ln3'),
  Queue('ln4',Exchange('ln'),routing_key='ln.ln4'),
+ Queue('ln3' ,Exchange('ln'), routing_key='ln.ln3'),
+ Queue('local' ,Exchange('ln'), routing_key='ln.local'),
 )
 
 #class MyRouter(object):

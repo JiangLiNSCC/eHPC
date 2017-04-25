@@ -97,11 +97,12 @@ class FileTest(BaseTest):
         self.logger.debug( self.mc.data  )
         self.assertEqual( self.mc.ret200() , False , errstr )
         self.mc.open( url   ) #5
-        self.logger.debug( self.mc.data  )
+        self.logger.debug( 'Download 1 response: '+ self.mc.data  )
         self.assertEqual( self.mc.ret200() , True , errstr )
-        self.mc.open( '/file/%s/%s?download=True' % ( self.machine ,  self.mc.data["output"] ) , retjson = False  ) #5 +
-        self.logger.debug( self.mc.data  )
-        self.assertEqual( self.mc.ret200() , True , errstr )
+        if self.mc.retjson :
+            self.mc.open( '/file/%s/%s?download=True' % ( self.machine ,  self.mc.data["output"] ) , retjson = False  ) #5 +
+            self.logger.debug( self.mc.data  )
+            self.assertEqual( self.mc.ret200() , True , errstr )
         gotdata = self.mc.data if isinstance( self.mc.data , str ) else self.mc.data.decode('utf-8')
         self.assertEqual( gotdata , testdata  , errstr )
         # try to delete 

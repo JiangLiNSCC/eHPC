@@ -76,11 +76,14 @@ def safty_task( task_func ):
                                  status_code=500,
                                  error="not a safty task: no taskenv")
         if ( "user" not in args[1].keys()  ) or ( "machine" not in args[1].keys() ) : 
-           return json_response(status="ERROR",
+            return json_response(status="ERROR",
                                  status_code=500,
                                  error="not a safty task: no taskenv")
-        # chuid :
         username = args[1]["user"]
+        if "USERMODE" in  settings.NEWT_CONFIG :
+            if settings.NEWT_CONFIG["USERMODE"] == "db" :
+                return [ username  ,  task_func( *args,**kwargs ) ]
+        # chuid :
         ngid = getpwnam( username ).pw_gid
         nuid = getpwnam( username ).pw_uid
         if nuid == 0 :

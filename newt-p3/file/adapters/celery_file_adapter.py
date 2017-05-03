@@ -210,7 +210,7 @@ def get_dir_task_unsafty( self , task_env , path ):
                 'uid' : i_stat.st_uid ,
                 'gid' : i_stat.st_gid ,
                 })
-            except PermissionError as ex :
+            except Exception as ex :
                 output.append({
                 'name' : filei ,
                 'date(m)' : None , # last modify

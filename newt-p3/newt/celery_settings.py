@@ -23,6 +23,8 @@ CELERY_QUEUES=(
  Queue('default',Exchange('default'),routing_key='task.#'),
  Queue('ln3' ,Exchange('ln'), routing_key='ln.ln3'),
  Queue('ln4',Exchange('ln'),routing_key='ln.ln4'),
+ Queue('ln7',Exchange('ln'),routing_key='ln.ln7'),
+
 )
 
 #class MyRouter(object):

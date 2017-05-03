@@ -22,6 +22,17 @@ GRID_RESOURCE_TABLE = dict(
         qjobstat=dict(bin='/usr/bin/sacct -lPj', scheduler='slurm' , split='|' , index = 'JobID' , parser_cls=SlurmAcctResultParser , ),
 
     ),
+    ln7=dict(
+        hostname='ln7-gn0',
+       jobmanagers=dict(fork=dict(url="ln7-gn0/jobmanager"),
+                         batch=dict(url="ln7-gn0/jobmanager-slurm")),
+        #gridftp_servers=['genepool01.nersc.gov'],
+        qstat=dict(bin='/usr/bin/squeue -o "%.18i %.18P %.18j %.32u %.2t %.10M %.6D %R" ', scheduler='slurm', index = 'JOBID' , parser_cls=SlurmStatResultParser ,  ),
+        qsub=dict(bin='/usr/bin/sbatch', scheduler='slurm' , parser_cls = SlurmHPCJobHandler),
+        qdel=dict(bin='/usr/bin/scancel', scheduler='slurm'),
+        qjobstat=dict(bin='/usr/bin/sacct -lPj', scheduler='slurm' , split='|' , index = 'JobID' , parser_cls=SlurmAcctResultParser , ),
+
+    ),
 )
 
 

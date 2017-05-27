@@ -33,8 +33,13 @@ from django.core.cache import cache
 from django.conf import settings
 from common.tools import str_to_dataframe
 import json
+import shutil
+
 tempdir = settings.NEWT_CONFIG["TEMPDIR"]
 
+homedir = ""
+if "USERMODE" in  settings.NEWT_CONFIG and settings.NEWT_CONFIG["USERMODE"] == "db" :
+    homedir = os.path.expanduser("~")
 
 @login_required
 def get_machines(request):
@@ -93,6 +98,11 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid , jobfilepath):
         job = HPCJob.objects.get( id = HPCJobid  )
     except ImportError :
         return sys.path
+    if "USERMODE" in  settings.NEWT_CONFIG and settings.NEWT_CONFIG["USERMODE"] == "db" :
+        homedir = os.path.expanduser("~")
+    else :
+        homedir = getpwnam( job.user.username ).pw_dir
+
     if  job.jobid : 
         return worker_json_response(status="ERROR",
                              status_code=500,
@@ -104,15 +114,22 @@ def submit_job_task_unsafty(self , taskenv , HPCJobid , jobfilepath):
         if jobfilepath : 
             dest = jobfilepath
         else :
-            dest = os.path.join(  getpwnam( job.user.username ).pw_dir , 'newt' , str(job.id)  , os.path.basename( job.jobfile  ) )
+            #if "USERMODE" in  settings.NEWT_CONFIG and settings.NEWT_CONFIG["USERMODE"] == "db" :
+            #    homedir = os.path.expanduser("~")
+            #else :
+            #    homedir = getpwnam( job.user.username ).pw_dir
+            dest = os.path.join(  homedir , 'newt' , str(job.id)  , os.path.basename( job.jobfile  ) )
         dest_dir = os.path.dirname( dest )
         if not os.path.isdir(dest_dir):
             os.makedirs( dest_dir )
-        put_file_task( taskenv, temphost ,  src, dest )
+        #put_file_task( taskenv, temphost ,  src, dest )
+        print( job.jobfile )
+        #os.rename( job.jobfile , dest )
+        shutil.move( job.jobfile , dest )
         pass
         #dest = os.path.join(  getpwnam( job.user.username ).pw_dir , 'newt' , str(job.id)  , os.path.basename( job.jobfile  ) )
         if dest.startswith('~'):
-            dest = os.path.join(  getpwnam( job.user.username ).pw_dir , dest[2:] ) 
+            dest = os.path.join(  homedir , dest[2:] ) 
         if not  os.path.isfile( dest) :
             return worker_json_response(status="ERROR",
                              status_code=500,

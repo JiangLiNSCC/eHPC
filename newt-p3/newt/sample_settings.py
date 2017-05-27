@@ -23,22 +23,22 @@ MANAGERS = ADMINS
 
 
 DATABASES = {
-'default':{
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS':{
-               'read_default_file': '/xxxxx/config/myln20.cnf',
-        },
-},
-#    'default': {
-#        'TEST_NAME': 'test_sqlite.db',
-#        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': 'newtdb.sqlite',                      # Or path to database file if using sqlite3.
-#        # The following settings are not used with sqlite3:
+#'default':{
+#        'ENGINE': 'django.db.backends.mysql',
+#        'OPTIONS':{
+#               'read_default_file': '/xxxxx/config/myln20.cnf',
+#        },
+#},
+    'default': {
+        'TEST_NAME': 'test_sqlite.db',
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'newtdb.sqlite',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
 #        'USER': '',
 #        'PASSWORD': '',
 #        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
 #        'PORT': '',                      # Set to empty string for default.
-#    },
+    },
 #    'mysqldb':{
 #        'ENGINE': 'django.db.backends.mysql',
 #        'OPTIONS':{
@@ -172,7 +172,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     # for django-celery
-    'djcelery',
+    #'djcelery',
     #'outerdb',
     'async',
 )
@@ -276,11 +276,6 @@ ALLOWED_HOSTS = [ 'localhost', '127.0.0.1' , '*' ]
 NEWT_CONFIG = {
     'SYSTEMS': [
         {'NAME': 'localhost', 'HOSTNAME': 'localhost' },
-        {'NAME': 'ln3', 'HOSTNAME': 'ln3-gn0' },
-        {'NAME': 'ln4', 'HOSTNAME': 'ln4-gn0' },
-        {'NAME': 'ln6', 'HOSTNAME': 'ln6-gn0' },
-        {'NAME': 'lnerror', 'HOSTNAME': 'lnerror' },
-
     ],
     'ADAPTERS': {
         'STATUS': {
@@ -288,11 +283,11 @@ NEWT_CONFIG = {
             'models': '',
         },
         'FILE': {
-            'adapter': 'file.adapters.celery_file_adapter',
+            'adapter': 'file.adapters.localfile_adapter',
             'models': "",
         }, 
         'AUTH': {
-            'adapter': 'authnz.adapters.ldap_adapter',
+            'adapter': 'authnz.adapters.dbauth_adapter',
             'models': '',
         },
         'COMMAND': {
@@ -314,7 +309,18 @@ NEWT_CONFIG = {
     },
     'TEMPDIR': '/tmp/newt_api' ,
     'LOCALCOOKIES' : '.newt_cookies' , 
-    'MACHINE_DEFAULT' : 'ln3' ,
+    'MACHINE_DEFAULT' : 'local' ,
+    'FILE_SYSTEM' : {
+     #   'ln3' : ['HOME' , 'WORK' ] ,
+     #   'ln4' : ['HOME' , 'VIP'] ,
+     #   'ln6' : ['HOME' , 'NSFCGZ'] ,
+       'localhost' : [ '/' ] ,
+    } ,
+    'CONNECTION' : {
+        'port' : '8000' ,
+        'protocol' : 'http' ,
+    } , 
+    "USERMODE" : 'db' , 
 }
 
 #TEMPLATES = [] 

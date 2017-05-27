@@ -11,8 +11,8 @@ from common.parser import SlurmStatResultParser , SlurmAcctResultParser , SlurmH
 
 
 GRID_RESOURCE_TABLE = dict(
-    ln3=dict(
-        hostname='ln3-gn0', 
+    local=dict(
+        hostname='local', 
        jobmanagers=dict(fork=dict(url="ln3-gn0/jobmanager"), 
                          batch=dict(url="ln3-gn0/jobmanager-slurm")),
         #gridftp_servers=['genepool01.nersc.gov'],
